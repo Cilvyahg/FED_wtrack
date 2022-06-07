@@ -104,7 +104,6 @@ cp (de huidige file naam) (nieuwe naam van copy)
 
 ## file openen
 open (filenaam)
-lalallalalal gtest
 
 ## rename a file 
 mv 
@@ -133,14 +132,52 @@ from Javascript (behaviour)
 
 **variables**
 
+let name; 
+see the variable as a box.
+variables with no value will have the outcome 'undefined'
+
+***naming rules***
+
+- always use meaningful and descriptive names
+- they cannot start with a number
+- they cannot contain a space or a hyphen (-)
+- camelnotation: firstName (so first words lowercase and second word start with uppercase)
+
+- If you don't need to reassign Use 'const'. Otherwise use 'let' 
+
+
+
+reserved keywords 
+- if 
+- let  
+vscode will sign you that this is not available they will have red dotted underline. 
+
+
+## PRIMITIVE TYPES
+what are the kind of values that we can assign to variables?
+
+we have: primitive types AND reference types
+
+primitive datatypes
+- boolean : either true or false
+- null : when you explicitely clear the value of a variable
+- undefined : if you don't initialize a variable it will be undefined.
+- numbers
+- string
+
+### Dynamic typing (js is a dynamic language)
+
+typeof (to check the typeof the variable)
+
+undefined is a Type but also a Value.
+typeof null is a object unlike undefined 
+
+<hr>
 
 ## Arrays
 
 - arrays zijn objects ; objecten zijn altijd true als je naar hun truthiness kijkt.
 - you can equip properties/eigenschappen like (arrayvariable.length)
-
-
-
 
 
 

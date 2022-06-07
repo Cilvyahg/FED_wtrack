@@ -104,6 +104,7 @@ cp (de huidige file naam) (nieuwe naam van copy)
 
 ## file openen
 open (filenaam)
+lalallalalal gtest
 
 ## rename a file 
 mv 

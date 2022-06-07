@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./contact.css" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>FORMS</h1>
+        <p>A few form examples</p>
+      </header>
+      <main>
+
+        
+        <form name="contact" method="POST" data-netlify="true">
+          <fieldset>
+            <legend><span>Plan a coffee date ☕</span></legend>
+            <div class="label-padding">
+              <label for="name" class="margin-top">Your name</label> <br />
+              <input type="text" name="name" /><br />
+              <label for="email">Your email-address</label> <br />
+              <input
+                type="email"
+                value="example@gmail.com"
+                name="email"
+              /><br />
+              <label for="text-area">Tell me a riddle</label><br />
+              <textarea name="joke" id="joke" cols="40" rows="10">
+Q: why did the programmer quit his job? A: because he didn't get arrays</textarea
+              ><br />
+              <label for="radio"><strong>Did you get it?</strong></label>
+              <div>
+                <input type="radio" value="Yes" name="yes" /><label
+                  id="yes"
+                  for="yes"
+                  >Yes</label
+                >
+              </div>
+              <div>
+                <input type="radio" value="No" name="no" /><label
+                  id="no"
+                  for="no"
+                  >No</label
+                >
+              </div>
+
+              <input
+                type="submit"
+                value="submit"
+                name="submit"
+                class="submit-margin"
+              />
+            </div>
+          </fieldset>
+        </form>
+      </main>
+      
+    </div>
+
+    <section>
+      <form name="contact" method="POST" data-netlify="true">
+        <fieldset>
+          <legend><span>share your favorite recipe with us 🍳</span></legend>
+          <label for="name">name</label><br />
+          <input type="text" name="name" /><br />
+          <label for="email">Your email-address</label><br />
+          <input type="email" name="email" value="cheffie@gmail.com" /><br />
+          <label for="phone">Enter your phone number</label><br />
+          <input type="tel" name="phone" min="9" /><br />
+          <label for="age">What is your age?</label><br />
+          <input type="number" name="age" /><br />
+          <label for="date-of-birth">Date of birth</label><br />
+          <input
+            type="date"
+            name="date-of-birth"
+            placeholder="dd/mm/yyyy"
+            value=""
+            min="01-01-2002"
+          /><br />
+          <label for="gender"><strong>What is your gender?</strong></label
+          ><br />
+          <small>
+            <input type="radio" name="gender" value="female" />
+            <label for="gender">Female</label><br />
+
+            <input type="radio" name="gender" value="male" />
+            <label for="gender">Male</label><br />
+
+            <input type="radio" name="gender" value="rather not say" />
+            <label for="gender">Rather not say</label>
+            <br />
+            <input type="radio" name="gender" value="i don't know yet" />
+            <label for="gender">I don't know yet</label> <br />
+          </small>
+          <label for="cuisine">Favorite cuisine</label> <br />
+          <input type="checkbox" name="checkbox" />
+          <label for="japanes">japanese</label><br />
+          <input type="checkbox" name="checkbox" />
+          <label for="spanish">spanish</label><br />
+          <input type="checkbox" name="checkbox" />
+          <label for="american">american</label><br />
+          <input type="checkbox" name="checkbox" />
+          <label for="surinam">surinam</label><br />
+          <label for="color-apron">Favorite apron color?</label>
+          <input type="color" name="color-apron" value="#fff" /> <br />
+          <label for="text-area">Tell me something about yourself</label><br />
+          <textarea
+            name="text-area"
+            cols="50"
+            rows="15"
+            placeholder="you can just write here anything...."
+          ></textarea
+          ><br />
+          <label for="recipe-file">Upload your latest recipe</label> <br />
+          <input type="file" name="file" /> <br />
+          <label for="website-url">Share your website url</label><br />
+          <input
+            type="url"
+            name="url"
+            placeholder="https://example.com"
+            pattern="https://.*"
+            required
+          />
+          <input
+            type="submit"
+            value="submit"
+            name="submit"
+            class="submit-margin"
+          />
+          <input type="reset" value="reset" name="reset" class="reset-btn" />
+        </fieldset>
+      </form>
+    </section>
+    <footer>
+        <a href="./index.html"><button>GO BACK TO HOME</button></a>
+      </footer>
+  </body>
+</html>

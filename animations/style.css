@@ -1,0 +1,64 @@
+/* ===================
+TRANSITION WITH WEBDEV
+====================== */
+
+.parent {
+  background: rgb(19, 11, 70);
+  height: 40rem;
+  width: 40rem;
+}
+
+.child {
+  background: red;
+  height: 50%;
+  width: 50%;
+  /* transition: transform 1000ms ease-in; */
+  animation: left-to-right 1000ms ease-in forwards infinite alternate;
+  /* infinite ; dan gaat tie de hele tijd door
+*/
+}
+
+
+.parent:hover .child {
+  transform: translateX(100%);
+  /* when you hover on it the animation will get paused */
+  animation-play-state: paused; 
+
+  /* running playstate the default  */
+}
+
+
+/* You can name your animation anything you want as long as it is matched with the keyframes. */
+
+
+@keyframes left-to-right {
+  0% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateY(100%);
+  }
+
+  50% {
+    background-color: white;
+  }
+
+  66% {
+    transform: translateX(100%) translateY(100%);
+  }
+
+  100% {
+    background-color: green;
+    transform: translateX(100%);
+  }
+}
+
+
+
+
+
+
+
+
+

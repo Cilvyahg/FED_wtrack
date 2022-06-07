@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.link a:hover {
+  color: lightblue;
+  font-weight: bold;
+}
+
+.link {
+  font-size: 1.6rem;
+}
+
+.link-2 a:active {
+  color: red;
+  font-style: italic;
+}
+
+.link-3 a:visited {
+  color: yellow;
+}
+
+.input:focus {
+  color: green;
+  font-size: 20rem;
+}
+
+.nav-container {
+  width: 100vw;
+  height: auto;
+}
+
+.nav-titles {
+  display: flex;
+  background: rgb(22, 19, 85);
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav-titles li {
+  list-style-type: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.nav-titles li > a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.search-bar {
+  height: 2.5rem;
+}
+
+.currentPage {
+  background-color: bisque;
+}
+
+li a:hover {
+  background-color: rgb(194, 211, 216);
+}
+
+.currentPage a:hover {
+  background-color: red;
+}
+
+.search-bar:focus {
+  border: 5px dashed rgb(152, 196, 42);
+}
+
+.nav-titles li:first-child {
+  font-size: 3rem;
+}
+
+
+
+/* ===============================
+CSS ::BEFORE and ::AFTER exercise
+================================== */
+
+

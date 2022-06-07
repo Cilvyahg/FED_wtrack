@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-container {
+  background: rgb(236, 231, 231);
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.cardholder {
+  margin: 5px;
+  padding: 1rem;
+
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+/* NAME AND PHOTO */
+.card-holder {
+  display: grid;
+  grid-template-rows: 15rem;
+  grid-template-columns: 3fr 1fr;
+  grid-area: "name photo" "request request" "approve decline";
+}
+
+/* .name-holder {
+  grid-row: 1/2;
+} */
+
+.name {
+  /* grid-row: 1/2; */
+  grid-area: name;
+  display: inline-block;
+}
+
+.photo {
+  /* grid-column: 2/-1; */
+  grid-area: photo;
+}
+
+span {
+  color: grey;
+  font-size: 1.2rem;
+}
+
+.request {
+  grid-row: 2/3;
+}

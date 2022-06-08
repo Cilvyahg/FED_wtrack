@@ -108,17 +108,34 @@ open (filenaam)
 ## rename a file 
 mv 
 
+# run javascript on Terminal 
+node script.js (wel eerst naar de juiste directory gaan) zowel in de macos terminal als vscode terminal
+
 ## VSCode
 first select the folder/file
 code . (it means open vscode)
 
 
 ## Node js
+- it's a JS Runtime
+- built on the V8 Javascript engine, same as google chrome
+- essentially let us run javascript code on the server
+- you can use node.js to get interaction with the computer e.g making desktop applications
+without node js. it will just be locked in the browser. it will happen in the server instead of on the client side. 
 
-node js is a runtime not a programmer language. 
+
+Node js is a runtime not a programmer language. 
+
+
+# mathematical operators 
+
+
+
 
 
 # <span style=color:green> Javascript </span>
+JavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types:
+
 we use javascript to add behaviour
 
 difference between javascript and ecma script
@@ -159,20 +176,69 @@ what are the kind of values that we can assign to variables?
 we have: primitive types AND reference types
 
 primitive datatypes
-- boolean : either true or false
-- null : when you explicitely clear the value of a variable
-- undefined : if you don't initialize a variable it will be undefined.
-- numbers
+- Booleans : can only have the values true OR false
+
+Boolean conditionals are often used to decide which sections of code to execute (such as in if statements) or repeat (such as in for loops).
+
+
+- Null : when you explicitely clear the value of a variable
+null is not as "primitive" as it first seems! Every Object is derived from null value, and therefore typeof operator returns object for it:
+
+>
+> tyoeof null === 'object'  
+> (true)
+>
+
+- undefined : if you don't initialize a value it will be undefined. A variable that has not been assigned a value has the value undefined
+undefined is a primitive value automatically assigned to variables that have just been declared, or to formal arguments for which there are no actual arguments.
+
+- numbers (bigInt, numeric, NaN)
 - string
+a string is a sequence of characters used to represent text.
+
+**NaN**
+0/0   output is NaN\
+NaN * 12  outout is NaN
+
+typeof NaN --> output number type
+
 
 ### Dynamic typing (js is a dynamic language)
 
-typeof (to check the typeof the variable)
+typeof (to check the typeof the variable). type of the value. 
 
 undefined is a Type but also a Value.
 typeof null is a object unlike undefined 
 
+# OPERATORS
+
+## Arithmetic Operators
+Arithmetic operators are used to perform arithmetic between variables and/or values.
+
+we can use the + operator to concatenate strings 
+
+
+**increment**
+
+prefix 
+postfix
+
+x++ returns the value before incrementing when calling the variable it will be incremented
+++x returns the value after incrementing when calling the variable the value is the same
+
+
+
+**decrement**
+x-- returns the value before decrementing when calling the variable it will be incremented
+--x returns the value after decrementing when calling the variable the value is the same
+
+
+
 <hr>
+
+## Objects
+The values are written as name:value pairs (name and value separated by a colon).
+
 
 ## Arrays
 
@@ -180,6 +246,24 @@ typeof null is a object unlike undefined
 - you can equip properties/eigenschappen like (arrayvariable.length)
 
 
+## precedence
+
+javascript has a operator precedence. operator precedence determines the order in which operators are evaluated. operators with higher precedence are evaluated first. 
+
+![link mdn precedence] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+use parantheses (2 + 900) / 2 to get a operator executed first. de grouping operator (...) has the highest precedence 
+
+# constructor
+
+all constructor functions , with the exception of function constructor will always be the typeof 'object'. 
+
+>
+> let str = new String ("String");
+>
+> typeof str; 
+> 
+> output will be 'object'
 
 ## <span style=color:YELLOW> API'S LIVE LES </span>
 
@@ -261,6 +345,10 @@ promise is a javascript object die mogelijk een waarde gaat produceren in de toe
 
 promise.then => 
 .then om te vertellen wat je er moet gebeuren als de waarde terugkomt. 
+
+
+# IF statements
+
 
 
 

@@ -373,3 +373,27 @@ objects are 'passed by reference'
 # IF statements
 
 to check if some conditions are met or not. always checks if the condition is true
+
+using `else if (condition) {     }` in order to check another condition or multiple conditions.
+ends with `else { }` 
+
+## comparison operators 
+`===`
+`==`
+`>=`
+`<=`
+ `>`
+ `<`
+ !==
+!=== negation operator
+
+
+### logical operators
+
+&& AND
+|| OR
+
+
+
+
+

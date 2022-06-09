@@ -61,3 +61,62 @@ number--
 --number
 
 These two don't fit into the list of normal operators because they are not normal expressions. They are statements (just as a variable is not an expression but a statement). With increment and decrement you "re-assign" the variable number by adding or subtracting one to/from it and you return the result of that edit.
+
+**in operator** in objects 
+
+met de ***in operator*** kunnen we checken of een object een bepaalde key heeft. de uitkomst hiervan is 'false' of 'true' 
+
+e.g 
+>
+>`const person = {`
+>
+>  `firstName = "Laura", `
+>
+>  `age = 40, `
+>
+>`}; `
+>
+>`console.log("lastName" in person);` // output false
+>
+>`console.log("firstName" in person);` // output true
+>
+
+Vaak hebben objecten binnen javascript hebben ook prototypes dus ze hebben parents, grandparent en etc etc. erven
+
+## Object methods
+
+- Object.keys();
+ Object heeft net zoals Math aantal methods zoals keys(). 
+ als je over alle keys van een object heen wilt, itereren, loop en etc kan je Object.keys(objectnaam)
+
+ VOORBEELD `Object.keys(cities);`
+ > uitkomt console.log(cities);
+ >
+ > `["Brussels", "Amsterdam and Paris", "Toronto"]`
+ >
+ >
+
+ - Object.values() 
+ als je de waarden van het object wilt weten
+
+ - Object.entries();
+geef mij alle keys met de waarde erbij in een array
+
+ 
+ VOORBEELD `Object.entries(cities);`
+
+ > uitkomst console.log(cities);
+ >
+ > `["Brussels, 3],`
+ >
+ > `["Amsterdam and Paris", 3]`
+ >
+ > `["Toronto", 2]`
+ >
+ >
+
+
+
+
+
+

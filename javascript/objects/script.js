@@ -78,14 +78,14 @@ secondPerson["age"] = 20;
 
 console.log(secondPerson.name);
 console.log(secondPerson.age);
- 
+
 // adding the key 'evaluations' with value [7, 10, 9]. the value is that this evaluation property has an array as value that exist out of 3 elements.
 console.log(person.evaluations);
-
 
 // PART 2 : ARRAYS
 
 const pastelColors = ["pink", "green", "yellow", "blue", "grey"];
+console.log(pastelColors);
 
 console.log(pastelColors.length);
 
@@ -93,28 +93,114 @@ console.log(pastelColors[0]);
 console.log(pastelColors[pastelColors.length - 1]);
 
 // push method -- added purple to the array and a digitnumber to the end.
-pastelColors.push("purple", 2022); 
+pastelColors.push("purple", 2022);
 pastelColors.push({ greeting: "hi I am an object" });
 
 console.log(pastelColors);
-console.log(pastelColors[pastelColors.length - 1]);
 
+//only the last index loggen
+console.log(pastelColors[pastelColors.length - 1]);
 
 // extra:: een nieuwe variable aangemaakt voor laatste element in pastelcolors.
 
-let lastPastelColors = pastelColors[pastelColors.length - 1]
+let lastPastelColors = pastelColors[pastelColors.length - 1];
 console.log(lastPastelColors);
-
 
 // PART 3: A 'real life' object
 
+const catBreeds = [
+  {
+    name: "Abyssinian",
+    description:
+      "The Abyssinian is easy to care for, and a joy to have in your home. They're affectionate cats and love both people and other animals.",
+    dog_friendly: 4,
+    energy_level: 5,
+    life_span: "14 - 15",
+    origin: "Egypt",
+    temperament: [
+      "Active",
+      "Energetic",
+      "Independent",
+      "Intelligent",
+      "Gentle",
+    ],
+    wikipedia_url: "https://en.wikipedia.org/wiki/Abyssinian_(cat)",
+    food: {
+      favourite_food: "fish",
+      medium_liked_food: "dried fruits",
+      disliked_food: "walnuts",
+    },
+  },
+  {
+    name: "Aegean",
+    description:
+      "Native to the Greek islands known as the Cyclades in the Aegean Sea, these are natural cats, meaning they developed without humans getting involved in their breeding. As a breed, Aegean Cats are rare, although they are numerous on their home islands. They are generally friendly toward people and can be excellent cats for families with children.",
+    dog_friendly: 4,
+    energy_level: 53,
+    life_span: "9- 12",
+    origin: "Greece",
+    temperament: ["Affectionate", "Social", "Intelligent", "Playful", "Active"],
+    wikipedia_url: "https://en.wikipedia.org/wiki/Aegean_cat",
+    food: {
+      favourite_food: "tuna",
+      medium_liked_food: "canned food",
+      disliked_food: "all fruits",
+    },
+  },
+  {
+    name: "American Bobtail",
+    description:
+      "American Bobtails are loving and incredibly intelligent cats possessing a distinctive wild appearance. They are extremely interactive cats that bond with their human family with great devotion.",
+    dog_friendly: 5,
+    energy_level: 3,
+    life_span: "11 - 15",
+    origin: "United States",
+    temperament: [
+      "Intelligent",
+      "Interactive",
+      "Lively",
+      "Playful",
+      "Sensitive",
+    ],
+    wikipedia_url: "https://en.wikipedia.org/wiki/American_Bobtail",
+    food: {
+      favourite_food: "meaty things",
+      medium_liked_food: "tuna",
+      disliked_food: "canned food",
+    },
+  },
+];
+
+//Log the name of the last cat breed. Name cat breed 3: American Bobtail
+
+console.log("Name of the last cat:", catBreeds[2].name);
+
+//Log the energy level of the first cat breed.Energy level cat breed 1: 5
+
+console.log("Energylevel of the first cat:", catBreeds[0].energy_level);
+// Log the first temperament of the temperaments of the second cat breed.First temperament cat breed 2: Affectionate
+console.log("the first temperament of the temperament of the second cat:", catBreeds[1].temperament[0]);
+
+// Log the last temperament of the temperaments of the third cat breed. Last temperament cat breed 3: Sensitive
+// hoe kom je bij het laatste? 
 
 
+  
+const lastTemperament = catBreeds[2].temperament;
+console.log(lastTemperament);
+console.log("Last temperament of the third cat:", lastTemperament[lastTemperament.length - 1]);
+
+//uitkomst van Winc
+const lengthTemperamentsCatThree = catBreeds[2].temperament.length;
+console.log(
+    "Laatste temperament kat 3:",
+    catBreeds[2].temperament[lengthTemperamentsCatThree - 1])
 
 
+// console.log(catBreeds[2].temperament[4]);
 
-
-
+console.log("The favorite food of the third cat:", catBreeds[2].food.favourite_food);
+console.log(catBreeds);
 
 
 

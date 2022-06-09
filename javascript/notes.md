@@ -175,7 +175,7 @@ we have: primitive types AND reference types
 
 primitive datatypes
 
-- Booleans : can only have the values true OR false
+- Booleans : can only have the values true OR false like subscribed or not subscribed. 
 
 Boolean conditionals are often used to decide which sections of code to execute (such as in if statements) or repeat (such as in for loops).
 
@@ -192,11 +192,27 @@ Boolean conditionals are often used to decide which sections of code to execute 
 - string
   a string is a sequence of characters used to represent text.
 
+- Big and symbol
+
 **NaN**
 0/0 output is NaN\
 NaN \* 12 outout is NaN
 
 typeof NaN --> output number type
+
+## truth-y & false-y values
+all js values have an inherent truthyness or falsyness about them
+- falsy values: 
+-false
+-0
+-"" (empty strint)
+-null
+-undefined
+-Nan
+
+- everything else is Truthy! 
+
+
 
 ### Dynamic typing (js is a dynamic language)
 
@@ -392,6 +408,15 @@ ends with `else { }`
 
 && AND
 || OR
+
+
+## stringmethods
+***syntax***
+thing.method() --> you have to add the paranthese, so that js knows that this is a method.
+
+## Math object 
+
+
 
 
 

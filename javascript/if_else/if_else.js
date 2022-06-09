@@ -96,3 +96,12 @@ if (totalAmount >= 100) {
     "Unfortunately you don't get a discount, but it's nice to have you!"
   );
 }
+
+// const userInput = prompt("enter something");
+
+// if (userInput) {
+//   console.log("TRUTHY!")
+// } else {
+//   console.log("FALSY!")
+// }
+

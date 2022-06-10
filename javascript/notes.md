@@ -405,20 +405,19 @@ ends with `else { }`
 
 
 ### logical operators
+In JavaScript, the logical operators are used to combine two or more conditions
 
 && AND
 || OR
+! = 	! is known as NOT operator. It reverses the boolean result of the operand (or condition). !false returns true, and !true returns false.
 
 
 ## stringmethods
 ***syntax***
 thing.method() --> you have to add the paranthese, so that js knows that this is a method.
 
-## Math object 
+## Ternary Operator
+ syntax `<condition> ? <true : <false>;`
 
-
-
-
-
-
+ 
 

@@ -203,6 +203,39 @@ console.log("The favorite food of the third cat:", catBreeds[2].food.favourite_f
 console.log(catBreeds);
 
 
+/* =============================
+LIVESESSIE ARRAYS NIELS BLOM
+============================= */
+
+// How to create an array 
+
+const numbers = [8, 304, 700, 10, 4, 373883];
+const numbers2 = [1, 2, 3, 4, 5, 6];
+
+
+console.log(numbers2.indexOf(2));
+console.log(numbers2.includes(3)); //true
+console.log(numbers2.includes(7)); //false
+
+// Concatenate a array : merging arrays together. 
+const numbersTotal = numbers.concat(numbers2);
+console.log(numbersTotal);
+
+// slice() method
+
+const animals = [ "horse", "ant", "bison", "camel", "duck", "elephant"];
+
+const animalsSliced = animals.slice(2);
+console.log(animals.slice(4, 6));
+console.log(animalsSliced);
+
+//splice() method
+
+
+//sort() sorteert of alfabetische volgorder oplopend.
+
+animals.sort();
+console.log(animals);
 
 
 

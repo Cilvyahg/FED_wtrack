@@ -129,7 +129,6 @@ code . (it means open vscode)
 
 Node js is a runtime not a programmer language.
 
-# mathematical operators
 
 # <span style=color:green> Javascript </span>
 
@@ -420,7 +419,5 @@ thing.method() --> you have to add the paranthese, so that js knows that this is
  syntax `<condition> ? <true : <false>;`
 
  
-## Type Conversion and Coercion (jonas udemy)
-
 
 

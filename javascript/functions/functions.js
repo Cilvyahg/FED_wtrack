@@ -1,21 +1,21 @@
-"use strict";
+'use strict';
 
-console.log("hello");
+console.log('hello');
 
 // writing or 'defining' a function
 const makeSpaghetti = function () {
-  console.log("Boil water");
-  console.log("Add pasta");
-  console.log("Make sauce");
-  console.log("Drain pasta");
-  console.log("Combine pasta and sauce");
+  console.log('Boil water');
+  console.log('Add pasta');
+  console.log('Make sauce');
+  console.log('Drain pasta');
+  console.log('Combine pasta and sauce');
 };
 
 // Calling/using the function: Use function name and the parantheses
 makeSpaghetti();
 
 const number = 3;
-const name = "Ariana";
+const name = 'Ariana';
 
 makeSpaghetti();
 makeSpaghetti();
@@ -33,15 +33,15 @@ showMessage();
   ++++++++++++++++ */
 
 function makingPizza() {
-  console.log("kneeding the dough");
-  console.log("making pasta sauce");
-  console.log("cutting vegetables");
-  console.log("putting tomatosauce on the dough");
-  console.log("putting a lot of cheese on the dough");
-  console.log("put artichokes on it");
-  console.log("put salami on it");
-  console.log("bake it in the over baby");
-  console.log("ENJOY".toLowerCase());
+  console.log('kneeding the dough');
+  console.log('making pasta sauce');
+  console.log('cutting vegetables');
+  console.log('putting tomatosauce on the dough');
+  console.log('putting a lot of cheese on the dough');
+  console.log('put artichokes on it');
+  console.log('put salami on it');
+  console.log('bake it in the over baby');
+  console.log('ENJOY'.toLowerCase());
 }
 
 // no the code won't run yet because it has only been defined but not called yet
@@ -50,15 +50,15 @@ makingPizza();
 makingPizza();
 
 function howToMakeYummySushi() {
-  console.log("cook the rice");
-  console.log("cut the vegetables");
-  console.log("bake the shrimps");
-  console.log("get the seaweed paper");
-  console.log("put the rice on it");
-  console.log("add different toppings");
-  console.log("roll it baby");
-  console.log("put wasabi on the sushi");
-  console.log("Itadakimasu!".toUpperCase());
+  console.log('cook the rice');
+  console.log('cut the vegetables');
+  console.log('bake the shrimps');
+  console.log('get the seaweed paper');
+  console.log('put the rice on it');
+  console.log('add different toppings');
+  console.log('roll it baby');
+  console.log('put wasabi on the sushi');
+  console.log('Itadakimasu!'.toUpperCase());
 }
 
 howToMakeYummySushi();
@@ -66,10 +66,10 @@ howToMakeYummySushi();
 howToMakeYummySushi();
 
 const makePizza = function () {
-  console.log("Roll dough");
-  console.log("Spread tomato sauce");
-  console.log("Grate cheese");
-  console.log("Bake in oven");
+  console.log('Roll dough');
+  console.log('Spread tomato sauce');
+  console.log('Grate cheese');
+  console.log('Bake in oven');
 };
 
 makePizza();
@@ -89,15 +89,15 @@ const heat = function (item) {
   //lot of code
   //lot of code
   //lot of code
-  console.log("Ping! Your " + item + " is heated.");
+  console.log('Ping! Your ' + item + ' is heated.');
 };
 
 // we give a string to this function
-heat("popcorn");
-heat("milk");
+heat('popcorn');
+heat('milk');
 
-const main_course = "pasta";
-const dessert = "cake";
+const main_course = 'pasta';
+const dessert = 'cake';
 
 // you can also give a 'variable' to a function
 heat(main_course);
@@ -147,29 +147,60 @@ wallPaintColor("black");
 // calling without an argument - it won't be running since it has an argument (color)
 wallPaintColor(); */
 
-
-// multiple arguments 
+// multiple arguments
 
 const wallPaintColor = function (color, wallcoordinates) {
   console.log(`The ${wallcoordinates} wall has been painted ${color}`);
 };
 
+// calling without an argument - it will run but it says undefined on the arguments.
+wallPaintColor();
 
-
-// calling without an argument - it will run but it says undefined on the arguments. 
-wallPaintColor(); 
- 
-wallPaintColor("north-side", "purple");
-wallPaintColor("south-east", "green");
-wallPaintColor("west-north", "black");
+wallPaintColor('north-side', 'purple');
+wallPaintColor('south-east', 'green');
+wallPaintColor('west-north', 'black');
 
 // the order of the passing arguments does matter. what you will be calling won't make sense
-wallPaintColor("red", "bedroom");
-wallPaintColor("brown", "gameroom");
+wallPaintColor('red', 'bedroom');
+wallPaintColor('brown', 'gameroom');
 
 // what happens if you change the order of the arguments in the function definition and when calling the function?
 // changing the order in the function doesn't effect what is inside the function. but it will change the order you need to put when calling the function.
 
+function add(x, y) {
+  console.log(x + y);
+  let sum = x + y;
+  return sum; // stop the function after this return
+}
 
+/* ===============
+ARROW Function
+=============== */
+
+// function expression - Jonas Udemy
+const calcAge2 = function (birthYear) {
+  return 2039 - birthYear;
+};
+
+// this is the arrow function where the return happens impplicity without us having writing return explicitely like for the one above
+const calcAge3 = (birthYear) => 2037 - birthYear;
+
+const age3 = calcAge3(1991);
+console.log(age3);
+
+// multiliner arrow function we need the curly braces again
+const yearsUntilRetirement = (birthYear, firstName1) => {
+  const age = 2037 - birthYear;
+  const retirement = 65 - age;
+  //return retirement;
+  return `${firstName1} retires in ${retirement} years`;
+};
+
+const grandmaAge = yearsUntilRetirement(1991, 'Cilvya');
+const grandpaAge = yearsUntilRetirement(1980, "Jesse");
+
+
+console.log(grandmaAge)
+console.log(grandpaAge)
 
 

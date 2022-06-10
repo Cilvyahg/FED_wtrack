@@ -1,4 +1,4 @@
-# FUNCTIONS (IS A MACHINE)
+# FUNCTIONS 
 function serie of steps. think of it as a executing a RECIPE.
 
 ***syntax***
@@ -74,8 +74,6 @@ you get a microwave to heat different things. that is why we use arguments in fu
 ## MENTAL MODEL FUNCTION
 create a machine and make this machine work
 
-## NAME OF ARGUMENTS
-
 
 ## ARGUMENTS OR PARAMETERS
 when u define the function the things inside the braces are parameters and also in the function 
@@ -87,12 +85,24 @@ when u define the function the things inside the braces are parameters and also 
 >}
 >
 
-when you call the function so like this `theQuestion(argument1, argument2)` those in the braces are called arguments. but it will be used interchangably.
+when you call the function so like this `theQuestion(argument1, argument2)` those in the braces are called arguments. but it will be used interchangebly.
 
 
 
 ## FUNCTIONS: WHAT ARE METHODS? 
-- A methid us a function attached to an object like Math.random()  .toUppercase() 
-- a function that is a property of an object is called it's method. 
+- A method is a function attached to an object like the methods Math.random()  .toUppercase() indexof() <-- these are built in methods
 
 ## RETURN STATEMENT
+- you can only use the return (return statement when there are lines in it) in the function.
+- the return statement stops the function when it is actually run. 
+- it goes back to where the function was called
+- it returns a value
+- we can return numbers, strings, booleans, arrays, objects, functions and more...
+-  save them and capture them instead of only printing. 
+
+## ARROW FUNCTIONS
+arrow functions is good for simple one-liner functions with not that many codes. arrow functions doesn't have the 'this' keyword. 
+
+
+
+

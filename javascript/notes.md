@@ -208,7 +208,7 @@ all js values have an inherent truthyness or falsyness about them
 -"" (empty strint)
 -null
 -undefined
--Nan
+-Nan (but the type is number. NaN is just an invalid number)
 
 - everything else is Truthy! 
 
@@ -420,4 +420,7 @@ thing.method() --> you have to add the paranthese, so that js knows that this is
  syntax `<condition> ? <true : <false>;`
 
  
+## Type Conversion and Coercion (jonas udemy)
+
+
 

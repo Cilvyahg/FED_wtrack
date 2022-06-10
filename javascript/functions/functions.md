@@ -1,5 +1,14 @@
-# FUNCTIONS
+# FUNCTIONS (IS A MACHINE)
 function serie of steps. think of it as a executing a RECIPE.
+
+***syntax***
+>
+>`function functionName(parameter1, parameter2, parameter3) {`
+>
+>  `// code to be executed`
+>
+>`}`
+>
 
 - functions can contain as many lines as you want. even one, or hundred.
 
@@ -42,3 +51,48 @@ A variable declared inside a function is only visible inside that function.
 >alert( message ); // <-- Error! The variable is local to the function
 >
 
+# CONVERSION AND COERCION (UDEMY JONAS)
+Javascript can only convert to three types
+
+console.log(String(23, 23)); now the first 23 is a string
+
+- Numbers
+- String
+- Boolean
+
+# FUNCTION ARGUMENTS
+you need arguments just like you need to put something in the microwave to have purpose. 
+
+you get a microwave to heat different things. that is why we use arguments in functions. most functions will have arguments.  e.g calculating the average. you need arguments for the function to know what to work with. 
+
+**arguments make functions work with different kinds of input.**
+
+## ALL KINDS OF ARGUMENTS
+
+ giving too many arguments in a function is not a proper way to do. Numbers, stringsm arrays, objects, booleans. 
+
+## MENTAL MODEL FUNCTION
+create a machine and make this machine work
+
+## NAME OF ARGUMENTS
+
+
+## ARGUMENTS OR PARAMETERS
+when u define the function the things inside the braces are parameters and also in the function 
+
+>
+>
+>const theQuestion = function (param1, param2) {
+>
+>}
+>
+
+when you call the function so like this `theQuestion(argument1, argument2)` those in the braces are called arguments. but it will be used interchangably.
+
+
+
+## FUNCTIONS: WHAT ARE METHODS? 
+- A methid us a function attached to an object like Math.random()  .toUppercase() 
+- a function that is a property of an object is called it's method. 
+
+## RETURN STATEMENT

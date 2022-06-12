@@ -87,22 +87,93 @@ when u define the function the things inside the braces are parameters and also 
 
 when you call the function so like this `theQuestion(argument1, argument2)` those in the braces are called arguments. but it will be used interchangebly.
 
+## DIFFERENT ROLES OF FUNCTIONS
+Generally speaking, functions can be used to 
+
+1.do something
+2. produce or calculate something
+3. do and produce something
+
+
+### Functions that do something:
+A function that does something can do things like:
+
+print something to the console
+display an alert
+change the background color of a webpage
+add a button to a webpage
+send an email
+write to a database
+Functions that do something often don't need a return statement. They just do something and then we're at the end of the function.
+
+Sometimes we'll check inside of the function "do we need to do this?" if the answer is no we can use return to exit the function early. For example: if we need to empty a list in a webpage but the list is already empty we can use return to exit the function early.
+
+### FUNCTIONS THAT PRODUCE SOMETHING
+A function that produces something returns one or more values. It does not do something. Some examples:
+
+- add two numbers
+- calculate the income tax
+- calculate the number of days between two dates
+- if there's a student older than 50 in a list of student - objects
+- find all the sweet fruits in a list of fruits
+- transform a collection of countries so that they all have a unique id
+- Functions that produce or calculate something always  use a return statement. (Except some arrow functions, see note about arrow functions above)
+
+### Functions that do both
+Functions in this category both do something and produce something. It's a best practice to have little or no functions that fall in this category.
 
 
 ## FUNCTIONS: WHAT ARE METHODS? 
 - A method is a function attached to an object like the methods Math.random()  .toUppercase() indexof() <-- these are built in methods
 
 ## RETURN STATEMENT
+- return is the keyword
+- return 'value'; <-- return statement.
+
+- every function returns a value, if you don't explicitely return a value. you return ***undefined***
+- you can only use this keyword when you are inside a function. 
+- when used we create a 'return statement' 
 - you can only use the return (return statement when there are lines in it) in the function.
 - the return statement stops the function when it is actually run. 
 - it goes back to where the function was called
 - it returns a value
 - we can return numbers, strings, booleans, arrays, objects, functions and more...
--  save them and capture them instead of only printing. 
+-  save them and capture them instead of only printing.
+
+### Return statement can be used for the following reasons: 
+- to extit a function (where we don't care about the return value)
+- to exit a function and return a specific value
+
+
+## MULTIPLE RETURN STATEMENTS
+A function can have multiple return statements. The first one the program comes across is executed. With this in mind: it's possible to write a function in such a way that certain parts of the function are never executed.
+
+
+
 
 ## ARROW FUNCTIONS
 arrow functions is good for simple one-liner functions with not that many codes. arrow functions doesn't have the 'this' keyword. 
 
+If an arrow function contains a single expression we can remove the curly braces and the return statements. Only do this with simple arrow functions. 
+
+! arrow functions have a so called implicit return. you dont need to use a return keyword but the function still returns something. !
+
+an expression can be like a 'value' 
+
+
+## Methods
+javascript also has a number of built-in objects
+Math.random() object = Math and the math has a method attached to it called random() indexOf() and etc. .toUpperCase()
+ 
+ u can call methods on strings. all strings have methods attached to them one of them is toUppercase() method. 
+
+
+#### Every functions returns something: undefined
+if we don't use the return statement in the function, the functions still returns something and that is 'undefined'. if you don't want to return something you get undefined. also if you use the return; statement without a value it will return undefined. 
+
+so you don't get undefined when you use a return statement with a value.
+
+## Math Object
 
 
 

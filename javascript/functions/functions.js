@@ -1,6 +1,4 @@
-'use strict';
-
-console.log('hello');
+// 'use strict';
 
 // writing or 'defining' a function
 const makeSpaghetti = function () {
@@ -46,8 +44,10 @@ function makingPizza() {
 
 // no the code won't run yet because it has only been defined but not called yet
 
-makingPizza();
-makingPizza();
+let a = makingPizza();
+console.log(a);
+
+console.log(makingPizza());
 
 function howToMakeYummySushi() {
   console.log('cook the rice');
@@ -174,7 +174,7 @@ function add(x, y) {
 }
 
 /* ===============
-ARROW Function
+ARROW FUNCTIONS
 =============== */
 
 // function expression - Jonas Udemy
@@ -197,10 +197,93 @@ const yearsUntilRetirement = (birthYear, firstName1) => {
 };
 
 const grandmaAge = yearsUntilRetirement(1991, 'Cilvya');
-const grandpaAge = yearsUntilRetirement(1980, "Jesse");
+const grandpaAge = yearsUntilRetirement(1980, 'Jesse');
+
+console.log(grandmaAge);
+console.log(grandpaAge);
+
+/* ===============
+RETURN 
+=============== */
+
+// checking if a number is big
+
+function pointsCalculator(points1) {
+  if (points1 > 100) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+pointsCalculator(89);
+pointsCalculator(101);
+pointsCalculator(100);
+pointsCalculator(23);
+pointsCalculator(130);
+
+console.log(pointsCalculator(88));
+
+// how to make it shorter::
+const numberIsBig = function (number) {
+  return number > 100;
+};
+
+console.log(numberIsBig(120));
+
+// this is a function that produces something. it will look if the number is bigger than 100 so a return statement is needed;
+
+// bouncer at a club
+
+const clubEnter = (age, currentPeople, maxPeople) => {
+  if (age < 18) {
+    return 'this is a club for adults';
+  }
+  if (currentPeople >= maxPeople) {
+    return "it's too busy now, come back later";
+  } else {
+    return 'come in';
+  }
+};
+
+console.log(clubEnter(19, 200, 250));
+
+//another solution. We can also use a temporary response variable, put a value into it and then return that variable at the end of the function. This can sometimes be a better pattern.
+
+const getBouncerReaction = function (
+  maxVisitors,
+  currentVisitors,
+  ageOfPotentialVisitor
+) {
+  let response;
+  if (ageOfPotentialVisitor < 18) {
+    response = 'this is a club for adults';
+  } else if (currentVisitors >= maxVisitors) {
+    response = "it's too busy now, come back later";
+  } else {
+    response = 'come in';
+  }
+  return response;
+};
 
 
-console.log(grandmaAge)
-console.log(grandpaAge)
+
+//calculating the average
+
+function numberAverage(number1, number2, number3, number4, number5) {
+  let averageFive = Math.round((number1 + number2 + number3 + number4 + number5) / 5); 
+  return averageFive; 
+}
+
+console.log(numberAverage(2, 2, 4, 5, 6));
+
+let numberCalc1 = numberAverage(5, 6, 8, 3, 2); 
+let numberCalc2 = numberAverage(20,20,20,20,20); 
+let numberCalc3 = numberAverage(5, 6, 50, 1, 2); 
 
 
+console.log(numberCalc1, numberCalc2, numberCalc3);
+
+
+
+// this is a function that does something. it will return the average of five numbers.

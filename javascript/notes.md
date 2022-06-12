@@ -419,5 +419,36 @@ thing.method() --> you have to add the paranthese, so that js knows that this is
  syntax `<condition> ? <true : <false>;`
 
  
+# JS Expressions and Values - liveles Niels Blom
+
+## Statements
+- all Javascripts code consist of 'statements' 
+- statement is een instructie aan de computer om iets te doen, om een bepaalde actie uit te voeren.
+- statements can containt other statements
+- statements almost always contain "expressions".
+- expressions geven geen instructie aan de computer om wat te doen.
+console.log() is bijvoorbeeld een statement je zegt dat de computer iets moet doet.
+
+## Values 
+values are simple expressions.
+2021
+"hello"
+true
+[1,2,3,4]
+{age: 52, name: "john"}
+
+## Expressions
+
+- expressions can be written anywhere where you would expect a value. Een expressie mag je overal neerzetten als het maar uiteindelijk een value wordt. 
+- each expression can be 'evaluated'
+- expressions can contain variables
+
+
+
+
+
+
+
+
 
 

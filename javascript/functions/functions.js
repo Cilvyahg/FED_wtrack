@@ -285,5 +285,31 @@ let numberCalc3 = numberAverage(5, 6, 50, 1, 2);
 console.log(numberCalc1, numberCalc2, numberCalc3);
 
 
-
 // this is a function that does something. it will return the average of five numbers.
+
+// =====================
+// THREE WAYS TO WRITE JS
+// =====================
+
+//Function declaration
+function sayHello1() {
+  console.log("Hello1");
+}
+
+//Function expression - modern way to write functions - good way to start as a beginner
+const sayHello2 = function () {
+  console.log("Hello 2");
+};
+
+//Arrow function (also a function expression)
+const sayHello3 = () => {
+  console.log("Hello 3")
+}
+
+// calling the three functions is all three the same
+sayHello1();
+sayHello2();
+sayHello3()
+
+console.log(sayHello1()); // undefined. 
+

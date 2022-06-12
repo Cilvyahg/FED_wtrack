@@ -175,5 +175,48 @@ so you don't get undefined when you use a return statement with a value.
 
 ## Math Object
 
+syntax Math.method(number)
+
+there are 4 common methods to round a number to an integer:
+
+- Math.round(x)	Returns x rounded to its nearest integer
+- Math.ceil(x)	Returns x rounded **up** to its nearest integer
+- Math.floor(x)	Returns x rounded **down** to its nearest integer
+- Math.trunc(x)	Returns the integer part of x (new in ES6)
+- Match.random(x) Returns a random number between 0 (inclusive), and 1 (exclusive):
+
+there are more ..
+like 
+Math.min() : used to find the lowest value in a list of arguments
+Math.min(0, 150, 30, 20, -8, -200); // output -200
+
+Math.max() : used to find the highest value in a list of arguments
+Math.max(0, 150, 30, 20, -8, -200); // output 150
+
+# FUNCTIONS : THREE WAYS TO WRITE THEM
+
+----> see functions.js 296
+
+the reason why we have more different ways to write javascript is because js is quite an old programming language. 
+
+There are 3 ways to write a function in Javascript.
+1. function declarations
+2. functions expressions
+we don't declare the function but we rather put the expression (function) in a variable. 
+3. arrow functions : compact way of writing code and return is implicitely return. you cannot always use them
+
+Whichever way you write a function does not influence how you call the function. That's always the same.
+
+
+
+
+
+
+
+
+
+
+
+
 
 

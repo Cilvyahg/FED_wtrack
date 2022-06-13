@@ -201,11 +201,67 @@ the reason why we have more different ways to write javascript is because js is 
 
 There are 3 ways to write a function in Javascript.
 1. function declarations
+
+This style has a few drawbacks which are a bit technical. ***The most important drawback is that you cannot assign or re-assign a function declaration. Function declarations also cannot create anonymous functions.***
+
 2. functions expressions
 we don't declare the function but we rather put the expression (function) in a variable. 
+
+>
+>`const add = function (number1, number2) {`
+>
+>
+>  `return number1 + number2;`
+>
+> `}; `
+>
+>`add(5,6);`
+>
+
+This is the more modern way of writing functions. This style is common in modern JavaScript.
+
+What happens here is two steps:
+
+we have an "expression" that evaluates to a function
+we assign the function to a variable (add in this case)
+We can use function expressions to create anonymous functions. With anonymous functions we don't assign the function to a variable, but use it immediately in some way.
+
+If you use a function expression and assign it: add a semicolon after the last }.
+
+
 3. arrow functions : compact way of writing code and return is implicitely return. you cannot always use them
 
 Whichever way you write a function does not influence how you call the function. That's always the same.
+
+We can sometimes skip the curly braces and the return keyword when writing an arrow function to make the syntax even more compact. We can only do this if:
+
+there's only one statement in the "body" of the function
+we want the evaluated value of that statement to be the value the function returns. However: this shorter syntax can decrease readability and ease of debugging, so don't overuse it.
+
+#  HOISTING 
+
+Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+
+It’s important to remember that only declarations are hoisted into memory during compile time, not assignments.
+
+# JSON
+
+Javascript Object Notation
+lightweight data-interchange format
+based on a subset of Javascript
+
+**data types that we can use with json**
+
+numbers
+string: use double quotes
+boolean
+array []
+object : unordered collection of key value pairs
+null: empty value 
+
+# Expressions
+
+expressions always results in value;
 
 
 

@@ -438,10 +438,37 @@ true
 {age: 52, name: "john"}
 
 ## Expressions
-
+- OVERAL WAAR JE CODE EEN WAARDE VERWACHT DAAR KUN JE EEN EXPRESSIE VOOR GEBRUIKEN. 
+- je kunt in plaats van een letterlijke waarde dus ook een expression hierin stoppen.
 - expressions can be written anywhere where you would expect a value. Een expressie mag je overal neerzetten als het maar uiteindelijk een value wordt. 
 - each expression can be 'evaluated'
 - expressions can contain variables
+
+## E(valu)ation of expression
+- Expression is a piece of code that resolves in a value; in other words becomes a value.
+Evaluation staat eigenlijk voor "waarde eruit halen".
+- there is a specific order to ***how*** an expression is evaluated. check precedence operators mdn. de volgorde waarin de expressie in wordt geevalueerd. 
+- fix hard-to-read expressions with "temporary variables" with helpful names.
+- functions are expression, dus een functie kan een functie teruggeven want het zijn dus ook values 
+
+
+[LINK PRECEDENCE OPERATOR MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+[link javascript info precedence - simpler version](https://javascript.info/operators#operator-precedence)
+
+- a bit of code that calls a function is also an expression 
+number(3 + 45);
+double(double(5));
+
+
+
+
+
+
+
+
+
+
 
 
 

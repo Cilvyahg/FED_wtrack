@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 // writing or 'defining' a function
 const makeSpaghetti = function () {
@@ -266,24 +266,22 @@ const getBouncerReaction = function (
   return response;
 };
 
-
-
 //calculating the average
 
 function numberAverage(number1, number2, number3, number4, number5) {
-  let averageFive = Math.round((number1 + number2 + number3 + number4 + number5) / 5); 
-  return averageFive; 
+  let averageFive = Math.round(
+    (number1 + number2 + number3 + number4 + number5) / 5
+  );
+  return averageFive;
 }
 
 console.log(numberAverage(2, 2, 4, 5, 6));
 
-let numberCalc1 = numberAverage(5, 6, 8, 3, 2); 
-let numberCalc2 = numberAverage(20,20,20,20,20); 
-let numberCalc3 = numberAverage(5, 6, 50, 1, 2); 
-
+let numberCalc1 = numberAverage(5, 6, 8, 3, 2);
+let numberCalc2 = numberAverage(20, 20, 20, 20, 20);
+let numberCalc3 = numberAverage(5, 6, 50, 1, 2);
 
 console.log(numberCalc1, numberCalc2, numberCalc3);
-
 
 // this is a function that does something. it will return the average of five numbers.
 
@@ -293,23 +291,92 @@ console.log(numberCalc1, numberCalc2, numberCalc3);
 
 //Function declaration
 function sayHello1() {
-  console.log("Hello1");
+  console.log('Hello1');
 }
 
 //Function expression - modern way to write functions - good way to start as a beginner
 const sayHello2 = function () {
-  console.log("Hello 2");
+  console.log('Hello 2');
 };
 
 //Arrow function (also a function expression)
 const sayHello3 = () => {
-  console.log("Hello 3")
-}
+  console.log('Hello 3');
+};
 
 // calling the three functions is all three the same
 sayHello1();
 sayHello2();
-sayHello3()
+sayHello3();
 
-console.log(sayHello1()); // undefined. 
+console.log(sayHello1()); // undefined.
 
+// FUNCTIONS: three ways to write them
+
+//function declaration
+
+function funcDeclaration(number1, number2) {
+  const squaredOne = number1 ** 2;
+  const squaeredTwo = number2 ** 2;
+  const squaredAdded = (squaredOne + squaeredTwo) ** 2;
+  return squaredAdded;
+}
+
+let declarationTotal = funcDeclaration(2, 2);
+console.log(declarationTotal);
+
+// function expression
+
+const funcExpression = function (number1, number2) {
+  const squaredBoth = number1 ** 2 + number2 ** 2;
+  const squaredAdded = squaredBoth ** 2;
+  return squaredAdded;
+};
+
+let expressionTotal = funcExpression(3, 3);
+console.log(expressionTotal);
+
+// shorter version
+
+const funcExpressionShort = function (number1, number2) {
+  const squaredAll = (number1 ** 2 + number2 ** 2) ** 2;
+  return squaredAll;
+};
+
+console.log(funcExpressionShort(2, 2));
+// als je geen haakjes doet dan doe tie dus   number 1 ** 2 = 4 en dan 16 daarbij optellen opmdat ** voorrang heeft op +
+
+
+
+// function expression with the helper function
+
+const square = function (number) {
+  return number * number;
+};
+
+const doSquareCalculation1 = function (number1, number2) {
+  return square(square(number1) + square(number2));
+};
+
+
+
+// Arrow functions
+
+const arrowExpression = (number1, number2) => {
+  let squaredBoth = number1 ** 2 + number2 ** 2;
+  let squaredAdded = squaredBoth ** 2;
+  return squaredAdded;
+};
+
+let arrowTotal = arrowExpression(2, 2);
+console.log(arrowTotal);
+
+
+// another arrow solution but a bit difficult to read.
+
+const doSquareCalculation = (number1, number2) => {
+  const sum = number1 * number1 + number2 * number2;
+  return sum * sum;
+};
+
+console.log(doSquareCalculation(3,3))

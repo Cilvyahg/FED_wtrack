@@ -38,5 +38,41 @@ for (let i = 1; i <= 5; i++) {
 // we use let because the let will be updated in the for loop
 
 for (let rep = 1; rep <= 10; rep++) {
-  console.log(`lifting weights repetition ${rep}`);
+  console.log(`Lifting weights repetition ${rep}`);
 }
+
+// FOR LOOP IN A ARRAY. WE START AT 0 BECAUSE ARRAYS ARE ZERO BASED
+
+const jonasArray = [
+  'Jonas',
+  'Schmedtman',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven'],
+  'spaghetti',
+  'surfing',
+  'coffee-maniac',
+];
+
+const types = [];
+
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== 'string') continue;
+
+  //reading from jonasarray
+  console.log(jonasArray[i], typeof jonasArray[i]);
+
+  //filling types array
+  types[i] = typeof jonasArray[i];
+}
+// set the type of to [i] the counter otherwise we get the type of from one element in the array
+console.log(types); // to get the type of all the elements of the array
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2037 - years[i]); // pushed it to the ages array.
+}
+
+console.log(ages);

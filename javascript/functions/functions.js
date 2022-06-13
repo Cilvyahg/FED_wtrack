@@ -340,13 +340,12 @@ console.log(expressionTotal);
 
 const funcExpressionShort = function (number1, number2) {
   const squaredAll = (number1 ** 2 + number2 ** 2) ** 2;
+  Math.pow(Math.pow(number1, 2) + Math.pow(number2, 2), 2);
   return squaredAll;
 };
 
 console.log(funcExpressionShort(2, 2));
 // als je geen haakjes doet dan doe tie dus   number 1 ** 2 = 4 en dan 16 daarbij optellen opmdat ** voorrang heeft op +
-
-
 
 // function expression with the helper function
 
@@ -357,8 +356,6 @@ const square = function (number) {
 const doSquareCalculation1 = function (number1, number2) {
   return square(square(number1) + square(number2));
 };
-
-
 
 // Arrow functions
 
@@ -371,7 +368,6 @@ const arrowExpression = (number1, number2) => {
 let arrowTotal = arrowExpression(2, 2);
 console.log(arrowTotal);
 
-
 // another arrow solution but a bit difficult to read.
 
 const doSquareCalculation = (number1, number2) => {
@@ -379,4 +375,123 @@ const doSquareCalculation = (number1, number2) => {
   return sum * sum;
 };
 
-console.log(doSquareCalculation(3,3))
+console.log(doSquareCalculation(3, 3));
+
+// NULL and Undefined testing - Kyle webdev
+
+console.log(null == undefined); // true
+console.log(null === undefined); // false .. === will distinguish null and undefined
+
+/* ==================================
+DEBUGGING FUNCTIONS CALLING FUNCTIONS
+==================================
+ */
+
+const makePositive = function (number) {
+  console.log('Entering makePositive..');
+  if (number < 0) {
+    return Math.abs(number);
+  }
+  return number;
+};
+
+const makeBigger = function (number) {
+  console.log('Entering makeBigger..');
+  if (number < 10) {
+    return 10 + number;
+  }
+  return number;
+};
+
+const squared = function (number) {
+  console.log('Entering square..');
+  return number * number;
+};
+
+const doComplexCalculation = function (number) {
+  console.log('Entering doComplexCalculation..');
+  const positiveNumber = makePositive(number);
+  const bigNumber = makeBigger(positiveNumber);
+  const squaredNumber = squared(bigNumber);
+  return squaredNumber;
+};
+
+console.log(doComplexCalculation(-1));
+
+/* ====================================
+FUNCTIONS CALLING FUNCTIONS EXERCISE
+==================================== */
+
+const cutFruitPieces = function (fruit) {
+  return fruit * 4;
+}
+
+const fruitProcessor = function (apples, bananas) {
+  const applePieces = cutFruitPieces(apples);
+  const bananaPieces = cutFruitPieces(bananas); 
+
+  return applePieces + bananaPieces;
+
+  // const juice = `Juice with ${applePieces} apple pieces and ${bananaPieces} banana pieces`;
+  // return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+
+
+// a. Hey kiddo
+
+const firstAge = function (age1) {
+  console.log("entering firstage");
+  if (age1 >= 18) {
+    let result = true;
+    console.log('The person is old enough', result);
+    return true;
+  } else {
+    let result = false;
+    console.log('output:', result);
+    return result;
+  }
+};
+
+
+const greetingAge = function (age2) {
+  console.log("entering greeting")
+  if (firstAge(age2)) {
+    let result = "hello there"
+    console.log("old enough:", result);
+    return result;
+  } else {
+    let result = "hey kiddo";
+    console.log("you are a kid", result);
+    return result;
+  }
+};
+
+console.log(greetingAge(17));
+console.log(greetingAge(22));
+
+
+// 2. VAT CALCULATIONS
+
+const basePriceVat = function (basePrice, vatPercentage) {
+  const basePriceCalc = basePrice; 
+  console.log(basePriceCalc);
+  const vatCalc = basePriceCalc * (vatPercentage / 100);
+  console.log(vatCalc);
+  const priceAndCalce = basePriceCalc + vatCalc;
+  return priceAndCalce
+};
+
+console.log(basePriceVat(100, 21));
+console.log(basePriceVat(20, 10))
+
+
+
+
+
+
+
+
+
+

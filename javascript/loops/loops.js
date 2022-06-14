@@ -226,6 +226,14 @@ for (let i = 0; i <= 0; i++) {
   }
 }
 
+// solution nested loops.
+for (let multiplier = 0; multiplier <= 10; multiplier++) {
+  for (let i = 0; i <= 10; i++) {
+    let result = multiplier * i;
+    console.log(multiplier + ' * ' + i + ' = ' + result);
+  }
+}
+
 // The grade assigner
 function assignGrade(score) {
   if (score > 90) {
@@ -248,9 +256,19 @@ for (let grade = 60; grade < 101; grade++) {
   console.log(gradeLooping);
 }
 
-for (let multiplier = 0; multiplier <= 10; multiplier++) {
-  for (let i = 0; i <= 10; i++) {
-    let result = multiplier * i;
-    console.log(multiplier + ' * ' + i + ' = ' + result);
-  }
+// FOR ... OF loop
+
+const subreddits = ['cringe', 'books', 'chickens', 'cake', 'pics', 'soccer'];
+
+for (let sub of subreddits) {
+  const love = 'I love';
+  // sub variable can be named anything.
+  console.log(`${love} ${sub}`);
+}
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //DON'T CHANGE THIS LINE PLEASE!
+
+// WRITE YOUR LOOP BELOW THIS LINE:
+for (let num of numbers) {
+  console.log(num * num);
 }

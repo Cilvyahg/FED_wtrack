@@ -424,25 +424,24 @@ FUNCTIONS CALLING FUNCTIONS EXERCISE
 
 const cutFruitPieces = function (fruit) {
   return fruit * 4;
-}
+};
 
 const fruitProcessor = function (apples, bananas) {
   const applePieces = cutFruitPieces(apples);
-  const bananaPieces = cutFruitPieces(bananas); 
+  const bananaPieces = cutFruitPieces(bananas);
 
   return applePieces + bananaPieces;
 
   // const juice = `Juice with ${applePieces} apple pieces and ${bananaPieces} banana pieces`;
   // return juice;
-}
+};
 
 console.log(fruitProcessor(2, 3));
 
-
 // a. Hey kiddo
 
-const firstAge = function (age1) {
-  console.log("entering firstage");
+const ageAboveEighteen = function (age1) {
+  console.log('entering firstage');
   if (age1 >= 18) {
     let result = true;
     console.log('The person is old enough', result);
@@ -454,38 +453,72 @@ const firstAge = function (age1) {
   }
 };
 
+const greetingByAge = function (age) {
+  console.log('entering greeting');
 
-const greetingAge = function (age2) {
-  console.log("entering greeting")
-  if (firstAge(age2)) {
-    let result = "hello there"
-    console.log("old enough:", result);
+  if (ageAboveEighteen(age)) {
+    // uitkomst van functie ageaboveeigtheen en niet naar de inhoud van de functie
+    let result = 'hello there';
+    console.log('old enough:', result);
+
     return result;
   } else {
-    let result = "hey kiddo";
-    console.log("you are a kid", result);
+    let result = 'hey kiddo';
+    console.log('you are a kid', result);
     return result;
   }
 };
 
-console.log(greetingAge(17));
-console.log(greetingAge(22));
+console.log(greetingByAge(17));
+console.log(greetingByAge(22));
 
+// VAT EXERCISE 1. // tip: eerst goed laten werken in de functie dan pas vervangen als je een tweede functie aanmaakt
 
-// 2. VAT CALCULATIONS
-
-const basePriceVat = function (basePrice, vatPercentage) {
-  const basePriceCalc = basePrice; 
-  console.log(basePriceCalc);
-  const vatCalc = basePriceCalc * (vatPercentage / 100);
-  console.log(vatCalc);
-  const priceAndCalce = basePriceCalc + vatCalc;
-  return priceAndCalce
+const calculateVatAmount = (basePrice, vatPercentage) => {
+  const vatAmount = basePrice * (vatPercentage / 100);
+  return vatAmount;
 };
 
-console.log(basePriceVat(100, 21));
-console.log(basePriceVat(20, 10))
+const basePriceWithVat = (basePrice2, vatPercentage2) => {
+  // const vatAmount = calculateVatAmount(1000, 21); // het gaat niet om de naam maar om de waarde.
+  const vatAmount = calculateVatAmount(basePrice2, vatPercentage2);
+  console.log(vatAmount);
+  const priceIncludeVat = basePrice2 + vatAmount;
+  return priceIncludeVat;
+};
 
+// de return waarde van de functie wordt assigned aan de variable en dus niet de funvtie
+const testingPrice = basePriceWithVat(1000, 21);
+
+const testingPrice2 = basePriceWithVat(2, 9);
+
+console.log(testingPrice, testingPrice2);
+
+
+// VAT exercise 2 dus baseprice en de Vatamount
+
+const calculateVatPercentageAmount = (
+  baseWithVatFunction,
+  vatPercentageFunction
+) => {
+  const baseMinusVatAmount =
+    baseWithVatFunction * (vatPercentageFunction / 100);
+  return baseMinusVatAmount;
+};
+
+const basePriceWithoutVat = (baseWithVat, vatPercentage) => {
+  const calculateVatAmount1 = calculateVatPercentageAmount(
+    baseWithVat,
+    vatPercentage
+  );
+  const basePriceSubstractVat = baseWithVat - calculateVatAmount1;
+  return [basePriceSubstractVat, calculateVatAmount1];
+};
+
+console.log(basePriceWithoutVat(300, 10));
+console.log(basePriceWithoutVat(200, 50));
+console.log(basePriceWithoutVat(2.18, 9));
+console.log(basePriceWithoutVat(1210, 21));
 
 
 

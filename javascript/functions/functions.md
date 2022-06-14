@@ -300,3 +300,18 @@ if a function does more than one thing it could be a goopd idea to split it up.
 # DEBUGGING
 
 If you have a lot of functions calling each other it can be a little confusing what happens when. To help figure this out you can use console.log statements. see functions.js
+
+
+// 2. VAT CALCULATIONS
+
+// const basePriceVat = function (basePrice, vatPercentage) {
+//   const basePriceCalc = basePrice; 
+//   console.log(basePriceCalc);
+//   const vatCalc = basePriceCalc * (vatPercentage / 100);
+//   console.log(vatCalc);
+//   const priceAndCalce = basePriceCalc + vatCalc;
+//   return priceAndCalce
+// };
+
+// console.log(basePriceVat(100, 21));
+// console.log(basePriceVat(20, 10))

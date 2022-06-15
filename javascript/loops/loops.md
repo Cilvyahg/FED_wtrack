@@ -100,4 +100,21 @@ it will only give you the key
 
 global scope : is a variable that is declared in the root of the file and can be used whevere we want in de Document.
 
-local scope:
+# New style : array methods that iterate over an Array
+
+Every array in JavaScript has these built-in functions that iterate over that array. The different array methods do different things, but they all iterate over an array.
+
+The forEach() method executes a provided function once for each array element.
+
+forEach:
+
+(method) Array<string>.forEach(callbackfn: (value: string, index: number, array: string[]) => void, thisArg?: any): void
+
+there is no way to stop or break a forEach( loop, then its better to use for loops.
+
+## FOR.. OF AND FOR...IN
+
+you can use both on objects
+
+for .. of loops through values
+for ...in loops through properties

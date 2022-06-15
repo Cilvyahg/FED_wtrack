@@ -5,12 +5,12 @@
 //while loop : it will run while this condition is true;
 
 let colors = [
-  'yellow',
+  'Yellow',
   'blue',
-  'red',
+  'Red',
   'orange',
   'pink',
-  'black',
+  'Black',
   'green',
   'purple',
 ];
@@ -42,6 +42,8 @@ for (let color of colors) {
 // NEW STYLE: ARRAY METHODS
 // ======================
 
+//forEach is an Array method.
+
 colors.forEach(function (element, index) {
   if (element === 'blue') {
     element = element.toUpperCase();
@@ -51,4 +53,65 @@ colors.forEach(function (element, index) {
   console.log(element, index);
 });
 
+colors.forEach((element, index) => {
+  if (element === 'blue') {
+    element = element.toUpperCase();
+  } else {
+    element = element.toLowerCase();
+  }
+  console.log(element, index);
+});
+
+// without inline call back function
+
 colors.forEach((element, index) => console.log(element, index));
+
+// QUESTIONS ANSWERING
+
+// 1. my for and while loop takes more lines min 3.
+// 2. it takes one line
+// i find the for loop easier to read but maybe its because the arrow function
+// sets me off a bit.
+
+const summervibes = {
+  degrees: 45,
+  drink: 'Sex on the beach',
+  travel: 'Spain',
+  lover: false,
+  purchases: ['sunglasses', 'suncream', 'hat', 'icelollies'],
+  activity: 'Go to the beack',
+
+  sayName: function () {
+    console.log(this.lover);
+  },
+};
+
+summervibes.sayName();
+
+console.log(summervibes.purchases);
+
+function bananas() {
+  console.log(`I'm a banana`);
+}
+console.log(bananas);
+
+// THIS - we get a list of everything that we can do in js. before our code even runs. this keyword and window get created before. the code will be set in memory.
+// IF WE DO this its gonna refer to the window.
+console.log(this);
+
+// =====================
+// LOOPING OVER OBJECTS
+// =====================
+
+const springvibes = {
+  degrees: 45,
+  drink: 'Sex on the beach',
+  travel: 'Spain',
+  lover: false,
+  purchases: ['sunglasses', 'suncream', 'hat', 'icelollies'],
+  activity: 'Go to the beach',
+};
+
+for (let springItems in springvibes) {
+  console.log(springvibes[springItems]);
+}

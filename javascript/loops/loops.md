@@ -22,6 +22,10 @@ if you need a loop without a counter then use while. If you don't know how many 
 
 when you loop over an array then you usually use a for loop since you know how many iterations you need.
 
+## BREAK KEYWORD
+
+break keyword is normally used with while loop to escape a loop. because we don't know how many times we need to do the iteration
+
 **dictionary**
 iterate = herhalen
 
@@ -36,7 +40,11 @@ second part --> condition; will keep running if the condition still holds true.
 third part --> counter ; rep = rep + 1 --> rep++ (same shorthand)
 i = i + 1 --> i++ (shorthand)
 
-for (initialExpession; condition; incrementExpression) {
+- you can call the variable anything you want this variable will only exist for the purpose of the loop. it doesn't do anything with code elsewhere in the code. it's common to use i. Colt says its perhaps for index.
+
+syntax:
+
+for (initialExpession; condition(boolean true or false); incrementExpression) {
 statement
 }
 
@@ -75,6 +83,21 @@ The for...of loop is preferable to the standard for loop because it always loops
 
 ![image](./Screenshot%202022-06-14%20at%2012.23.52.png)
 
-## BREAK KEYWORD
+for .. of loops are especially good if you need to iterate over an array but you don't need to know the index of the array. IF you do need to know the index then it's better to use the for loop instead of for..of loop.
 
-- scopes
+you can also use it for ' strings'
+
+## object literals Looping
+
+object literal (key value) is actually not iterable.
+
+when we want to loop over object we can use
+for .. in loops
+
+it will only give you the key
+
+# SCOPES
+
+global scope : is a variable that is declared in the root of the file and can be used whevere we want in de Document.
+
+local scope:

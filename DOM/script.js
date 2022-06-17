@@ -57,7 +57,7 @@ console.log(document.querySelector('.paragraph'));
 document.querySelector('#second-section').id = 'whoops';
 document.querySelector('#whoops').id = 'second-section';
 
-//placing a picture in the element. it will put last in the document. 
+//placing a picture in the element. it will put last in the document.
 
 //image element aanmaken.
 const newImg = document.createElement('img');
@@ -65,12 +65,10 @@ const newImg = document.createElement('img');
 //class aanmaken
 newImg.classList.add('doggie');
 
-
 newImg.src =
   'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80';
 
 document.body.appendChild(newImg);
-
 
 const newH3 = document.createElement('h3');
 console.log(newH3);
@@ -79,15 +77,11 @@ newH3.innerText = '<i>hello</i>';
 
 document.body.appendChild(newH3);
 
-
-
 // APPEND IT'S TO THE END OF THE PARAGRAPH. IT WONT WORK ON INTERNET EXPLORE
 // WITH APPEND YOU CAN APPEND MORE ELEMENTS.
 
-
 let pAppend = document.querySelector('p');
 pAppend.append(' I am sexy and I know it');
-
 
 //PREPEND WILL ADD SOMETHING IN THE BEGINNING OF THE ELEMENT.
 
@@ -95,6 +89,59 @@ const newB = document.createElement('i');
 newB.append('I am the the first one');
 // pAppend.append(newB);
 newH3.prepend(newB); // adding in the beginning of newH3.
- 
 
 // DOM EVENTS
+
+let radius = 8;
+if (radius > 0) {
+  const PI = 3.14159;
+  let msg = 'hiii';
+}
+
+// EVENTHANDLES ARE FUNCTIONS
+
+/* ======
+  method 1
+  ====== */
+
+// const handleClickEvent = () => {
+//   console.log("The divOne element was clicked");
+// }
+
+const divOne = document.querySelector('.div1');
+// divOne.addEventListener('click', handleClickEvent);
+
+// const divOne = document.querySelector('.div1');
+// divOne.addEventListener('mouseover', handleClickEvent);
+
+// als er op jou wordt geklikt divOne dan wilo ik dat je dit gaat doen
+// als er een muis over jou heen gaat, dan wil ik dt je handleClickEvents gaat uitvoeren.
+
+/* =======
+method 2 : inline function. dus bijvoorbeeld met anonieme functie
+
+========= */
+
+// divOne.addEventListener('click', () => {
+//   console.log('The Element was clicked')
+// });
+
+const Para1 = document.querySelector('#first-section');
+
+console.log(Para1);
+console.log(Para1.getAttribute('id')); // gaat ook na of je attributen hebt zoals id
+
+
+// console.log(Para1.classList.remove('paragraph'));
+Para1.classList.add('paragraph1', 'paragraph2'); // adding more classes
+
+Para1.classList.remove('paragraph1'); // removing classes
+Para1.classList.replace('paragraph2', 'paragraph3'); // replacing classes 
+
+
+console.log(Para1.classList); // dom tokens zie je of er classes zijn en welke
+
+Para1.classList.toggle('paragraph3') // will remove it when its there
+Para1.classList.toggle('paragraph3') // will add it when its not there to get a toggle 
+
+

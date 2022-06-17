@@ -465,8 +465,31 @@ true
  
 
  # Scope
- 
 
+variables that are defined in the function (where we use the let keyword)
+they are scoped to that function. it's like a bubble.
+
+function scope : 
+>
+>
+>`const HelpMe = function () {`
+>
+> ` let msg = `I'm on fire`;`
+>
+>  `msg;`
+>`}`
+>
+>
+>`msg;//NOT DEFINED`
+>
+
+
+{ } block scope
+in if conditions, loops and etc are all having block scopes when you create variables there.
+so those variables only exist within the curly braces. 
+
+
+### Lexical scope
 
 
 

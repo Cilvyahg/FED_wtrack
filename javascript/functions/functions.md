@@ -315,3 +315,9 @@ If you have a lot of functions calling each other it can be a little confusing w
 
 // console.log(basePriceVat(100, 21));
 // console.log(basePriceVat(20, 10))
+
+
+## Recursion
+
+functions roept zichzelf aan
+

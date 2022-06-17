@@ -521,6 +521,16 @@ console.log(basePriceWithoutVat(2.18, 9));
 console.log(basePriceWithoutVat(1210, 21));
 
 
+// Recursion function
+
+const myPow = (base, power) => {
+  if (power === 1) {
+    return 1;
+  } else {
+    return base * myPow(base, power -1 )
+  }
+}
+console.log(myPow(2, 1)); 
 
 
 

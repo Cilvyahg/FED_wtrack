@@ -10,19 +10,19 @@ const butClick = document.querySelector('#mybutton');
 console.log(butClick);
 
 const alertPopUp = () => {
-  
-  console.log(`Seperate function: Button ${butClick.textContent} clicked!`)
-}
+  console.log(`Seperate function: Button ${butClick.textContent} clicked!`);
+};
 
 butClick.addEventListener('click', alertPopUp);
 
 butClick.addEventListener('click', () => {
-  console.log("Button clicked");
-})
+  alert('Button clicked');
+  console.log("buttong Clicked")
+});
 
 // ADDING CLASS BLUE-BACKGROUND TO BODY
 
-const newBody = document.querySelector('body');
+const newBody = document.querySelector('body'); // = document.body 
 newBody.classList.add('blue-background');
 
 /* Create a new function that includes the following functionalities:
@@ -32,20 +32,20 @@ When the change-background-button is clicked you will add the class "red-backgro
 
  */
 
-
-const red = () => {
-
-  newBody.classList.add('red-background');
-  butClick.classList.add('blue-background')
+const changeColor = () => {
+  newBody.classList.toggle('red-background');
+  butClick.classList.add('blue-background');
   // newBody.classList.toggle('red-background'); // toggle tussen rood en blauw
   // newBody.classList.replace('blue-background', 'red-background'); // blauw vervangen voor rood met replace methode
-}
+};
 
 const secondButton = document.querySelector('button');
+console.log(secondButton);
+
 const nextSiblingButton = secondButton.nextElementSibling;
 console.log(nextSiblingButton);
 
-nextSiblingButton.addEventListener('click', red); 
+nextSiblingButton.addEventListener('click', changeColor);
 
 // ================
 // PART 3
@@ -59,3 +59,9 @@ Instead of adding an extra class "red-background" to the classlist we are going 
 
  */
 
+const toggleColor = () => {
+  newBody.classList.toggle('blue-background'); // toevoegen als het nog niet bestaat.
+  nextSiblingButton.classList.add('pink-background');
+};
+
+nextSiblingButton.addEventListener('click', toggleColor);

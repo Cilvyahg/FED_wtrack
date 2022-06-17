@@ -3,10 +3,18 @@
   margin: 0;
   box-sizing: border-box;
 }
+.red-background {
+background-color: red;
+}
 
 .blue-background {
 background-color: blue;
 }
-.red-background {
-background-color: red;
+
+.pink-background {
+  background: rgb(248, 175, 246);
+  font-size: 2rem;
+  width: 20%;
+ height: auto;
+  
 }

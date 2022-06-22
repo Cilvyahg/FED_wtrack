@@ -550,8 +550,76 @@ console.log(calculateYear);
 const add1 = (number1, number2) => number1 * number2;
 
 let empty = () => {}; // Output = undefined als je een object wil dan moet je nog de haakjes erom heen doen bij een arrow function
-let empty2 = () => ({});  // output = {} , want hier zitten wel de haakjes er om heen. 
+let empty2 = () => ({}); // output = {} , want hier zitten wel de haakjes er om heen.
 console.log(empty(), empty());
 
-// 5 eerste nummers van onze lijst terug te krijgen
+// default parameters
+
+// const booking = [];
+
+// const createBooking = funtion (flightNumber, numPassengers, price) {
+//   const booking = {
+//     flightNum, // will create a property with this name, so need to put value to it
+//     numPassengers,
+//     price
+
+//   }
+//   console.log(booking);
+// booking.push(booking);
+// };
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase(); // returns a string without any spaces in it
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split('');
+  return [first.toUpperCase(), ...others].join('');
+};
+
+/* =======================
+ SPREAD OPERATOR - EXPANDING ARRAY
+ the spread operator works on all iterables, so arrays, strings, maps or sets but NOT objects
+ =========================
+ expland an array into all its elements - packing all the array elements in one */
+
+const arr1 = [7, 8, 9];
+const badNewArr1 = [1, 2, arr1[0], arr1[1], arr1[2]]; // bad way of adding items to the list
+console.log(badNewArr1);
+
+// use the spread operator instead!
+
+const newArr1 = [1, 2, ...arr1];
+console.log(newArr1);
+
+console.log(...newArr1); // logged all the items individually / same as below but this is better
+console.log(1, 2, 7, 8, 9);
+
+const restaurant = ['pizza', 'cache e pepe', 'gelato']
+const restaurantDessert =['applepie', 'madeline', 'fruitbowl', 'cafe normale']
+
+// USING THE SPREAD OPERATOR TO ADD NEW ITEMS
+
+const newMenuAdd = [...restaurant, 'Gnocci']; // adding a new item to the array and put it in a new variable. building a new array 
+console.log(newMenuAdd);
+
+// copy array
+const mainMenuCopy = [...restaurant];
+// join 2 arrays 
+let menuWhenDone = [...restaurant, ...restaurantDessert]; // met de spread operatoir 
+menuWhenDone = [restaurant, restaurantDessert]; // hier log je twee arrays
+console.log(menuWhenDone);
+
+
+
+
+const str = 'Jonas'; 
+const letters = [...str, ' ', 'S.'];
+console.log(letters) // output : each letter of the original string is now an individual element.
+console.log('j', 'o','n','a','s') // same as above
+
+
+
+
+
 

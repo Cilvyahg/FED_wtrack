@@ -7,8 +7,6 @@ functies zijn niks meer dan het opdelen van stukjes in code die je zo vaak kunt 
 - je geeft je functie het liefst maar een responsibility/ een taak die ze uitvoeren.
 
 
-## anatomy
-
 ### arrow functions
 
 
@@ -347,5 +345,13 @@ If you have a lot of functions calling each other it can be a little confusing w
 
 functions roept zichzelf aan
 
+## Array.map()
 
+Instead of manually iterating over the array using a loop, you can simply use the built-in Array.map() method.
+
+The Array.map() method allows you to iterate over an array and modify its elements using a callback function. 
+The callback function will then be executed on each of the array's elements.
+
+Definition and Usage. map() creates a new array from calling a function for every array element. map() 
+calls a function once for each element in an array. map() does not execute the function for empty elements. map() does not change the original array.
 

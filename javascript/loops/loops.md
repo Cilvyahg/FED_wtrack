@@ -144,3 +144,14 @@ example::
 > ` console.log(array);`
 >
 > `});`
+
+
+## SPREAD OPERATOR
+
+
+...(ArrayName)
+
+
+So what the spread operator does is to basically take all the values
+out of this arr. array, and then write them individually. its like taking all the elements out of the array and write them manually
+

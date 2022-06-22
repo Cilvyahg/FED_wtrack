@@ -1,4 +1,16 @@
 # FUNCTIONS
+functies zijn niks meer dan het opdelen van stukjes in code die je zo vaak kunt oproepen zoals je wilt.
+
+## WHY FUNCTIONS?
+- je kunt ze beschrijvende namen geven
+- geen lappen code maar verschillende kleine blokjes met minder side effects en overzichtelijker om te debuggen omdat de code in kleine stukjes is opgedeeld.
+- je geeft je functie het liefst maar een responsibility/ een taak die ze uitvoeren.
+
+
+## anatomy
+
+### arrow functions
+
 
 function serie of steps. think of it as a executing a RECIPE.
 
@@ -26,6 +38,20 @@ Functions are the main “building blocks” of the program. They allow the code
   make a box and press the button when u want to use the box
 
 a functions runs and then it stops. like a microwave. you turn it on and after a while you are done.
+
+- JONAS FUNCTIONS: there is no use to restore a value in a variable if all you do is return that value. so if you won't be doing anything with that variable
+except for returning it immediately so e.g.
+
+> `function calcAge1(birthYear) {`
+>
+>`const age = 2022 - birthYear;`
+>
+>`return age `
+>
+>`// but better in this case since you are only returning that value, no need to store it in a variable`
+>`return 2022 - birthYear }`
+>
+
 
 ## why use functions?
 
@@ -320,4 +346,6 @@ If you have a lot of functions calling each other it can be a little confusing w
 ## Recursion
 
 functions roept zichzelf aan
+
+
 

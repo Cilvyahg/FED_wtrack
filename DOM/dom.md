@@ -205,7 +205,8 @@ you could add and remove the class to toggle between OFF and ON
 
 
 
-
+## toggle
+toggle(): This method belongs to DOMTokenList object, and is used to toggle between the classes
 
 
 

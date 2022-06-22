@@ -494,7 +494,6 @@ const testingPrice2 = basePriceWithVat(2, 9);
 
 console.log(testingPrice, testingPrice2);
 
-
 // VAT exercise 2 dus baseprice en de Vatamount
 
 const calculateVatPercentageAmount = (
@@ -520,21 +519,39 @@ console.log(basePriceWithoutVat(200, 50));
 console.log(basePriceWithoutVat(2.18, 9));
 console.log(basePriceWithoutVat(1210, 21));
 
-
 // Recursion function
 
 const myPow = (base, power) => {
   if (power === 1) {
     return 1;
   } else {
-    return base * myPow(base, power -1 )
+    return base * myPow(base, power - 1);
   }
+};
+console.log(myPow(2, 1));
+
+// OEFENING FUNCTION.
+// function keyword - name - input (parameter), so we want the person's birthyear as a input. this parameter is local and only available in this function.
+// the parameter is the placeholder.
+
+function calculateAge(birthYear) {
+  const age = 2037 - birthYear;
+  return age; // this returns a value
+  // we calculate the age first AND then return it
 }
-console.log(myPow(2, 1)); 
+const calculateYear = calculateAge(1991); // let's capture this value out of function and put it in a variable
+console.log(calculateYear);
 
+// =============================
+// HELPER FUNCTIONS LIVE SESSIE
+// =============================
 
+//arrow functions (als je maar een één taak hebt, een hele simpele )
+const add1 = (number1, number2) => number1 * number2;
 
+let empty = () => {}; // Output = undefined als je een object wil dan moet je nog de haakjes erom heen doen bij een arrow function
+let empty2 = () => ({});  // output = {} , want hier zitten wel de haakjes er om heen. 
+console.log(empty(), empty());
 
-
-
+// 5 eerste nummers van onze lijst terug te krijgen
 

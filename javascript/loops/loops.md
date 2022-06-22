@@ -118,3 +118,29 @@ you can use both on objects
 
 for .. of loops through values
 for ...in loops through properties
+
+## forEach
+
+The forEach method is also used to loop through arrays, but it uses a function differently than the classic "for loop".
+
+The forEach method passes a callback function for each element of an array together with the following parameters:
+
+- Current Value (required) - The value of the current array element
+- Index (optional) - The current element's index number
+- Array (optional) - The array object to which the current element belongs
+
+The forEach() method executes a function once for each item in the array. The method is called on the array object that you wish to manipulate, and the function to call is provided as an argument.
+
+Array forEach methpd
+
+names.forEach(function(currentValue,index, array(optional))) {
+console.log(e,i)
+}
+
+example:: 
+
+> ` numbers.forEach((number, index, array) => {`
+>
+> ` console.log(array);`
+>
+> `});`

@@ -355,3 +355,16 @@ The callback function will then be executed on each of the array's elements.
 Definition and Usage. map() creates a new array from calling a function for every array element. map() 
 calls a function once for each element in an array. map() does not execute the function for empty elements. map() does not change the original array.
 
+## reduce ();
+
+The array reduce() is a built-in JavaScript method used to apply a function to each element in the array to reduce the array to a single value. The reduce() method accepts two parameters, the total and the current value.
+
+It is similar to both Javascript map() and Javascript filter(), but it differs in the callback arguments.
+
+The callback now receives an accumulator (it accumulates all the return values. Its value accumulates a previously returned accumulations), a current value, a curren
+
+`array.reduce(function(total, currentValue, currentIndex, arr), initialValue)`
+
+or
+
+`array.reduce(callback[, initialValue]);`

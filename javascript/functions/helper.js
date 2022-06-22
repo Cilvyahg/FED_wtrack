@@ -159,3 +159,78 @@ const testMapArrow = companies.map(company =>
 
 console.log(testMapArrow);
 
+
+// squared
+const agesSqrt = ages.map(age => Math.sqrt(age));
+console.log(agesSqrt);
+
+// multiplication
+const ageMultiplication = ages.map(age => age * 3);
+console.log(ageMultiplication);
+
+
+/* ==========
+Sort()
+==========
+ */
+
+
+const sortedCompanes = companies.sort(function (c1, c2) {
+  if (c1.start > c2.start) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
+
+console.log(sortedCompanes);
+
+const sortedCompaniesArrow = companies.sort((a, b) => a.start > b.start ? 1 : -1);
+
+//Sort Ages
+
+const sortAges = ages.sort((a, b) => a - b);
+console.log(sortAges);
+
+
+// reduce
+// all the arrays have the reduce() method, it takes a CallBackFunction
+//to boil down all the elements in the array to one value. all the elements together.
+// the first parameter is actually the accumulator, this differs from map(), filter(), sort()
+// reduce also loops over an array 
+
+const movement = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+console.log(movement);
+
+const balance = movement.reduce(function (accumulator, currentValue, index) {
+console.log(` iteration ${index} : ${accumulator}`)
+  return accumulator + currentValue; 
+  
+}, 0); // we want to start counting at 0. you can also put another no e.g. 100; 
+
+console.log(balance);
+
+/* output balance
+ iteration 0 : 0  - starts at 0, as we defined.
+ iteration 1 : 200
+ iteration 2 : 650
+ iteration 3 : 250
+ iteration 4 : 3250
+ iteration 5 : 2600
+ iteration 6 : 2470
+ iteration 7 : 2540
+3840 */
+
+
+/* =================================
+same result with using for... of but with reduce it's easier 
+================================= */
+
+let balance2 = 0; // with the for .. of loop you always need an External variable, with the reduce() you don't need that
+
+for (mov of movement) balance2 += mov; 
+console.log(balance2);
+
+// output also 3840
+

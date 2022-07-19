@@ -29,3 +29,25 @@ style() object will contain the inline styles in its markup. don't do this inste
 
 // if you want to know the current fontSize of element h1 for example. SO GET THE CURRENT STYLES. 
 window.getComputedStyle(h1).fontSize
+
+
+***classList***
+The classList property returns the CSS classnames of an element.
+
+toggle method
+With the toggle() method, you simply pass the name of the class which you want to toggle:
+The toggle() method returns true if the class was added, and false if it was removed:
+
+
+replace() 
+
+previousElementSibling
+nextElementSibling
+
+***MAKING A NEW DOM ELEMENT***
+
+createElement()
+
+removeChild() -- remove based on the child and parent relationship
+ remove()
+

@@ -1,9 +1,34 @@
 # DOM
 
-
 Nearly everything in JavaScript is an object other than six things that are not objects which are — null , undefined , strings, numbers, boolean, and symbols. These are called primitive values or primitive types.
 
 console.dir(object)
+
+dom is the interface between js and the webpage
+
+
+
+
+## Nodelist & HTML collection
+it's important to know what you need to do something.
+querySelectorAll() returns a Nodelist
+getElementsByTagnName() returns a HTMLcollection
+
+*HTML collection*
+is ONLY element nodes
+so elements only 
+when you have a variable that holds HTML collection it will be updated live immediately; live HTML collection Node list
+
+*Node list*
+ANT  kind of node. so it could include text nodes, elements nodes, comments and etc.
+
+
+
+children e.g. main.children / element only HTML collection
+
+childNodes and querySelectorByAll // returns Nodelist -- this one is live unlike other ones 
+most of them are static so not live updating
+
 
 **_innerHTML_**
 
@@ -209,6 +234,51 @@ you could add and remove the class to toggle between OFF and ON
 toggle(): This method belongs to DOMTokenList object, and is used to toggle between the classes
 
 
+# DOM
+
+domtree  is generated from any HTML document. the Dom contains a ton of methods and properties
+
+In the DOM there are different types of nodes
+some nodes are HTML elements and others are just text
+
+- every single node in the DOM tree is of the type Node
+- each Node is represented in Javascript by an object
+and this objects gets access to special node methods and properties such as
+text, childNode, parentNode, textContent, cloneNode() and etc.
+
+Document is another type of Node.
+
+Important to keep in mind! 
+HTML collectiom updates immediately
+Nodelist doesn't do this. it wont updates itself.
+
+
+querty selector gives you a node list
+while getElements ByClass gives you a html collection
+
+## Javascript events
+
+### bubbling and capturing phase
+
+CAPTURE PHASE
+the event is not generated at the target element but generated at the root of the document, the document root and it will travels down the tree. it will pass through every single parent element (so only parents) of the target element. 
+
+addEventListerner.('click', function() { }) --> callback function
+
+
+BUBBLING PHASE
+after reaching the target the event travels all the way up to the document root. Bubble up. the (click) event passes through all the parents elements and not through the sibling element. 
+
+
+
+events can only be handled in the target phase and bubbling phase.
+not all events do have bubbling and capture phase but target the target phase immediately.
+
+
+
+# DOM TRAVERSING
+
+is basically walking through the elements.
 
 
 
@@ -218,9 +288,14 @@ toggle(): This method belongs to DOMTokenList object, and is used to toggle betw
 
 
 
+# INTRODUCING THE WORLD OF THE DOM (colt)
 
+document object model
 
+tree structure
+at the very top of the tree srtructur is the "document" . the document object is our entry point to the world of the DOM. 
 
+document is an object just like everything in the dom. it's created automatically everytime we load up the page. document is th root of the tree.
 
 
 

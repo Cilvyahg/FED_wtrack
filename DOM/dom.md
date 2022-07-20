@@ -369,12 +369,6 @@ is basically walking through the elements.
 
 
 
-
-
-
-
-
-
 # INTRODUCING THE WORLD OF THE DOM (colt)
 
 document object model
@@ -385,8 +379,26 @@ at the very top of the tree srtructur is the "document" . the document object is
 document is an object just like everything in the dom. it's created automatically everytime we load up the page. document is th root of the tree.
 
 
+# EVENTS AND THE KEYWORD 'THIS'
+
+this keyword or variable. the value of the this keyword is not status it depends on how the function is actually called.
+
+arrow functions do not get their own this keyword .. 
+
+event listener : this = Dom element that the handler is attached to
 
 
+
+
+# Event Objects
+function(e)
+
+
+# Form Events 
+**Responding to user inputs and actions!**
+ preventdefault()
+
+ usually used when submitting a form. 
 
 
 

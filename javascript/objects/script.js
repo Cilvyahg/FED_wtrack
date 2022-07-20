@@ -237,7 +237,31 @@ console.log(animalsSliced);
 animals.sort();
 console.log(animals);
 
+//object
 
+let personas = new Object(); 
+
+personas.name = "Daniel";
+personas.eyeColor = "Blue";
+personas.age = 27;
+personas.updateAge = function() {
+  return ++personas.age; 
+}
+
+console.log(personas.age);
+personas.updateAge()
+console.log(personas.age)
+
+
+
+
+
+
+
+const mathilda = {
+  year: 2017,
+  
+}
 
 
 

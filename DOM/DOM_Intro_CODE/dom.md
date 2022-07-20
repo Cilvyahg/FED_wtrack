@@ -9,6 +9,32 @@ console.dir(value) in order to get the objects
 document.getElementsByTagName()
 document.getElementsByClassName()
 
+**Nodes versus Element nodes**
+Nodes are all the different components the webpage contains of also textnodes and comments. Elements are one type of nodes. Elements are only HTMNL elements. 
+so Element is just a special type of a Node. 
+
+every node has a parent. and they also can have children. 
+textnodes (are text in a element)
+parent nodes can only be elements.
+comments, textnodes can be children
+
+
+main.nodeType / main.nodeName (de tag die erbij hoort)
+1 = Element node
+2 = text Node
+8 = comment Nodes
+9 = Document Node
+10 = Document Type Node
+11 = Document Fragment Node
+
+
+use mainly Element Nodes instead of Nodes. 
+
+children instead of childNodes
+nodeList returns all of the Nodes (also text, comments)
+HTMLcollection returns only elements
+
+
 **we can use one method to select a single element**
 
 document.querySelector()
@@ -50,4 +76,8 @@ createElement()
 
 removeChild() -- remove based on the child and parent relationship
  remove()
+
+appendChild : allows you to append a child element or child node to a parent node or a parent element. 
+
+The appendChild() method appends a node (element) as the last child of an element.
 

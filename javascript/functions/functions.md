@@ -7,7 +7,18 @@ functies zijn niks meer dan het opdelen van stukjes in code die je zo vaak kunt 
 - je geeft je functie het liefst maar een responsibility/ een taak die ze uitvoeren.
 
 
+
+## Function declaration VS Function Expressions
+one major difference between function declaration and expression is that with function declaration, you can invoke the function even BEFORE DEFINING IT. this is not possible with function expressions because the function expression follows a top-to-bottom control flow sequence.
+
+
 ### arrow functions
+
+arrow functions are yet another notation of the function expression but are of a shorter syntax. the function() keyword is replaced by `() =>`
+
+If the function body within the curly braces contains only **a single statement**, then the braces can be omitted. An arrow function with curly braces must include the return keyword.
+
+return is a directive (instructie) that returns a value to the function after the code within it has been executed.
 
 
 function serie of steps. think of it as a executing a RECIPE.
@@ -260,6 +271,16 @@ We can sometimes skip the curly braces and the return keyword when writing an ar
 there's only one statement in the "body" of the function
 we want the evaluated value of that statement to be the value the function returns. However: this shorter syntax can decrease readability and ease of debugging, so don't overuse it.
 
+
+# SCOPES
+
+Each new function creates a new scope, known as function scope. variables created within the function scope are not visible or accessible outside of that scope (codeblock)
+
+everything within a codeblock {} is not accessible from outside
+but global variables can be accessible globally
+
+
+
 # HOISTING
 
 Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
@@ -368,3 +389,4 @@ The callback now receives an accumulator (it accumulates all the return values. 
 or
 
 `array.reduce(callback[, initialValue]);`
+

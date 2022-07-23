@@ -167,3 +167,26 @@ in een array kan je alles stoppen (heterogeneous), maar meestal doe je meestal d
 - the things are always ordered in an array
 - in JS we can add and replace all over the array. read, update and delete.
 
+## LOOPING 
+doing something repeatedly; dus iets herhaaldelijk doen; iets wat je meerdere keren wilt doen. 
+-for loop
+-forEach // meest gebruikt maar je moet wel functies gebruiken
+-while
+
+
+- we can use loops without arrays
+we can use arrays without loops
+- we can use arrays and loops together
+
+### ITERATING OVER THINGS THAT ARE NOT ARRAYS
+things we can interate over are called 'iterable objects". je kan dus over mijn loopen. those objects basically tell the world 'hey you can interate over me'.
+
+Arrays are also interable objects.
+
+when we have a 'iterable object' we can use **for .. of**
+
+***methods to iterate over objects***
+\
+
+
+

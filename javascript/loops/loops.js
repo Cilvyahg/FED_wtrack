@@ -1,5 +1,7 @@
 'use strict';
 
+const { objectToString } = require("@vue/shared");
+
 console.log('********');
 
 // let age = 5; //index variable
@@ -307,4 +309,89 @@ console.log(countries);
 
 
 
+// FOR LOOP
 
+// initializatie // conditie // 
+  for (let i = 0; i <= 5; i++) { // i = i + 1
+    console.log(`I'm in the loop where i == ${i}`);
+    console.log('*****************')
+  }
+  
+  for (let i = 0; i <= 5; i += 2) { 
+    console.log(`I'm in the loop where i == ${i}`);
+  }
+
+// WHILE LOOP - heeft enkel een conditie
+let j = 0;
+
+while (j < 5) {
+  console.log(`I'm in the loop where j == ${j} `)
+  j++;
+  // j = math.round(Math.random() * 50) --> dit kan ook maar doe je eigenlijk bijna niet
+
+} 
+  
+
+let temperature = 10; 
+
+while (temperature < 100) {
+  console.log("We keep boiling the water");
+  const degreesToAdd = Math.round(Math.random() * 20);
+  temperature += degreesToAdd;
+  console.log(` The current temperature = ${temperature}`);
+}
+
+console.log(`The water is at or above the boiler point(${temperature})`)
+
+// forEach
+
+const foodie = ["sugarcotton", "cookies", "pizza", "lollipops"]; 
+foodie.forEach(foodies => console.log(foodies)); // voor elk item in deze array wil ik dat je dit doet
+
+
+for (let i = 0; i < foodie.length; i++) {
+  console.log(i)
+  console.log(`The food is: ${foodie[i]}`)
+}
+
+
+// for ... of
+for (let foodies of foodie) { // elke keer uit deze iterable object pakken, in dit geval is het een array.
+  // we willen elke keer een variabele aanmaken met de naam foodies.
+  console.log(`${foodies} is delicious`);
+}
+
+
+// met for .. of kun je itereren over een string. output is elke letter en dus ook de spatie ertussen
+const studentName = 'Jean-Paul Sartre'
+for (let character of studentName) {
+  console.log(character);
+}
+
+
+//LOOPING (ITERATING) OVER OBJECT ATTRIBUTES (key-value pairs)
+//Object keys kun je gemakkelijk de objecten uit een object halen en lezen.
+
+const student = {
+  firstName :"Jean Paul",
+  lastName :"Satre",
+  education : "philosophy",
+};
+
+console.log(Object.keys(student)); // geef mij alle keys van de Object student
+
+console.log(Object.values(student)); // output value van de keys
+
+console.log(Object.entries(student)); // output is een array van arrays
+
+for (let key of Object.keys(student)) {
+  console.log(`A key : ${key}`)
+}
+
+for (let key of Object.values(student)) {
+  console.log(`A value: ${key}`)
+}
+
+for (let [key, value] of Object.entries(student)) {
+  console.log(`The key: ${key}. The value: ${value}`)
+}

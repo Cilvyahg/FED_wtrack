@@ -388,17 +388,39 @@ arrow functions do not get their own this keyword ..
 event listener : this = Dom element that the handler is attached to
 
 
+# Event Object
+//what is function(e)
+
+information about the event that just has occured.
 
 
-# Event Objects
-function(e)
+e in this context is just a parameter name, and could be replaced with any valid identifier. It represents the event data itself, and is passed in by the browser when it invokes your event callback.  The event data can contain some extra information in certain cases, but the most useful part of it is that it has a reference to the "target" that triggered the event. So, e.target in this case would refer to the button that triggered the event. 
+
+console.log(e) to see the properties.
 
 
 # Form Events 
 **Responding to user inputs and actions!**
- preventdefault()
+ preventdefault() // prevents page reload
 
  usually used when submitting a form. 
+
+# Input and Change Events
+addEventListener('change', function(e)){
+  
+}
+
+
+addEventListener('input', function(e)){
+console.log(e)
+
+}
+
+# Event Bubbling
+
+e.stopPropagation() --> stops bubbling up. 
+
+
 
 
 

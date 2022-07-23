@@ -155,3 +155,15 @@ example::
 So what the spread operator does is to basically take all the values
 out of this arr. array, and then write them individually. its like taking all the elements out of the array and write them manually
 
+
+
+# Arrays (NIELS BLOM 29-07-2021)
+arrays is een ingebouwde datastructure = gestructureerde data
+
+lijst van dingen (kan cijfer zijn, boolean, object maar ook lijsten van lijsten). 
+
+in een array kan je alles stoppen (heterogeneous), maar meestal doe je meestal dezelfde items in de lijst.
+
+- the things are always ordered in an array
+- in JS we can add and replace all over the array. read, update and delete.
+

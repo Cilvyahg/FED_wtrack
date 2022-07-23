@@ -272,3 +272,39 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]; //DON'T CHANGE THIS LINE PLEASE!
 for (let num of numbers) {
   console.log(num * num);
 }
+
+
+
+
+// =============
+// NIELS BLOM: ARRAY & LOOPS
+// =============
+
+
+const countries = ["The Netherlands", "India", "Mali", "Colombia"]
+
+// ADD ITEM TO ARRAY - AT THE END
+// push() functie en je geeft een parameter mee, van geef cuba mee aan de array countries
+countries.push("Cuba"); 
+
+
+// ITEM LEZEN uit een array : arrayname[index], arrayname[variable]
+const index = 1; 
+console.log(countries[index]) // india ..je kan dus ook variabelen gebruiken
+console.log(countries[2]);
+
+
+// UPDATEN VAN EEN ARRAY 
+countries[1] = 'Republic of India'; // index 1 vervang je met dit
+console.log(countries);
+
+
+// DELETE SOMETHING FROM THE END - POP
+// pop()
+countries.pop();
+
+console.log(countries);
+
+
+
+

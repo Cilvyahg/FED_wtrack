@@ -388,7 +388,11 @@ for (let key of Object.keys(student)) {
   console.log(`A key : ${key}`)
 }
 
+
+console.log('************');
+
 for (let key of Object.values(student)) {
+  console.log(key)
   console.log(`A value: ${key}`)
 }
 

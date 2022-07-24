@@ -1,5 +1,55 @@
 'use strict';
 
+const { createElementVNode } = require("@vue/runtime-core");
+
+// ==================
+// OEFENING DOM BASICS - WINC
+// ==================
+
+const title = document.querySelector('.app-title');
+const nameList = document.querySelector('.namelist');
+const inputText = document.querySelector('#input-text');
+console.log(title);
+
+title.style.color = 'red';
+title.style.border = '10px solid black';
+title.classList.add('active');
+
+const clickBtn = document.querySelector('.btn');
+console.log(clickBtn);
+
+const onClickDivided = () => {
+  title.classList.toggle('inactive');
+
+  // TODO log content of listInput
+  const newName = inputText.value;
+
+  if (newName.length <= 2)
+  {
+    console.log(`you filled in ${newName}`) ;
+    return; 
+  }
+
+  console.log(newName);
+
+  //create an Li Dom element
+  const newLi = document.createElement('li');
+  console.log(newLi);
+
+  // add content to the li element
+
+  // const addLi = document.createTextNode(newName); // zelfde als beneden
+  newLi.innerHTML = newName;
+
+  // newLi.appendChild(addLi);
+
+  // add the li element to the DOM list
+  nameList.appendChild(newLi);
+};
+
+
+clickBtn.addEventListener('click', onClickDivided);
+
 // document.querySelector('#first-section')
 
 /* document.getElementById('header').innerHTML = 'Tech with <i>Cilvya</i>!';
@@ -131,17 +181,13 @@ const Para1 = document.querySelector('#first-section');
 console.log(Para1);
 console.log(Para1.getAttribute('id')); // gaat ook na of je attributen hebt zoals id
 
-
 // console.log(Para1.classList.remove('paragraph'));
 Para1.classList.add('paragraph1', 'paragraph2'); // adding more classes
 
 Para1.classList.remove('paragraph1'); // removing classes
-Para1.classList.replace('paragraph2', 'paragraph3'); // replacing classes 
-
+Para1.classList.replace('paragraph2', 'paragraph3'); // replacing classes
 
 console.log(Para1.classList); // dom tokens zie je of er classes zijn en welke
 
-Para1.classList.toggle('paragraph3') // will remove it when its there
-Para1.classList.toggle('paragraph3') // will add it when its not there to get a toggle 
-
-
+Para1.classList.toggle('paragraph3'); // will remove it when its there
+Para1.classList.toggle('paragraph3'); // will add it when its not there to get a toggle

@@ -422,7 +422,14 @@ e.stopPropagation() --> stops bubbling up.
 
 
 
+# DOM BASICS
 
+querySelector, getElementsByTagname are all methods.
+querySelector returned het eerste element.
+
+const hello = document.createTextNode('hello world') // output is hello world
+document.createTextNode(variable)
+document.createElementNode()
 
 
 

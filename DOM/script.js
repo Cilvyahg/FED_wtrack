@@ -1,7 +1,5 @@
 'use strict';
 
-const { createElementVNode } = require("@vue/runtime-core");
-
 // ==================
 // OEFENING DOM BASICS - WINC
 // ==================
@@ -16,6 +14,10 @@ title.style.border = '10px solid black';
 title.classList.add('active');
 
 const clickBtn = document.querySelector('.btn');
+
+clickBtn.addEventListener('keypress', function (een) {
+  console.log(een.key);
+});
 console.log(clickBtn);
 
 const onClickDivided = () => {
@@ -24,10 +26,9 @@ const onClickDivided = () => {
   // TODO log content of listInput
   const newName = inputText.value;
 
-  if (newName.length <= 2)
-  {
-    console.log(`you filled in ${newName}`) ;
-    return; 
+  if (newName.length <= 2) {
+    console.log(`you filled in ${newName}`);
+    return;
   }
 
   console.log(newName);
@@ -46,7 +47,6 @@ const onClickDivided = () => {
   // add the li element to the DOM list
   nameList.appendChild(newLi);
 };
-
 
 clickBtn.addEventListener('click', onClickDivided);
 
@@ -187,7 +187,21 @@ Para1.classList.add('paragraph1', 'paragraph2'); // adding more classes
 Para1.classList.remove('paragraph1'); // removing classes
 Para1.classList.replace('paragraph2', 'paragraph3'); // replacing classes
 
+// LEZEN VAN EEN CLASSLIST VAN HET ELEMENT
 console.log(Para1.classList); // dom tokens zie je of er classes zijn en welke
 
 Para1.classList.toggle('paragraph3'); // will remove it when its there
 Para1.classList.toggle('paragraph3'); // will add it when its not there to get a toggle
+
+function aa(a) {
+  console.log(a.key);
+}
+
+
+const body = document.body 
+const div = document.createElement('div');
+const newDiv = body.append(div);
+div.innerText = "this is a new div".toUpperCase();
+
+
+

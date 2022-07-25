@@ -432,4 +432,23 @@ document.createTextNode(variable)
 document.createElementNode()
 
 
+Element.className  --> is de volledige lijst van class names van het element, je kunt dit bekijken in console log. 
+
+Element.classList geeft je een domteken list met de classes. Dus geeft een array van classes. met de classList kun je niet alleen lezen maar ook classes toevoegen, verwijderen, vervangen. 
+
+innerText --> shows only what you can see on the screen. prints its out as the html.
+
+textContent --> also returns spaces, indentation and etc. 
+
+innerHTML --> 
+bijv div.innerHTML = <strong>hello</strong> it will be rendered
+
+
+Element.remove() // deleting it from the html
+kyle uses remove() instead of removeChild since you already have access to the element.
+
+element.append() // appending it again
+
+
+
 

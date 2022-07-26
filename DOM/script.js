@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 
 // ==================
@@ -81,7 +82,7 @@ PART 2
 =============
  */
 
-let firstSection = document.getElementById('first-section');
+
 const firstSection1 = document.getElementById('first-section');
 
 // the result is I see the first section element with all its children so with the ptags
@@ -197,11 +198,8 @@ function aa(a) {
   console.log(a.key);
 }
 
-
-const body = document.body 
+const body = document.body;
 const div = document.createElement('div');
 const newDiv = body.append(div);
-div.innerText = "this is a new div".toUpperCase();
-
-
+div.innerText = 'this is a new div'.toUpperCase();
 

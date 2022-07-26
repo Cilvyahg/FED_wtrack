@@ -1,4 +1,26 @@
-# Array Methods
+# Array & Array Methods
+
+###### what are arrays (recap)
+
+The array object enables storing a collection of multipele items under a single variable name. In javascript arrays arent primitives. 
+
+(what are primitives(datatypes again?)
+In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods or properties. There are 7 primitive data types:
+
+*string
+*number
+*bigint
+*boolean
+*undefined
+*symbol
+*null )
+
+- to get the last index of the array arrayName.length -1 
+
+
+
+
+## Array Methods
 
 the .filter() method --> filters some conditions if it's true you will get a new array, if it's false you wont. It won't change the old array
 
@@ -32,3 +54,13 @@ Some array methods change the original array (and the items in the array). **Oth
 
 For example, the _.map()_ method makes a copy, iterates through all the items in the array, and returns a new array (so it doesn't mutate the original array). The _.push()_ method adds something to an array and **mutates** the original.
 
+array methods that mutates are 
+* .copyWithin()
+* .fill()
+* .pop()
+* .push()
+* .reverse()
+* .shift()
+* .unshift()
+* .sort()
+* .splice()

@@ -615,8 +615,10 @@ variblename.previousElementSibling.querySelector('p').innerHTML += '<br/> Too co
 
 
 
+## DEBUGGING JAVASCRIPT 101
 
 
 ## Devtools
 
 use the devtool to test js and not too create js.
+

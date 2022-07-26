@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 
 const items = [
@@ -9,6 +10,8 @@ const items = [
   { name: 'Computer', price: 1000 },
   { name: 'Keyboard', price: 25 },
 ];
+
+console.log(typeof items); // output is object, because anything other than primitive datatypes are objects in js
 
 // ============
 // .filter() -- TRUE OR FALSE
@@ -112,14 +115,74 @@ const totalPrice = items.reduce((currentTotal, item) => {
 
 console.log(totalPrice);
 
-
 // ============
 // .includes() -- TRUE OF FALSE
 // ============
 
-const numbers = [1,"strawberry", 2, 3, 4, 5];
+const numbers = [1, 'strawberry', 2, 3, 4, 5];
 
-const includesTwo = numbers.includes("strawberry", 0); // HOW CAN THIS BE TRUE?? 
+const includesTwo = numbers.includes('strawberry', 0); // HOW CAN THIS BE TRUE??
 
-console.log(includesTwo)
-console.log(numbers.includes(0))
+console.log(includesTwo);
+console.log(numbers.includes(0));
+
+//   =======
+// join()
+// =======
+
+const arr2 = [1, 2, 3, 4];
+const arr1 = [5, 6, 8];
+
+const arrJoin = arr1.join('+');
+console.log(arr1.join('*'));
+console.log(arrJoin);
+
+console.log(arr1.indexOf(5));
+
+// ++++++++++++++++++++++++++++++++++++++++++++
+//   Exercise: Debugging 101 – Console.log()
+// ++++++++++++++++++++++++++++++++++++++++++++
+
+const people = [
+  { name: 'N. Armstrong', profession: 'spacecowboy', age: 89 },
+  { name: 'H. de Haan', profession: 'chicken hypnotist', age: 59 },
+  { name: 'A. Curry', profession: 'frogman', age: 32 },
+  { name: 'F. Vonk', profession: 'snake milker', age: 36 },
+  { name: 'B. Bunny', profession: 'rabbit walking service', age: 27 },
+  { name: 'Dr.Evil', profession: 'digital overlord', age: 56 },
+];
+
+for (let person of people) {
+  // console.log(person);
+  console.log('this is the whole person:', person);
+  console.log(`THIS IS THE WHOLE PERSON ${person}`); // OUTPUT : THIS IS THE WHOLE PERSON [object Object]
+
+  console.log('This is the name of the person:', person.name);
+  console.log(`THIS IS THE NAME OF THE PERSON: ${person.name}`);
+
+  console.log(
+    `This is the year ${2022 - person.age} that ${
+      person.name
+    } was born in backticks`
+  ); // backticks
+  console.log(
+    'this is the year',
+    2022 - person.age,
+    'that',
+    person.name,
+    'was born'
+  );
+
+  console.log(`${person.name} is a ${person.profession}`);
+
+  if (person.age >= 50) {
+    console.log('YES, this person is older than 50');
+  } else {
+    console.log(`NO this person is not older than 50 and is ${person.age} old`);
+  }
+}
+
+
+// +++++++++++++++++++++++++++++++++++
+//   EXERCISE: ARRAY METHODS - PART 1
+// +++++++++++++++++++++++++++++++++++

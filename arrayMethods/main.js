@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
 'use strict';
-
-console.log('hello');
 
 const items = [
   { name: 'Bike', price: 100 },
@@ -16,8 +13,7 @@ const items = [
 // ============
 // .filter() -- TRUE OR FALSE
 // ============
-
-//all items under or exact 100 dollars
+//all items under or equal to 100 dollars
 
 const predicate = (item) => {
   return item.price <= 100;
@@ -66,19 +62,64 @@ const findItems2 = items.find((item) => {
   return item.price === 100;
 });
 
-console.log(findItems)
-console.log(findItems2)
-
+console.log(findItems);
+console.log(findItems2);
 
 // ============
-// .forEach()
+// .forEach() -- similair to a for loop but takes a function so it's easier
 // ============
 
 // looping over arrays .. much easier thant for loops
 
 items.forEach((item) => {
-  console.log(item.name)
+  console.log(item.name);
+  // waarom kan return niet? omdat het geen variabele heeft?
+});
 
-})
+// ============
+// .some() -- TRUE OR FALSE - Checks if at least one item hold the condition
+// ============
+
+const hasInexpensiveItem = items.some((item) => {
+  return item.price <= 100;
+});
+console.log(hasInexpensiveItem); // OUTPUT: true
+
+const hasExpensiveItem = items.some((item) => {
+  return item.price >= 2000;
+});
+
+console.log(hasExpensiveItem); // OUTPUT: false
+
+// ============
+// .every() -- TRUE OR FALSE Checks if every item holds the condition
+// ============
+
+const isEveryItemExpensive = items.every((item) => {
+  return item.price >= 5;
+});
+
+console.log(isEveryItemExpensive); // OUTPUT : true
+// want de prijs van iedere item in the array Items is hoger of gelijk aan 5 dollars
+
+// ============
+// .reduce() -- does a loop .. add to the previous item price
+// ============
+
+const totalPrice = items.reduce((currentTotal, item) => {
+  return item.price + currentTotal;
+}, 0);
+
+console.log(totalPrice);
 
 
+// ============
+// .includes() -- TRUE OF FALSE
+// ============
+
+const numbers = [1,"strawberry", 2, 3, 4, 5];
+
+const includesTwo = numbers.includes("strawberry", 0); // HOW CAN THIS BE TRUE?? 
+
+console.log(includesTwo)
+console.log(numbers.includes(0))

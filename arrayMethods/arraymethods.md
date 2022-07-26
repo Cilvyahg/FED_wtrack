@@ -22,14 +22,20 @@ In JavaScript, a primitive (primitive value, primitive data type) is data that i
 
 ## Array Methods
 
+array methods have callbacks 
+
 the .filter() method --> filters some conditions if it's true you will get a new array, if it's false you wont. It won't change the old array
 
-the .map() method --> allows you to take one arrays and converts it into a new array 
+the .map() method --> allows you to take one arrays and converts it into a new array. it makes a new array for us. we map it to a new copied array
+
+
+
 
 the .find method  --> true or false .. return the first item that it finds in the array that is true.
 
 
-the .forEach() method --> looks like a for loop but takes a functions
+the .forEach() method --> looks like a for loop but takes a functions. it's the same as for .. of
+for ... of is easier
 
 the .some method -- it just check if ONE ITEM in the array hold at least the condition TRUE OR FALSE. for example if there is a price below 50 dollars. if so than it will return 'true' if not then it would be 'false'
 
@@ -64,3 +70,19 @@ array methods that mutates are
 * .unshift()
 * .sort()
 * .splice()
+
+The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. To access part of an array without modifying it, see slice().
+
+
+_syntax_ Array.splice(start, removeCount, newItem, newItem, newItem, ...)
+
+
+**...arrayName1, ...arrayName2**
+1.1 Merge using the spread operator
+If you want to know one but a good way to merge arrays in JavaScript, then remember the merge using the spread operator.
+
+Write inside the array literal two or more arrays prefixed with the spread operator ..., and JavaScript will create a new array with all these arrays merged:
+
+###### Array.isArray()
+syntax Array.isArray(value)
+returns a boolean; true or false 

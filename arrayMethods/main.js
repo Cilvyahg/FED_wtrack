@@ -69,10 +69,10 @@ console.log(findItems);
 console.log(findItems2);
 
 // ============
-// .forEach() -- similair to a for loop but takes a function so it's easier
+// .forEach() -- similair to a for of loop but takes a function so it's easier
 // ============
 
-// looping over arrays .. much easier thant for loops
+//looping over arrays
 
 items.forEach((item) => {
   console.log(item.name);

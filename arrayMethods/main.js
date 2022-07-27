@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-'use strict';
+// 'use strict';
 
 const items = [
   { name: 'Bike', price: 100 },
@@ -186,3 +186,46 @@ for (let person of people) {
 // +++++++++++++++++++++++++++++++++++
 //   EXERCISE: ARRAY METHODS - PART 1
 // +++++++++++++++++++++++++++++++++++
+
+//hoisting
+console.log(nameDev);
+
+var nameDev = "Ed";
+
+
+// IIFE
+(function () {
+  console.log('hello');
+})();
+
+console.log('final');
+
+
+//  synchronous callback
+
+const sayName = (name, cb) => { // the funcion callBack gaat in de tweede parameter
+  console.log('running some code')
+  console.log('running some code')
+  console.log('running some code')
+  console.log('running some code')
+  console.log('running some code')
+  console.log('my name is cilvya')
+  console.log(`my name is ${name}`)
+  cb();
+}
+
+function callBack() {
+  console.log("this is the end")
+}
+
+sayName('Ed', callBack)
+
+// SYNCC callback -- with setTimeOut , with Evenlistener
+
+console.log('first')
+
+setTimeout(() => {
+  console.log('from callback')
+},2000)
+
+console.log('last')

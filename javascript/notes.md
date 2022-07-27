@@ -615,10 +615,39 @@ variblename.previousElementSibling.querySelector('p').innerHTML += '<br/> Too co
 
 
 
-## DEBUGGING JAVASCRIPT 101
-
-
 ## Devtools
 
 use the devtool to test js and not too create js.
 
+
+# IMPORTANT CONCEPTS ABOUT JAVASCRIPT
+
+**hoisting**
+takes ur variabele declaration and function declaration to the top. 
+
+**callstack**
+
+when the function is invoked it get on the callstack
+
+
+**IIFE**
+
+immediately invoked function expression
+
+>(function(){
+  console.log("hello")
+})();
+
+console.log('final')
+
+
+**scope**
+* global scopesd
+.... variables that are declared in the global scope can be used anywhere unless that same variable is declared in the function -- goes level up .. it;s going look for it untill it fines it 
+
+
+
+* function scoped
+all variables that are INSODE of a function, cannot be used OUTSIDE
+
+**Callbacks, promises and asyn await**

@@ -47,8 +47,6 @@ function selectBelgiumFromBenelux(el) {
 
 console.log(selectBelgiumFromBenelux(['Belgium', 'Netherlands', 'Luxembourg'])); // result: "Belgium"
 
-
-
 //D. Write a JavaScript function to return the last element of an array.
 
 function lastElementInArray(el) {
@@ -91,7 +89,6 @@ console.log(impeachTrumpSlice(presidents)); // ["Obama", "Bush", "Clinton"]
 
 console.log(impeachTrumpSplice(presidents)); // ["Obama", "Bush", "Clinton"]
 
-
 // F. Write a simple JavaScript program to join all elements of the following array into a string (with spaces).
 //ps: the word join is a big tip on what array method you should use.
 
@@ -125,12 +122,20 @@ function combineArrays(arr1, arr2) {
 // resultaat: [1,2,3,4,5,6]
 
 function concatArrays(arr1, arr2) {
-  const concat = arr1.concat(arr2)
+  const concat = arr1.concat(arr2);
   return concat;
 }
 console.log(combineArrays([1, 2, 3], [4, 5, 6]));
-console.log(concatArrays(["hoi", "hi", "hello"], [5, 7, 4, 12]));
+console.log(concatArrays(['hoi', 'hi', 'hello'], [5, 7, 4, 12]));
 
-=======================
-EXERCISE PART 2
-========================
+// =======================
+// EXERCISE PART 2
+// ========================
+
+const greet = (name) => {
+  const greeting = `Hey ${name}`;
+  return  greeting;
+};
+
+console.log(greet('Hagrid'));
+console.log(greet('Luna'));

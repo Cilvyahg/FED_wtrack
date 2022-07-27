@@ -86,3 +86,7 @@ Write inside the array literal two or more arrays prefixed with the spread opera
 ###### Array.isArray()
 syntax Array.isArray(value)
 returns a boolean; true or false 
+
+
+**reduce() method**
+

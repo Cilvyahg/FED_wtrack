@@ -32,10 +32,20 @@ the .map() method --> allows you to take one arrays and converts it into a new a
 
 
 the .find method  --> true or false .. return the first item that it finds in the array that is true.
+it will not return a new array .
+
+find method return the FIRST ITEM and won't give back a new array. The Filter method will return all items that are true to the condition. 
+
+
+
+
 
 
 the .forEach() method --> looks like a for loop but takes a functions. it's the same as for .. of
-for ... of is easier
+for ... of is easier. 
+The forEach method allows you to execute a function by iterating through each element of an array. It's important to note that the **forEach() method doesn't return anything**, and thus, if you try to get the return value of the forEach method, you will get undefined .
+
+
 
 the .some method -- it just check if ONE ITEM in the array hold at least the condition TRUE OR FALSE. for example if there is a price below 50 dollars. if so than it will return 'true' if not then it would be 'false'
 

@@ -128,14 +128,143 @@ function concatArrays(arr1, arr2) {
 console.log(combineArrays([1, 2, 3], [4, 5, 6]));
 console.log(concatArrays(['hoi', 'hi', 'hello'], [5, 7, 4, 12]));
 
-// =======================
-// EXERCISE PART 2
-// ========================
-
 const greet = (name) => {
   const greeting = `Hey ${name}`;
-  return  greeting;
+  return greeting;
 };
 
 console.log(greet('Hagrid'));
 console.log(greet('Luna'));
+
+// =======================
+// EXERCISE PART 2
+// ========================
+
+//[A] Write a JavaScript function that finds a certain item and returns it based on a
+//certain value.Find the entire Spiderman object, based on the name "Spiderman".Use .find().
+
+const superheroes = [
+  { name: 'Batman', alter_ego: 'Bruce Wayne' },
+  { name: 'Superman', alter_ego: 'Clark Kent' },
+  { name: 'Spiderman', alter_ego: 'Peter Parker' },
+];
+
+// Here goes your function
+
+const findSpiderMan = function (array) {
+  return array.find((arr) => {
+    return arr.name === 'Spiderman';
+  });
+};
+
+console.log(findSpiderMan(superheroes));
+
+const findSpiderMan1 = superheroes.find((hero) => {
+  if (hero.name === 'Spiderman') {
+    return hero.name;
+  }
+});
+
+console.log(findSpiderMan1);
+
+// Find Spiderman
+// result should be: {name: "Spiderman", alter_ego: "Peter Parker"}
+
+//B In an array of integers.
+//Make sure you return an array with the integers doubled.Use the.forEach method or, one level higher: the.map method.
+
+const doubleArrayValues = (array) => {
+  let newArray = new Array();
+
+  array.forEach(function (value) {
+    // doe je hier geen return omdat forEach geen array aanmaakt zelf?
+    const multiplied = value * 2;
+    newArray.push(multiplied);
+  });
+
+  return newArray; // HOEZOE DEZE BUITEN DE FOREACH METHOD?
+};
+
+console.log(doubleArrayValues([1, 2, 3]));
+
+// result should be [2, 4, 6]
+
+// .map() method
+
+const doubleArrayValuesMap = (array) => {
+  return array.map((numbers) => {
+    // waarom RETURN HIER?? IK HAD EERST GEEN RETURN HIER??
+    return numbers * 2;
+  });
+};
+
+console.log(doubleArrayValuesMap([3, 4, 6]));
+
+//C. In an array of integers. Write a JavaScript function that checks if there is a number
+//(integer) in the array that is greater than 10.
+
+const containsNumberBiggerThan10 = (array) => {
+  return array.some((numbers) => {
+    return numbers > 10;
+  });
+};
+
+console.log(containsNumberBiggerThan10([1, 4, 3, 6, 9, 7, 11]));
+// result should be true
+console.log(containsNumberBiggerThan10([1, 2, 1, 2, 1, 2]));
+// result should be false
+
+//D. In an array of strings.
+//Write a JavaScript function that checks for a certain string: "Italy" in the array.
+
+const isItalyInTheGreat7 = (countries) => {
+  return countries.some(function (country) {
+    return country === 'Italy';
+  });
+};
+
+console.log(
+  isItalyInTheGreat7([
+    'Canada',
+    'France',
+    'Germany',
+    'Italy',
+    'Japan',
+    'United Kingdom',
+    'United States',
+  ])
+);
+// result should be true
+
+//[E] In an array of integers.
+//Write a JavaScript function that will multiply every integer tenfold.Use.forEach
+// .forEach doesn't return an array.
+
+const tenfold = (array) => {
+  const tenfoldArray = [];
+
+  array.forEach((numbers) => {
+    tenfoldArray.push(numbers * 10);
+  });
+
+  return tenfoldArray;
+};
+
+console.log(tenfold([1, 4, 3, 6, 9, 7, 11]));
+// result should be [10, 40, 30, 60, 90, 70, 110]
+
+// F. In an array of integers. Write a JavaScript function that checks if all values ​​in the array are below 100, and return True or False.
+
+const isBelow100 = (array) => {
+  return array.every(function (number) {
+    return number < 100;
+  });
+};
+console.log(
+  isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
+);
+// result should be: false
+
+
+//G Bonus! The last exercise is a bit more challenging. 
+//Use Google and be a little rowdy(maybe copy a piece of code).In an array of integers.Write a JavaScript function that adds all the values in the array and returns the sum total.Use the.reduce method.And really, use Google.

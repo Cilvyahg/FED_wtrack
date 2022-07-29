@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 // 'use strict';
 
-
 const items = [
   { name: 'Bike', price: 100 },
   { name: 'TV', price: 200 },
@@ -357,20 +356,56 @@ const vintageShops = [
     year: 2020,
     headquarters: 'Berlijn',
     amountofEmployees: 10,
-  }
+  },
 ];
 
 console.log(animalsArray.length);
-console.log(vintageShops.length); 
+console.log(vintageShops.length);
 
-
-
-const hasAmountOfEmployees = vintageShops.filter(shop => shop.year > 2000);
+const hasAmountOfEmployees = vintageShops.filter((shop) => shop.year > 2000);
 
 console.log(hasAmountOfEmployees);
 
+const numbersTest = [5, 3, 7, 8, 4, 2, 56, 8, 5];
+const numberArray = (number) => number < 20;
 
-const numbersTest = [5, 3, 7, 8, 4, 2, 56, 8, 5]
-const sortedNumbers = numbersTest.sort();
+const sortedNumbers = numbersTest.sort(numberArray);
+const filtered = numbersTest.filter(numberArray);
+const mapped = numbersTest.map(numberArray);
+
+console.log(numbersTest);
+console.log(filtered);
+console.log(mapped);
 console.log(sortedNumbers);
-console.log(numbersTest)
+
+[1, 2, 3, 4].map((a) => {
+  return { a: 1 };
+});
+
+// console.log(myFriends.filter((a) => a.age));
+console.log(
+  [
+    {
+      name: 'Dom',
+      age: 35,
+      occupation: 'Web developer',
+    },
+    {
+      name: 'Amy',
+      age: 26,
+      occupation: 'Nurse',
+    },
+    {
+      name: 'Bruce',
+      age: 55,
+      occupation: 'Electrician',
+    },
+  ].map((pen) => {
+    return {
+      size: 'A4',
+      color: "red"
+    };
+  })
+);
+
+a()()

@@ -32,10 +32,16 @@ It won't change the old array. good usecase when you for example want to filter 
 
 
 
-the .map() method --> allows you to take one arrays and converts it into a new array. it makes a new array for us. we map it to a new copied array
+the .map() method --> allows you to take one arrays and converts it into a new array. it makes a new array for us. we map it to a new copied array. The map() method creates a new array with the results of calling a function for every array element. The map method allows items in an array to be manipulated to the user’s preference, returning the conclusion of the chosen manipulation in an entirely new array. For example, consider the following array. 
 
 .map() --> transformeer je een array van dingen naar iets anders. eerst 10 eitjes en na de map heb je 10 omeletten.
 
+
+
+
+.filter()
+The filter() method creates an array filled with all array elements that pass a test implemented by the provided function. The filter method is well suited for particular instances where the user must identify certain items in an array that share a common characteristic.
+Filter let you provide a callback for every element and returns a filtered array.
 
 
 While both the .filter() and .map() methods will return a new array, .filter() will create a new array of array elements that pass a given test while .map() will create a new array made up of the results of calling a function on each array element. 

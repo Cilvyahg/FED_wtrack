@@ -153,22 +153,23 @@ const superheroes = [
 
 const findSpiderMan = function (array) {
   return array.find((arr) => {
-    return arr.name === 'Spiderman';
+    return arr.name ==='Spiderman'
   });
 };
 
-console.log(findSpiderMan(superheroes));
+console.log(`Find Spiderman:`, findSpiderMan(superheroes));
+//
 
+
+
+//
 const findSpiderMan1 = superheroes.find((hero) => {
   if (hero.name === 'Spiderman') {
     return hero.name;
   }
 });
 
-console.log(findSpiderMan1);
-
-// Find Spiderman
-// result should be: {name: "Spiderman", alter_ego: "Peter Parker"}
+console.log(findSpiderMan1); // result should be: {name: "Spiderman", alter_ego: "Peter Parker"}
 
 //B In an array of integers.
 //Make sure you return an array with the integers doubled.Use the.forEach method or, one level higher: the.map method.
@@ -177,31 +178,25 @@ const doubleArrayValues = (array) => {
   let newArray = new Array();
 
   array.forEach(function (value) {
-    // doe je hier geen return omdat forEach geen array aanmaakt zelf?
     const multiplied = value * 2;
     newArray.push(multiplied);
   });
 
-  return newArray; // HOEZOE DEZE BUITEN DE FOREACH METHOD?
+  return newArray;
 };
 
-console.log(doubleArrayValues([1, 2, 3]));
-
-// result should be [2, 4, 6]
+console.log(doubleArrayValues([1, 2, 3])); // result should be [2, 4, 6]
 
 // .map() method
 
 const doubleArrayValuesMap = (array) => {
-  return array.map((numbers) => {
-    // waarom RETURN HIER?? IK HAD EERST GEEN RETURN HIER??
-    return numbers * 2;
-  });
+  return array.map((numbers) => numbers * 2);
 };
 
 console.log(doubleArrayValuesMap([3, 4, 6]));
 
 //C. In an array of integers. Write a JavaScript function that checks if there is a number
-//(integer) in the array that is greater than 10.
+//Is bigger than 10;
 
 const containsNumberBiggerThan10 = (array) => {
   return array.some((numbers) => {
@@ -209,18 +204,23 @@ const containsNumberBiggerThan10 = (array) => {
   });
 };
 
-console.log(containsNumberBiggerThan10([1, 4, 3, 6, 9, 7, 11]));
-// result should be true
-console.log(containsNumberBiggerThan10([1, 2, 1, 2, 1, 2]));
-// result should be false
+const containsNumberBiggerThan10v2 = (array) => {
+  return hasSome(array);
+};
 
-//D. In an array of strings.
-//Write a JavaScript function that checks for a certain string: "Italy" in the array.
+let hasSome = (array) => array.some(biggerThan10);
+
+let biggerThan10 = (number) => {
+  return number > 10;
+};
+
+console.log(containsNumberBiggerThan10([1, 4, 3, 6, 9, 7, 11])); //  true
+console.log(containsNumberBiggerThan10([1, 2, 1, 2, 1, 2])); //  false
+
+//D. Write a JavaScript function that checks for a certain string: "Italy" in the array.
 
 const isItalyInTheGreat7 = (countries) => {
-  return countries.some(function (country) {
-    return country === 'Italy';
-  });
+  return countries.includes('Italy', 2); // hoe kan dit true zijn???
 };
 
 console.log(
@@ -238,7 +238,7 @@ console.log(
 
 //[E] In an array of integers.
 //Write a JavaScript function that will multiply every integer tenfold.Use.forEach
-// .forEach doesn't return an array.
+// .forEach doesn't return an array. // kan ook met mapping
 
 const tenfold = (array) => {
   const tenfoldArray = [];
@@ -250,10 +250,9 @@ const tenfold = (array) => {
   return tenfoldArray;
 };
 
-console.log(tenfold([1, 4, 3, 6, 9, 7, 11]));
-// result should be [10, 40, 30, 60, 90, 70, 110]
+console.log(tenfold([1, 4, 3, 6, 9, 7, 11])); // result should be [10, 40, 30, 60, 90, 70, 110]
 
-// F. In an array of integers. Write a JavaScript function that checks if all values ​​in the array are below 100, and return True or False.
+//F. In an array of integers. Write a JavaScript function that checks if all values in the array are below 100, and return True or False.
 
 const isBelow100 = (array) => {
   return array.every(function (number) {
@@ -263,8 +262,18 @@ const isBelow100 = (array) => {
 console.log(
   isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
 );
-// result should be: false
 
+let randomSum = bigSum([4, 2, 3]);
 
-//G Bonus! The last exercise is a bit more challenging. 
-//Use Google and be a little rowdy(maybe copy a piece of code).In an array of integers.Write a JavaScript function that adds all the values in the array and returns the sum total.Use the.reduce method.And really, use Google.
+const bigSum = (reduceNumbers) => {
+  return reduceNumbers.reduce(function (accumulatingValue, currentValue) {
+    const sum = accumulatingValue + currentValue;
+    return sum;
+  });
+};
+
+console.log(
+  bigSum([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98, 101, 206, 234])
+); // output 1118
+
+console.log(randomSum);

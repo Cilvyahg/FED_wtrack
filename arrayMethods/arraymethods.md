@@ -24,10 +24,21 @@ In JavaScript, a primitive (primitive value, primitive data type) is data that i
 
 array methods have callbacks 
 
-the .filter() method --> filters some conditions if it's true you will get a new array, if it's false you wont. It won't change the old array
+the .filter() method --> filters some conditions if it's true you will get a new array. een filter functie moet altijd een boolean teruggeven.
+
+
+
+It won't change the old array. good usecase when you for example want to filter 'the highest ranking things, old items, new items (like a year of the movie)
+
+
 
 the .map() method --> allows you to take one arrays and converts it into a new array. it makes a new array for us. we map it to a new copied array
 
+.map() --> transformeer je een array van dingen naar iets anders. eerst 10 eitjes en na de map heb je 10 omeletten.
+
+
+
+While both the .filter() and .map() methods will return a new array, .filter() will create a new array of array elements that pass a given test while .map() will create a new array made up of the results of calling a function on each array element. 
 
 
 
@@ -56,6 +67,15 @@ the .every() -- it just if every items in the array holds a certain condition. s
 the .reduce method -- does an operation .. accumulating
 
 the .includes() -- does it include a certain value? like 2? and you can also give a index number as parameter. 
+
+
+## Array.sort()
+
+sort die sorteert de elementen van een array en het gesorteerde array wordt teruggegeven het wordt dus ook op de plaatst gesorteerd en het word gereturned. 
+
+
+
+
 
 ## ARRAY METHODS: MUTABILITY
 
@@ -98,5 +118,17 @@ syntax Array.isArray(value)
 returns a boolean; true or false 
 
 
+
+
 **reduce() method**
+
+
+
+
+***return***
+when you don't give a return type and you want to do something with it later on, it's not stored in memory anywhere, only stored locally in function. 
+
+
+## Looping over arrays (iterating over an array)
+
 

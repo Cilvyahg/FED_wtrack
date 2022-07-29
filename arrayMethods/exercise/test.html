@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const superheroes = [
+        { name: 'Superman', alter_ego: 'Clark Kent' },
+        { name: 'Batman', alter_ego: 'Bruce Wayne' },
+        { name: 'Spiderman', alter_ego: 'Peter Parker' },
+      ];
+
+      function findSpiderMan(array) {
+        let spidermanObject = array[0]; // value = object met index 1
+        let spidermanObjectName = spidermanObject.name; // dus object met index 1 .met de naam property
+
+        if (spidermanObjectName === 'Batman') {
+          return spidermanObject;
+        }
+      }
+
+      function findsuperhero(array, fn) {
+        for (let el of array) {
+          // if (el.name === 'Batman') {
+          //   return el; // return je het hele object van batman
+          // }
+          if (fn(el)) // de waarde van de fn(el) is true of false
+          {
+            return el;
+          }
+        }
+      }
+
+      let isbatman = (el) => {
+        return el.name === 'Batman';
+      };
+
+      let superman = (el) => {
+        return el.name === 'Superman';
+      };
+
+      // let a = { digit: 1 };
+      // let b = { digit: 2 };
+      // function chooseRandom(array) {
+      //   let a = array[0];
+      //   let aDigit = a.digit;
+      //   let b = array[1];
+      //   let bDigit = b.digit;
+      //   if (aDigit > bDigit) {
+      //     return a;
+      //   } else {
+      //     return b;
+      //   }
+      // }
+
+      // let ar1 = [a, b];
+
+      console.log(findsuperhero(superheroes, isbatman) == superheroes.find(isbatman))
+
+
+      console.log(findsuperhero(superheroes, superman));
+
+    </script>
+  </head>
+  <body></body>
+</html>

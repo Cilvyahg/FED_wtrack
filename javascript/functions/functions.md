@@ -390,3 +390,15 @@ or
 
 `array.reduce(callback[, initialValue]);`
 
+
+
+## function methods
+ a function that is a property of an object is called its method
+ a method is a function attached to an object. javascript has many built in objects like Math, 
+
+ .random() is the method of the Math Object.
+
+ Math.random() is also a function but we call it method.
+
+ const greetings = "hello";
+ greetings.toUpperCase() < --- to uppercase is a method a function that is attached to an object. strings like greeting are also objects. 

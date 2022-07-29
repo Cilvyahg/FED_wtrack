@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 // 'use strict';
 
+
 const items = [
   { name: 'Bike', price: 100 },
   { name: 'TV', price: 200 },
@@ -182,7 +183,6 @@ for (let person of people) {
   }
 }
 
-
 // +++++++++++++++++++++++++++++++++++
 //   EXERCISE: ARRAY METHODS - PART 1
 // +++++++++++++++++++++++++++++++++++
@@ -190,8 +190,7 @@ for (let person of people) {
 //hoisting
 console.log(nameDev);
 
-var nameDev = "Ed";
-
+var nameDev = 'Ed';
 
 // IIFE
 (function () {
@@ -200,32 +199,178 @@ var nameDev = "Ed";
 
 console.log('final');
 
-
 //  synchronous callback
 
-const sayName = (name, cb) => { // the funcion callBack gaat in de tweede parameter
-  console.log('running some code')
-  console.log('running some code')
-  console.log('running some code')
-  console.log('running some code')
-  console.log('running some code')
-  console.log('my name is cilvya')
-  console.log(`my name is ${name}`)
+const sayName = (name, cb) => {
+  // the funcion callBack gaat in de tweede parameter
+  console.log('running some code');
+  console.log('running some code');
+  console.log('running some code');
+  console.log('running some code');
+  console.log('running some code');
+  console.log('my name is cilvya');
+  console.log(`my name is ${name}`);
   cb();
-}
+};
 
 function callBack() {
-  console.log("this is the end")
+  console.log('this is the end');
 }
 
-sayName('Ed', callBack)
+sayName('Ed', callBack);
 
 // SYNCC callback -- with setTimeOut , with Evenlistener
 
-console.log('first')
+console.log('first');
 
 setTimeout(() => {
-  console.log('from callback')
-},2000)
+  console.log('from callback');
+}, 2000);
 
-console.log('last')
+console.log('last');
+
+// NETNINJA ||
+// Functions
+
+const speak = function (name = 'cilvya', time = 'afternoon') {
+  return `good ${time} ${name}`;
+};
+
+console.log(speak('mario', 'night'));
+console.log(speak()); // this one will console log the default value that are stated in as parameter in the function
+
+// return
+const calcArea = function (radius) {
+  let area = 3.14 * Math.pow(radius, 2); // local variable in the function
+  // let area = 3.14 * radius**2 // same
+  return area; // this is how to return a value
+};
+
+const areaCapture = calcArea(5);
+console.log(areaCapture);
+
+const calcVolume = function (radius) {
+  return radius * 2;
+};
+
+const calcNumber = calcVolume(areaCapture); // assign the value to a variable so we can work with it later
+// otherwise it's not saved to the memory
+console.log(calcNumber);
+
+// can also do this -- make it a big shorter
+const calcAreaShort = function (radius) {
+  return 3.14 * Math.pow(radius, 2); // don't have to store it in a local variable we can return it
+};
+
+const areaCaptureShort = calcAreaShort(3);
+console.log(areaCaptureShort);
+
+// Arrow functions
+
+const calcAreaArrow = (radius) => {
+  // when there is one parameter we can leave the parantheses, but if we have no parameter we do have to add the ()
+  // return 3.14 * Math.pow(radius, 2);
+  return 'hello' + 2 * radius;
+};
+
+const areaCaptureArrow = calcAreaArrow(5);
+console.log(areaCaptureArrow);
+console.log(typeof areaCaptureArrow); // string
+
+const greet = () => 'hello, world';
+const resultGreet = greet().toUpperCase();
+console.log(resultGreet);
+
+console.log('********');
+
+const bill = function (products, tax) {
+  let total = 0;
+
+  for (let i = 0; i < products.length; i++) {
+    total += products[i] + products[i] * tax;
+  }
+  return total;
+};
+
+const billArrow = (products, tax) => {
+  let total = 0;
+
+  for (let i = 0; i < products.length; i++) {
+    total += products[i] + products[i] * tax;
+    // console.log(products[i]);
+    // console.log(total);
+  }
+  return total;
+};
+
+console.log(bill([10, 15, 30], 0.2));
+console.log(billArrow([2, 3, 4], 0.8));
+
+// how to add strings as numbers
+
+const string1 = '2';
+const string2 = '4';
+console.log(typeof string1, typeof string2);
+
+const unaryPlus = +string1 + +string2;
+console.log(typeof unaryPlus);
+
+const stringToNumbers = Number(string1) + Number(string2);
+console.log(typeof stringToNumbers);
+
+// parseInt method but it won't work if the non-numeric characters are at the beginning of the string
+
+const s1 = parseInt('5fff');
+
+console.log(s1); // 👉️ 5
+console.log(typeof s1); // 👉️ number
+
+// NaN is Not a Number but it is considered in JS as a number
+
+const animalsArray = [
+  'Bear',
+  'cheetah',
+  'Crocodile',
+  'Fox',
+  'Dolphin',
+  'Lion',
+  'Shark',
+  'Snake',
+  'Tiger',
+];
+
+const vintageShops = [
+  {
+    name: 'vinted',
+    year: 2000,
+    headquarters: 'New York',
+    amountofEmployees: 100,
+  },
+  {
+    name: 'marktplaats',
+    year: 1996,
+    headquarters: 'Amsterdam',
+    amountofEmployees: 2000,
+  },
+  {
+    name: 'reliving',
+    year: 2020,
+    headquarters: 'Berlijn',
+    amountofEmployees: 10,
+  }
+];
+
+console.log(animalsArray.length);
+console.log(vintageShops.length); 
+
+
+
+const hasAmountOfEmployees = vintageShops.filter(shop => shop.year > 2000);
+
+console.log(hasAmountOfEmployees);
+
+
+const numbersTest = [5, 3, 7, 8, 4, 2, 56, 8, 5]
+const sortedNumbers = numbersTest.sort();
+console.log(sortedNumbers);
+console.log(numbersTest)

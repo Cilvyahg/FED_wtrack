@@ -58,7 +58,19 @@ the .includes() -- does it include a certain value? like 2? and you can also giv
 
 ## Array.sort()
 
-sort die sorteert de elementen van een array en het gesorteerde array wordt teruggegeven het wordt dus ook op de plaatst gesorteerd en het word gereturned.
+Telling 'Array.sort' how to sort: compare functions maken. dan bepalen wij als programmeurs hoe er wordt omgegaan met strings, booleans en etc. dus wijzig je de default behavior.
+
+
+
+dus de sort() methode veranderd ook zijn originele array, en geeft ook het nieuwe gesorteerde array terug
+
+
+**default behavior** aan de sort() kun je ook een functie meegeven.
+
+default sort dus, alles wat ik binnenkrijg zie ik als een string (UTF8 encoding) dus wordt het gesorteerd als [1 15 2 24 3 38] dus de string 1 hoort bij elkaar, de string 2 hoort bij elkaar. 
+
+compare functie 
+kijkt naar twee en vergelijkt met elkaar 
 
 ## ARRAY METHODS: MUTABILITY
 

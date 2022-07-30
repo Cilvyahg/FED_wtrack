@@ -1,9 +1,6 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 
-
-
-
 const items = [
   { name: 'Bike', price: 100 },
   { name: 'TV', price: 200 },
@@ -477,20 +474,16 @@ const friends = [
   },
 ];
 
-
-
-delete friends[0].age // delete the age of the first index in the object friends. 
-console.log(friends)
+delete friends[0].age; // delete the age of the first index in the object friends.
+console.log(friends);
 
 // map
 
-
-const niiii = friends.map(function (friend, index, array) { 
+const niiii = friends.map(function (friend, index, array) {
   return array.length;
-})
+});
 
-console.log(niiii)
-
+console.log(niiii);
 
 const arrayPlay = friends.map(function (friend) {
   return friend.name;
@@ -517,9 +510,7 @@ const hasDiploma = friends
 
 console.log(hasDiploma);
 
-
 // CONDITIONALS
-
 
 const sayHi = function (greeting) {
   return function (name) {
@@ -527,66 +518,94 @@ const sayHi = function (greeting) {
   };
 };
 
-
 // arrow way to do it. one arrow function returning another arrow function
-const sayHiArrow = greeting => name =>
-    console.log(`${greeting} ${name} `);
+const sayHiArrow = (greeting) => (name) => console.log(`${greeting} ${name} `);
 
-sayHi('hello')('jonas') // also invoking the function. 
-
+sayHi('hello')('jonas'); // also invoking the function.
 
 const greeter = sayHi('hey'); // dit is nu de functie, zie console.
 
 // ƒ(name) {
-  //   console.log(`${greeting} ${name} `);
-  // }
+//   console.log(`${greeting} ${name} `);
+// }
 
 greeter('qing');
-console.log(greeter)
- 
-
-
-
+console.log(greeter);
 
 // first class functions -- higher order functions
 
 const oneWord = function (str) {
   return str.replace(/ /g, '').toLowerCase();
-}
+};
 
 const upperFirstWord = function (str) {
   const [first, ...others] = str.split(' ');
-  return [first.toUpperCase(), ...others].join(' ')
-}
-
+  return [first.toUpperCase(), ...others].join(' ');
+};
 
 // Higher order function
 const transformer = function (str, fn) {
-  console.log(`Original string ${str}`)
-  console.log(`Transformed string ${fn(str)}`)
-  console.log(`Transformed by: ${fn.name}`)
+  console.log(`Original string ${str}`);
+  console.log(`Transformed string ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
 
-}
-
-transformer('Js is the best', upperFirstWord)
-
-
+transformer('Js is the best', upperFirstWord);
 
 const calcAge = function (birthYear) {
   console.log(2037 - birthYear);
   console.log(this); // undefined but it does has it own this keyword
-}
+};
 
 calcAge(1991);
 
-
 const jonas = {
   year: 1991,
-  calcAge: function (){
-    console.log(this)
+  calcAge: function () {
+    console.log(this);
     console.log(2074 - this.year);
-  }
+  },
+};
+
+jonas.calcAge(); // it logs the jonas object.
+
+// object constructor
+function Person(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = new Date(dob);
 }
 
-jonas.calcAge() // it logs the jonas object. 
+//instantiate object
+
+const person1 = new Person('John', 'Doe', '4-3-1980');
+const person2 = new Person('Jane', 'Almos', '8-10-1989');
+
+console.log(person1);
+console.log(person2.dob.getFullYear);
+
+const input = document.querySelector('#input');
+
+input.addEventListener('focus', function (e) {
+  console.log(e);
+});
+
+//the opposite van focus is blur 
+document.querySelector('#input-2').addEventListener('blur', function (e) {
+  console.log(e);
+});
+
+// op het hele document keydown
+document.addEventListener('keydown', (e) => {
+  console.log(e.key) //welke toets wordt er getoetst 
+});
+
+
+
+
+// SORT array Methods
+
+console.log(["b", "a", "c", "g"].sort());
+
+// meestal gebruik je sort() als compare function
 

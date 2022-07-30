@@ -367,7 +367,7 @@ const hasAmountOfEmployees = vintageShops.filter((shop) => shop.year > 2000);
 console.log(hasAmountOfEmployees);
 
 const numbersTest = [5, 3, 7, 8, 4, 2, 56, 8, 5];
-const numberArray = (number) => number < 20;
+const numberArray = (number) => number > 20;
 
 const sortedNumbers = numbersTest.sort(numberArray);
 const filtered = numbersTest.filter(numberArray);
@@ -403,9 +403,103 @@ console.log(
   ].map((pen) => {
     return {
       size: 'A4',
-      color: "red"
+      color: 'red',
     };
   })
 );
 
-a()()
+const myself = [
+  {
+    firstName: 'Cilvya',
+    lastName: 'Huang',
+    age: 30,
+    hobbies: ['ceramics', 'yoga', 'music'],
+    address: {
+      street: 'baltimoreplein 4',
+      zipcode: '1334KA',
+      city: 'Almere',
+      country: 'The Netherlands',
+    },
+  },
+];
+
+console.log(myself[0].firstName); // music
+
+console.log(myself);
+
+// for
+for (let i = 0; i <= 10; i++) {
+  console.log(`For loopnumber ${i}`);
+}
+
+// while
+let i = 0; // with the while loop you set the variable outside of the loop
+
+while (i < 10) {
+  console.log(`while loop number ${i}`);
+  i++;
+}
+
+// for ..of
+
+for (let me of myself) {
+  console.log(me.firstName);
+}
+
+// high order array methods
+
+//forEach -especially if you want to go through an array.
+myself.forEach(function (item) {
+  console.log(item.firstName);
+});
+
+const friends = [
+  {
+    name: 'Dom',
+    age: 35,
+    occupation: 'Web developer',
+    diploma: 'true',
+  },
+  {
+    name: 'Amy',
+    age: 26,
+    occupation: 'Nurse',
+    diploma: 'true',
+  },
+  {
+    name: 'Bruce',
+    age: 55,
+    occupation: 'Electrician',
+    diploma: 'false',
+  },
+];
+
+// map
+
+const arrayPlay = friends.map(function (friend) {
+  return friend.name;
+});
+
+console.log(arrayPlay);
+
+const hastheNameAmy = function (names) {
+  // ['Dom', 'Amy', 'Bruce']
+  let findAmy = names.filter((name) => name === 'Amy'); // wat is name? name is een string binnen de array. hij loopt over de name strings van de array names, dus je returned string dat gelijk staat aan amy. filter maakt enkel een nieuwe array aan
+  return findAmy;
+};
+
+console.log(hastheNameAmy(arrayPlay));
+
+// wat hier staat is. filter binnen de friend objecten op mensen die een diploma hebben, geef mij die array. en map, en dus geef mij vervolgens de occupatuon van deze mensen terug.
+const hasDiploma = friends
+  .filter(function (friend) {
+    return friend.diploma === 'true';
+  })
+  .map(function (friend) {
+    return friend.occupation; // het is een array bestaande uit een object dus je moet dan de property naam erbij zetten (occupation)
+  });
+
+console.log(hasDiploma);
+
+
+// CONDITIONALS

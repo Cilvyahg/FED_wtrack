@@ -151,16 +151,22 @@ const superheroes = [
 
 // Here goes your function
 
-const findSpiderMan = function (array) {
-  return array.find((arr) => {
-    return arr.name ==='Spiderman'
-  });
+const findSuperHero = function (array, fn) {
+  let a = array.find(fn);
+  return a;
 };
 
-console.log(`Find Spiderman:`, findSpiderMan(superheroes));
+const isSpiderman = (arr) => {
+  return arr.name === 'Spiderman';
+};
+
+const isBatman = function (s) {
+    return s.name === 'Batman';
+  }
+
+console.log(`Find Spiderman:`, findSuperHero(superheroes, isSpiderman));
+console.log(`Find Batman:`, findSuperHero(superheroes, isBatman));
 //
-
-
 
 //
 const findSpiderMan1 = superheroes.find((hero) => {

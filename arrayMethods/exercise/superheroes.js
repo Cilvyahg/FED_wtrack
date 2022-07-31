@@ -159,39 +159,96 @@ console.log(isAMarvelHero);
 //6. Add up the weight of all DC Comics superheroes.
 //Pay attention! Conditional to the rescue! The weight you see here, what data type is that? A number ? Or a string ? Oh yeah, and do all superheroes have weight ?
 
-const weightOfDcComics = function (array) {
-  
-  const createFunction = (item) => {
-    if (item !== 195) {
-      return true;
-    } else {
-      return false;
-    }
+
+const stringToNumbers = superHeroes.map(function (superhero) {
+
+    const weightInNumbers = Number(superhero.weight);
+    console.log(weightInNumbers);
+    return weightInNumbers;
+})
+
+console.log(stringToNumbers);
+
+const stringWithoutNaN = stringToNumbers.filter(
+  function (superhero) {
+    const check = !isNaN(superhero)
+    console.log(check)
+    return check;
   }
 
 
-  const stringToNumbers = array.map(el => parseInt(el.weight))
-  console.log(stringToNumbers);
-
-  const asdfg = stringToNumbers.filter(createFunction);
-  console.log(asdfg)
+)
 
 
+console.log(stringWithoutNaN);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  const filteredHeroes = superHeroes.filter(function (weight) {
+//    return weight !== isNaN });
+
+// console.log(filteredHeroes())
+
+
+
+
+// const mappingHero = function (array) {
+//   return array.map(function (superhero) {
+//     return fromStringToNumber
+    
+//   })
+
+// }
+
+// mappingHero(stringToNumbers())
+
+
+
+
+
+
+
+
+// const weightOfDcComics = function (array) {
   
+//   const createFunction = (item) => {
+//     if (item !== 195) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
 
 
+//   const stringToNumbers = array.map(el => parseInt(el.weight))
+//   console.log(stringToNumbers);
+
+//   const asdfg = stringToNumbers.filter(createFunction);
+//   console.log(asdfg)
 
 
 
 
   // return stringToNumbers.reduce((accumulatenum, currentnum) => {
-  // return accumulatenum + currentnum; 
+  // return accumulatenum + currentnum;
   // })
 
-};
-
-
-weightOfDcComics(superHeroes);
+// };
 
 
 // let a = [1, 2, 3, 4, 5]

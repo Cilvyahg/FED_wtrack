@@ -185,3 +185,7 @@ er kunnen meerdere returns in een functie staat, maar er kan maar een return sta
 early returns worden soms ook 'guard clauses' genoemd. word vaak gebruikt. is de waarde die we aan de functie meegeven is dat een normale waarde. 
 
 there's a bunch of array methods that you need to give a function to. these functions often need to return a specific thing zoals .filter(funtion, element) --> de functie geeft een boolean terug. en deze boolean wordt gebruikt door de .filter methode om te kijken welke toegevoegd worden aan de array. 
+
+
+## Higher order functions
+functies die je functies geeft en functies die functies geven. 

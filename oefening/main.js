@@ -129,8 +129,8 @@ for (let i = 0; i < superHeroes.length; i++) {
 }
 
 console.log(arrayName);
-arrayName[0] = 'hello'
-console.log(arrayName)
+arrayName[0] = 'hello';
+console.log(arrayName);
 
 // ***************************************
 // const arr = [1, 3, 4, 5];
@@ -144,18 +144,15 @@ let arrayLightSuperheroes = [];
 
 const functionExmaple = function (array) {
   let arrayWeight = [];
-  
+
   for (let element of array) {
     const weight = element.weight;
     if (weight < 190) {
       arrayWeight[arrayWeight.length] = weight;
     }
   }
-  return arrayWeight; // als je deze na de if statement zou zetten, dus in de if statement dan stopt tie zodra tie de conditie true is en itereert hij niet over alle gewichten. de return statement hoort bij de functie 
+  return arrayWeight; // als je deze na de if statement zou zetten, dus in de if statement dan stopt tie zodra tie de conditie true is en itereert hij niet over alle gewichten. de return statement hoort bij de functie
 };
-
-
-
 
 for (let superhero of superHeroes) {
   const weight = superhero.weight;
@@ -168,8 +165,110 @@ for (let superhero of superHeroes) {
 console.log(arrayLightSuperheroes);
 
 console.log(functionExmaple(superHeroes));
-console.log(functionExmaple)
+console.log(functionExmaple);
 
 // 3.Create an array with the names of the superheroes who weigh 200 pounds.
+
+// const is200Pounds = function (array) {
+//   let weigh200Pounds = [];
+
+//   for (let superhero of array) {
+//     const heroThatis200Pounds = parseInt(superhero.weight, 10);
+//     const superHeroName = superhero.name;
+//     console.log(heroThatis200Pounds);
+//     if (heroThatis200Pounds === 200) {
+//       console.log('yes');
+//       weigh200Pounds[weigh200Pounds.length] = superHeroName;
+//     } else {
+//       console.log('nopes');
+//     }
+//   }
+//   return weigh200Pounds;
+// };
+
+// console.log(is200Pounds(superHeroes));
+
+let something = new Array(4);
+console.log(something.fill('newitem'));
+console.log(something.length);
+
+// 4.Make an array with all the comics where the superheroes had their "first appearances".
+
+let firstAppearanceArray = [];
+
+for (let superhero of superHeroes) {
+  const appearanceInComic = superhero.first_appearance;
+  console.log(appearanceInComic);
+  firstAppearanceArray[firstAppearanceArray.length] = appearanceInComic;
+}
+
+console.log(firstAppearanceArray);
+
+//5. Create an array of all DC Comics superheroes. /
+// Did that work ? Then repeat the above function and also create an array with all Marvel Comics superheroes.
+
+let dcComicsArray = [];
+let marvelComicsArray = [];
+
+for (let superhero of superHeroes) {
+  const publisher = superhero.publisher;
+  if (publisher === 'DC Comics') {
+    dcComicsArray[dcComicsArray.length] = superhero.name;
+  }
+
+  if (publisher === 'Marvel Comics') {
+    marvelComicsArray[marvelComicsArray.length] = superhero.name;
+  }
+}
+
+console.log(`These are the DC comics superhero's :`, dcComicsArray);
+console.log(`These are the Marvelcomics superhero:`, marvelComicsArray);
+
+//Add up the weight of all DC Comics superheroes. Pay attention! Conditional to the rescue! The weight you see here, what data type is that? A number? Or a string? Oh yeah, and do all superheroes have weight?
+
+for (let superhero of superHeroes) {
+  const weightInNumbers = parseInt(superhero.weight);
+  console.log(weightInNumbers);
+}
+
+console.log(!isNaN(NaN));
+
+Number(isNaN('45'));
+console.log(typeof NaN);
+console.log(typeof 1);
+
+console.log(Number(' hhhhhh'));
+
+function outer() {
+  return inner;
+}
+
+function inner() {
+  console.log('hoi');
+  return 'inner';
+}
+
+console.log(outer());
+
+function balala() {
+  return [1, 2, 3, 4, 5].filter(test); //[1,2]
+}
+
+console.log(test)
+
+function test(ar) {
+  console.log(ar)
+  console.log(ar < 3)
+ return ar < 3;
+}
+
+console.log(balala());
+
+// function filter(fn) {
+// for (let item of array) {}
+//   if (fn(ar))
+//array.pusd()
+//}
+// }
 
 

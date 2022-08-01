@@ -168,4 +168,20 @@ the this keyword will always point to the object that was calling the method. Ja
 
 
 
+## return
 
+* every function returns something(implicit vs explicit)
+* the return statement stops the execution of the function(the code in the rest of the function does not get executed).
+
+
+**early returns vs single exit pooints**
+a function can contain multiple return statement but it's better to use simpler syntax. 
+
+return is hoe we de 'waarden' uit een functie halen, zodat ze kunnen worden opgeslagen en deze opvangen in een variable.
+
+er kunnen meerdere returns in een functie staat, maar er kan maar een return statement worden uitgevoerd. dus bijvoorbeeld bij een if statement staan er meerdere returns maar deze voert alleen de return uit behorende bij de conditie. dus er wordt maar 1 return gerund. want als deze gerund heeft dan stopt de functie  ook 
+
+### PATTERN
+early returns worden soms ook 'guard clauses' genoemd. word vaak gebruikt. is de waarde die we aan de functie meegeven is dat een normale waarde. 
+
+there's a bunch of array methods that you need to give a function to. these functions often need to return a specific thing zoals .filter(funtion, element) --> de functie geeft een boolean terug. en deze boolean wordt gebruikt door de .filter methode om te kijken welke toegevoegd worden aan de array. 

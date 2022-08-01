@@ -590,22 +590,71 @@ input.addEventListener('focus', function (e) {
   console.log(e);
 });
 
-//the opposite van focus is blur 
+//the opposite van focus is blur
 document.querySelector('#input-2').addEventListener('blur', function (e) {
   console.log(e);
 });
 
 // op het hele document keydown
 document.addEventListener('keydown', (e) => {
-  console.log(e.key) //welke toets wordt er getoetst 
+  console.log(e.key); //welke toets wordt er getoetst
 });
-
-
-
 
 // SORT array Methods
 
-console.log(["b", "a", "c", "g"].sort());
+console.log(['b', 'a', 'c', 'g'].sort());
 
 // meestal gebruik je sort() als compare function
+
+// =====================
+// RETURN // NIELS BLOM
+// =====================
+
+const myVar = NaN;
+
+if (myVar) {
+  console.log('truthy');
+} else {
+  console.log('falsey');
+}
+
+function add(x, y) {
+  console.log(x + y);
+  return x + y;
+}
+
+const total = add(9, 6);
+console.log(total);
+
+const totale = add(add(6, 3), 9);
+console.log(totale);
+
+// higher order functions
+let sayHello = function () {
+  return 'hello';
+};
+
+console.log(sayHello); // output function is de functie zelf.
+console.log(sayHello()); // output is de waarde van de sayHello functie dat is hallo.
+
+function callTwice(func) {
+  func();
+  console.log(func)
+
+  func();
+
+ 
+}
+
+
+console.log(callTwice)
+
+function rollDie() {
+  const roll = Math.floor(Math.random() * 6) + 1;
+  console.log(roll)
+}
+
+callTwice(rollDie);
+
+
 

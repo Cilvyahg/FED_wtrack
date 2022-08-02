@@ -257,6 +257,8 @@ we gebruiken de event properties om meer informatie over het 'event' te krijgen.
 
 Now, when our event object encounters an element with an event handler that meets certain criteria the handler will be triggered, and the function that it contains will execute. But how do events encounter event handlers?
 
+nextSibling (gives a dom node back, for example give textnode can also be spaces, text)
+so it's better to use .nextElementSibling, .reviousElementSibling ignoring those weird nodes like white spaces, comments and etc.
 
 # WHAT EVENTS ARE THERE
 mdn documentation
@@ -451,4 +453,7 @@ element.append() // appending it again
 
 
 
+variabele.parentElement.parentElement (level op)
+.childElementsCounts (how many children
+.children[0] (it's not an array but they do have an indices
 

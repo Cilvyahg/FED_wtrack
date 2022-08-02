@@ -114,6 +114,7 @@ const superHeroes = [
 
 console.log(superHeroes);
 
+console.log(superHeroes[superHeroes.length - 1].weight); // getting the last index of superheroes and the property weight.
 // 1. Make an array of all superhero names.
 
 let arrayName = [];
@@ -226,14 +227,87 @@ console.log(`These are the Marvelcomics superhero:`, marvelComicsArray);
 
 //Add up the weight of all DC Comics superheroes. Pay attention! Conditional to the rescue! The weight you see here, what data type is that? A number? Or a string? Oh yeah, and do all superheroes have weight?
 
-for (let superhero of superHeroes) {
-  const weightInNumbers = parseInt(superhero.weight);
-  console.log(weightInNumbers);
+// for (let superhero of superHeroes) {
+//   const weightInNumbers = parseInt(superhero.weight);
+//   console.log(weightInNumbers);
+// }
+
+const accumulateWeight = function (array) {
+  const newMap = array.map(function (superhero) {
+    let weightOfSuperhero = superhero.weight;
+    if (weightOfSuperhero !== 'unknown') {
+      //  return parseInt(weightOfSuperhero, 10);
+      return parseInt(weightOfSuperhero, 10);
+    }
+    if (weightOfSuperhero == 'unknown') {
+      // return (weightOfSuperhero = parseInt(0, 10));
+      return (weightOfSuperhero = 0);
+    }
+  });
+  console.log(Number.isNaN(newMap[15])); // false
+  return newMap;
+};
+
+const accumulatedWeightMapped = accumulateWeight(superHeroes);
+console.log(accumulatedWeightMapped);
+
+const reduceWeight = accumulatedWeightMapped.reduce(function (
+  accummulatedWeight,
+  currentWeight
+) {
+  console.log(`this is the accumulated weight`, accummulatedWeight);
+  console.log(`this is the currentweight:`, currentWeight);
+  return accummulatedWeight + currentWeight;
+},
+0);
+
+console.log(reduceWeight); // REDUCEWEIGHT IS NOT A FUNCTION.
+
+const numbersTest = [1, 2, 3, 4, 67, 7, 9];
+
+// function print(element) {
+//   console.log(element);
+// }
+
+// console.log(print);
+
+// console.log(numbersTest.forEach(print));
+
+numbersTest.forEach(function (number) {
+  if (number % 2 === 0) {
+    // als je het nummer deelt door 2 en er niks overblijft dan de de numbers
+    console.log(number);
+  }
+});
+
+// samee as forEach() // for .. of  but forEach comes with a function.
+
+for (let number of numbersTest) {
+  if (number % 2 === 0) {
+    console.log(number);
+  }
 }
 
-console.log(!isNaN(NaN));
+function somefunction() {
+  // let som = 0;
+  for (let number of numbersTest) {
+    // eslint-disable-next-line no-unused-vars
+    // som += number;
 
-Number(isNaN('45'));
+    if (number % 2 === 0) {
+      console.log(`${number} is even`);
+    } else {
+      console.log(`${number} is odd`);
+    }
+  }
+}
+
+console.log(somefunction());
+
+console.log(`this outcome it`, isNaN(NaN));
+
+console.log(`the outcome is`, Number(isNaN(0)));
+
 console.log(typeof NaN);
 console.log(typeof 1);
 
@@ -254,12 +328,12 @@ function balala() {
   return [1, 2, 3, 4, 5].filter(test); //[1,2]
 }
 
-console.log(test)
+console.log(test);
 
 function test(ar) {
-  console.log(ar)
-  console.log(ar < 3)
- return ar < 3;
+  console.log(ar);
+  console.log(ar < 3);
+  return ar < 3;
 }
 
 console.log(balala());
@@ -272,3 +346,12 @@ console.log(balala());
 // }
 
 
+let array1 = [1, 2, 3, 4, 5];
+let max = 0;
+array1.forEach((element) => {
+  if (element > max) {
+    console.log(element)
+  } else 
+    console.log('hello')
+});
+console.log(max); // 5

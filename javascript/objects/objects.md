@@ -209,15 +209,39 @@ je kan er dingen van verschillende typen instoppen, dat geldt ook voor arrays.
 
  
 
+als je een object aanmaakt en de variabele (key en variable ) hetzelfde zijn hoef je het maar een keer te doen. age = 33 
+age. 
+
+## Objects are passed by reference
+
+je kan dit doen door de waarde door te geven of een verwijzing . objecten worden bij reference gepassed. er worden niet altijd kopieetjes van gemaakt
+
+als je een kopietje wilt maken van een object, aangezien objecten worden gepassed by reference. 
+
+const person2 = {... person1} // kopietje van object person1 ( maar alleen van het buitenste object, dus als een object meerdere objecten binnen heeft dan wordt daar geen kopie van gemaakt)
 
 
 
+**Heeft dit object een bepaalde key?**
+
+in operator ..
+bijv console.log("age" in person1) dus zit de key age in object person1;
 
 
 
+**object in javascript have Prototypes**
+de meeste objecten in js hebben prototypes (dus een parent, grandparent en etc.)
+prototype = een van de ouders, of grootouders van het object. dus als je een array aanmaakt of een object dan krijg je allemaal eigenschappen erbij zoals filter() method en etc. 
 
 
+## advanced usage 
+-- handig als je wilt itereren over Object.keys en etc.
 
 
+Object.keys() -- je krijgt de keys van het object 
+Object.values()
+Object.entries() geef mij een array van elk key value pair 
+in     operator -- heeft het object deze key?
+hasOwnProperty -- 
 
 

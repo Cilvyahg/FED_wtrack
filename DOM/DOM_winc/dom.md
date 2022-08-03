@@ -35,10 +35,15 @@ functie kunt je zien als een machine .. je stopt er iets in en je krijgt iets te
 
 
 
+## Debuggen 
+
+#### Debugging strategy
+
+![image](./Screenshot%202022-08-03%20at%2016.26.46.png)
 
 
-
-
+* locate : wanneer (in tijd) en waar in je file gebeurd de bug? 
+* analyze: wat gebeurd hier nou eigenlijk? ga console.log gebruiken om te zien wat er gebeurd. 
 
 
 

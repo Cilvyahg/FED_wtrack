@@ -402,3 +402,12 @@ or
 
  const greetings = "hello";
  greetings.toUpperCase() < --- to uppercase is a method a function that is attached to an object. strings like greeting are also objects. 
+
+
+ ## HIGHER ORDER FUNCTIES // niels blom
+ .map
+ .foreach
+ .reduce
+ .filter 
+
+ deze functies geven een functie mee, maar er zijn ook functies die een functie teruggeven aan een andere functie

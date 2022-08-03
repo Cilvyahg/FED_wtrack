@@ -197,9 +197,17 @@ with objects its the same but with the curly braces
 
 
 
+# Object
+
+* objects are not ordered // arrays are ordered. 
+* heterogeneous
+* data structuur welke je makkelijk maakt om je data te structureren. je kunt dus elk stukje data (value) een label meegeven (key). in array kijk je naar indexen dan zou je elke keer moeten weten op index 0 staat naam, op index 2 staat adres en etc.
 
 
+je kan er dingen van verschillende typen instoppen, dat geldt ook voor arrays.
 
+
+ 
 
 
 

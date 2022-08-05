@@ -1,6 +1,7 @@
 /* eslint-disable no-debugger */
 'use strict';
 
+
 // higher order functions. functions that take other functions as arguments
 function add(num1, num2) {
   return num1 + num2;
@@ -10,13 +11,21 @@ function multiply(num1, num2) {
   return num1 * num2; 
 }
 
-function calculator(num1, num2, operator) {
+function calculator(num1, num2, operator) { // 1, 2, 
   return operator(num1, num2)
 }
 
 debugger;
 console.log(calculator(1, 2, multiply));
 console.log(calculator(3, 5, add));
+
+
+// ++++++++++
+//   Scope 
+// ++++++++++
+
+
+
 
 
 
@@ -163,9 +172,9 @@ log(childrenSpotted);
 
 
 
-document.querySelector('#remove-first-item-button')
-  .addEventListener('click', function () {
+document.querySelector('#remove-first-item-button').addEventListener('click', function (event) {
     spottedListUL.removeChild(spottedListUL.firstElementChild);
+    log(event);
 
     // for (let button of Object.entries(spottedListUL)) {
     //   buttonsBigFive.addEventListener('click', function () {

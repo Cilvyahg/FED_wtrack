@@ -464,7 +464,34 @@ true
 
  
 
- # Scope
+ # SCOPE
+
+ you can find the word scope in other words 
+ -telescope
+ - microscope
+
+ so it's about seeing. 
+
+ de constanten en de functie die je maakt binnen een functie zijn alleen toegangelijk binnen de functionscope.
+
+
+javascript kijkt altijd eerst binnen de huidige scope en dan pas buiten. zelfs als dezelfde const variable is gesteld. want soms is het handig om wel dezelfde constante te hebben (shadowen).
+
+
+#### Block scope
+variables created with const or let are block scoped 
+alsmost every time when we see { } (if, loops, switch, for loops, while loops)
+
+const or let variable made in the blockscope cannot be used outside of the blockscope
+or being called from outside. 
+
+
+* create variables close to where you use them to prevent mixups 
+- als je bijvoorbeeld iets wilt doen in de DOM houdt dan je variabele en wanneer je dit gebruikt zo dichtbij mogelijk wordt gehouden. makkelijker te lezen. 
+
+
+
+
 
 variables that are defined in the function (where we use the let keyword)
 they are scoped to that function. it's like a bubble.
@@ -490,6 +517,10 @@ so those variables only exist within the curly braces.
 
 
 ### Lexical scope
+
+
+
+
 
 
 

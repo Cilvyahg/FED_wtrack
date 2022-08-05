@@ -1,4 +1,25 @@
+/* eslint-disable no-debugger */
 'use strict';
+
+// higher order functions. functions that take other functions as arguments
+function add(num1, num2) {
+  return num1 + num2;
+}
+
+function multiply(num1, num2) {
+  return num1 * num2; 
+}
+
+function calculator(num1, num2, operator) {
+  return operator(num1, num2)
+}
+
+debugger;
+console.log(calculator(1, 2, multiply));
+console.log(calculator(3, 5, add));
+
+
+
 
 const log = console.log;
 
@@ -97,7 +118,6 @@ log(`These are the buttons::::::`, buttonsBigFive);
 const spottedAnimalList = document.querySelector('#spotted-animals-list');
 log(spottedAnimalList);
 
-
 function buttonClick() {
   for (let button of buttonsBigFive) {
     button.addEventListener('click', addToSpottedAnimals);
@@ -106,23 +126,21 @@ function buttonClick() {
 
 buttonClick();
 
-
 function addToSpottedAnimals(e) {
-  log(e)
- 
+  log(e);
+
   this.style.backgroundColor = 'pink';
   log('You have clicked on the button:', this.innerText);
 
-
-  if (this.style.display !== "block") {
+  if (this.style.display !== 'block') {
     const newLi = document.createElement('li');
     const addToSpottedList = spottedAnimalList.appendChild(newLi);
     log(addToSpottedList);
-    addToSpottedList.classList.add("spotted-animals-list-item");
+    addToSpottedList.classList.add('spotted-animals-list-item');
     addToSpottedList.innerText = this.innerText;
-    this.style.display = "block";
-  } 
-  
+    this.style.display = 'block';
+  }
+
   if (this.innerText === 'Rhino') {
     this.style.backgroundColor = 'blue';
   }
@@ -132,24 +150,50 @@ function addToSpottedAnimals(e) {
   }
 }
 
-
 // PART 2. REMOVE THE DUCK ELEMENT FROM THE DOM
 
-const duckItem = document.querySelector(".spotted-animals-list-item");
-log(duckItem);
+// const duckItem = document.querySelector(".spotted-animals-list-item");
+// log(duckItem);
 
-const removeFirstItem = document.querySelector('#remove-first-item-button');
+const spottedListUL = document.querySelector('#spotted-animals-list');
+log(spottedListUL.children);
+
+const childrenSpotted = document.querySelectorAll('.spotted-animals-list-item');
+log(childrenSpotted);
 
 
-const removeFirst = function () {
-  removeFirstItem.addEventListener('click', function () {
-    console.log(`the duck item is removed`, duckItem)
-    duckItem.remove();
-  })
-}
 
-removeFirst()
+document.querySelector('#remove-first-item-button')
+  .addEventListener('click', function () {
+    spottedListUL.removeChild(spottedListUL.firstElementChild);
 
+    // for (let button of Object.entries(spottedListUL)) {
+    //   buttonsBigFive.addEventListener('click', function () {
+    //     if (button === ' ') {
+          
+    //       const newLi = document.createElement('li'); 
+    //       spottedListUL.append(newLi);
+    //     }
+    //   });
+    // }
+
+    // element child doesnt return back text nodes and etc.
+  });
+
+// const removeFirstBtn = document.querySelector('#remove-first-item-button');
+
+// const removeFirst = function () {
+//   removeFirstBtn.addEventListener('click', function () {
+//    for (let button of )
+
+//   })
+// }
+
+// removeFirst()
 
 // PART 3. Removing Multiple Elements from the DOM
 
+// let element = document.getElementById('top');
+// while (element.firstChild) {
+//   element.removeChild(element.firstChild);
+// }

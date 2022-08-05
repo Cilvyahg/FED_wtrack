@@ -96,6 +96,7 @@ The appendChild() method appends a node (element) as the last child of an elemen
 
 
 
+
 ## Nodelist & HTML collection
 it's important to know what you need to do something.
 querySelectorAll() returns a Nodelist
@@ -457,3 +458,20 @@ variabele.parentElement.parentElement (level op)
 .childElementsCounts (how many children
 .children[0] (it's not an array but they do have an indices
 
+### createElement() 
+wanneer je een element creert bijvoorbeeld een "li" dan is deze enkel gecreerd maar nog niet te zien in de HTML je moet deze als ware appenden 
+
+
+## insertAdjacentElement(position, element);
+'beforebegin' , 'afterend' 
+
+will be inserted before or after and will be a sibling so not a child.
+
+
+### remove
+removeChild() then you have to put it on the parent first.
+
+instead use remove() 
+
+## insertBefore();
+kan je plaatsen waar je het wilt inplaats van append or prepend. 

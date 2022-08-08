@@ -119,6 +119,11 @@ you can use both on objects
 for .. of loops through values
 for ...in loops through properties
 
+
+for...of - Use to loop over strings and arrays.
+for...in - Use to loop over objects.
+
+
 ## forEach
 
 The forEach method is also used to loop through arrays, but it uses a function differently than the classic "for loop".
@@ -186,7 +191,9 @@ Arrays are also interable objects.
 when we have a 'iterable object' we can use **for .. of**
 
 ***methods to iterate over objects***
-\
+ for ... of
+
+ for ... in 
 
 
 

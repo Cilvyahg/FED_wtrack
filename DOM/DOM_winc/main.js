@@ -1,4 +1,4 @@
-/* eslint-disable no-debugger */
+
 'use strict';
 
 
@@ -15,7 +15,7 @@ function calculator(num1, num2, operator) { // 1, 2,
   return operator(num1, num2)
 }
 
-debugger;
+
 console.log(calculator(1, 2, multiply));
 console.log(calculator(3, 5, add));
 
@@ -200,9 +200,55 @@ document.querySelector('#remove-first-item-button').addEventListener('click', fu
 
 // removeFirst()
 
-// PART 3. Removing Multiple Elements from the DOM
+// PART 3: REMOVING MULTIPLE ELEMENTS FROM THE DOM
 
-// let element = document.getElementById('top');
-// while (element.firstChild) {
-//   element.removeChild(element.firstChild);
+
+const removeAll = document.querySelector("#remove-all-button");
+log(removeAll);
+
+const removeAllElement = document.getElementById("remove-all-button"); 
+log(removeAllElement)
+
+
+const removeAllSpottedHandler = function () {
+
+  for (let animal of spottedListUL) {
+    spottedListUL.remove(animal);
+  }
+  // spottedListUL.innerHTML = "";
+
+
+}
+console.dir(spottedListUL);
+
+const removeAllSpotted = () => {
+  removeAll.addEventListener("click", removeAllSpottedHandler)
+}
+ 
+removeAllSpotted();
+
+
+
+
+// let personBeau = { fname: "Beau", lname: "Carnes", arms: 2 }; 
+
+// let text = ""; 
+
+// for (let x in personBeau) {
+//   text += personBeau[x];
+//   console.log(x)
 // }
+
+// log(text)
+
+// to see if something is an array
+
+const result = Array.isArray(spottedListUL);
+
+if (Array.isArray([5,7,8,9,10])) {
+  log('is array');
+} else {
+  log('not array');
+}
+ 
+log(result);

@@ -197,3 +197,21 @@ when we have a 'iterable object' we can use **for .. of**
 
 
 
+
+# Functioneel programmeren
+
+map() --> voor elk element in de array kun je een wijziging doorgeven. de orginele array blijft bewaard. dus niet zoals splice(), push() methode die dus wel de array aanpast. 
+array.map(element, index, arg). 
+
+met map() kun je je hele array/lijst van structuur wijzigen en of van waarde wijzigen. dus elke waarde kan vertaald worden naar iets anders. het doel is om een nieuwe array/lijst te maken
+
+array.filter() --> het doel is om de array/lijst te filteren op een bepaalde conditie. je geeft een functie mee aan de filter functie. 
+
+op basis van true of false. een lege string " " heeft een falsey value en zal false zijn en wordt dus ook niet toegevoegd aan de nieuwe array/lijst. makkelijk om bijvoorbeeld lege strings eruit te filteren en of 0 getallen eruit filter. want 0 heeft ook een falsey waarde. 
+
+
+
+
+
+
+

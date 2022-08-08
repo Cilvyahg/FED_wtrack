@@ -1,6 +1,4 @@
-
 'use strict';
-
 
 // higher order functions. functions that take other functions as arguments
 function add(num1, num2) {
@@ -8,27 +6,20 @@ function add(num1, num2) {
 }
 
 function multiply(num1, num2) {
-  return num1 * num2; 
+  return num1 * num2;
 }
 
-function calculator(num1, num2, operator) { // 1, 2, 
-  return operator(num1, num2)
+function calculator(num1, num2, operator) {
+  // 1, 2,
+  return operator(num1, num2);
 }
-
 
 console.log(calculator(1, 2, multiply));
 console.log(calculator(3, 5, add));
 
-
 // ++++++++++
-//   Scope 
+//   Scope
 // ++++++++++
-
-
-
-
-
-
 
 const log = console.log;
 
@@ -111,23 +102,13 @@ div2.addEventListener('click', function () {
 // Exercise: When I click on a button of one of the Big 5 as a user,
 // I want it to appear in my list with "animals spotted".
 
-const Mybody = document.body.querySelector('ul');
-log(Mybody);
+// const AnimalList = document.querySelector('.big-five-list');
 
-const AnimalList = document.querySelector('.big-five-list');
-log(`This is the UL:::::`, AnimalList);
-
-const AnimalListItems = AnimalList.children;
-log(`This are the LI::::::`, AnimalListItems);
-log(AnimalListItems[4]);
-
-const buttonsBigFive = document.querySelectorAll('button.big-five-button');
-log(`These are the buttons::::::`, buttonsBigFive);
-
-const spottedAnimalList = document.querySelector('#spotted-animals-list');
-log(spottedAnimalList);
+// const AnimalListItems = AnimalList.children;
+// log(AnimalListItems[4]);
 
 function buttonClick() {
+  const buttonsBigFive = document.querySelectorAll('button.big-five-button');
   for (let button of buttonsBigFive) {
     button.addEventListener('click', addToSpottedAnimals);
   }
@@ -138,13 +119,14 @@ buttonClick();
 function addToSpottedAnimals(e) {
   log(e);
 
+  const spottedAnimalList = document.querySelector('#spotted-animals-list');
+
   this.style.backgroundColor = 'pink';
   log('You have clicked on the button:', this.innerText);
 
   if (this.style.display !== 'block') {
     const newLi = document.createElement('li');
     const addToSpottedList = spottedAnimalList.appendChild(newLi);
-    log(addToSpottedList);
     addToSpottedList.classList.add('spotted-animals-list-item');
     addToSpottedList.innerText = this.innerText;
     this.style.display = 'block';
@@ -161,33 +143,35 @@ function addToSpottedAnimals(e) {
 
 // PART 2. REMOVE THE DUCK ELEMENT FROM THE DOM
 
-// const duckItem = document.querySelector(".spotted-animals-list-item");
-// log(duckItem);
-
 const spottedListUL = document.querySelector('#spotted-animals-list');
 log(spottedListUL.children);
 
-const childrenSpotted = document.querySelectorAll('.spotted-animals-list-item');
-log(childrenSpotted);
-
-
-
-document.querySelector('#remove-first-item-button').addEventListener('click', function (event) {
+document
+  .querySelector('#remove-first-item-button')
+  .addEventListener('click', function (event) {
     spottedListUL.removeChild(spottedListUL.firstElementChild);
     log(event);
-
-    // for (let button of Object.entries(spottedListUL)) {
-    //   buttonsBigFive.addEventListener('click', function () {
-    //     if (button === ' ') {
-          
-    //       const newLi = document.createElement('li'); 
-    //       spottedListUL.append(newLi);
-    //     }
-    //   });
-    // }
-
-    // element child doesnt return back text nodes and etc.
   });
+
+const removeAllElement = document.getElementById('remove-all-button');
+log(removeAllElement);
+
+const removeAllSpottedHandler = function () {
+  for (let animal in spottedListUL) {
+    spottedListUL.remove(animal);
+  }
+
+  //OR spottedListUL.innerHTML = "";
+};
+console.dir(spottedListUL);
+
+const removeAllSpotted = () => {
+  document
+    .querySelector('#remove-all-button')
+    .addEventListener('click', removeAllSpottedHandler);
+};
+
+removeAllSpotted();
 
 // const removeFirstBtn = document.querySelector('#remove-first-item-button');
 
@@ -202,37 +186,9 @@ document.querySelector('#remove-first-item-button').addEventListener('click', fu
 
 // PART 3: REMOVING MULTIPLE ELEMENTS FROM THE DOM
 
+// let personBeau = { fname: "Beau", lname: "Carnes", arms: 2 };
 
-const removeAll = document.querySelector("#remove-all-button");
-log(removeAll);
-
-const removeAllElement = document.getElementById("remove-all-button"); 
-log(removeAllElement)
-
-
-const removeAllSpottedHandler = function () {
-
-  for (let animal of spottedListUL) {
-    spottedListUL.remove(animal);
-  }
-  // spottedListUL.innerHTML = "";
-
-
-}
-console.dir(spottedListUL);
-
-const removeAllSpotted = () => {
-  removeAll.addEventListener("click", removeAllSpottedHandler)
-}
- 
-removeAllSpotted();
-
-
-
-
-// let personBeau = { fname: "Beau", lname: "Carnes", arms: 2 }; 
-
-// let text = ""; 
+// let text = "";
 
 // for (let x in personBeau) {
 //   text += personBeau[x];
@@ -245,10 +201,90 @@ removeAllSpotted();
 
 const result = Array.isArray(spottedListUL);
 
-if (Array.isArray([5,7,8,9,10])) {
+if (Array.isArray([5, 7, 8, 9, 10])) {
   log('is array');
 } else {
   log('not array');
 }
- 
+
 log(result);
+
+// let guestlist = ["arjan", "leo", "sarah", "harry"]
+// log(guestlist);
+
+// let guestName = prompt("what is your name?"); // guessname will take the name that prompt takes in.
+
+//  if (guestlist.includes(guestName)) {
+//    alert("welcome")
+// } else {
+//   alert("next time")
+//  }
+
+// creating a new array
+
+let emptyArray = [];
+
+let countNumbers = 1;
+
+function fizzBizz() {
+  if (countNumbers % 3 === 0 && countNumbers % 5 === 0) {
+    emptyArray.push('Fizzbuzz');
+  }
+
+  if (countNumbers % 3 === 0) {
+    emptyArray.push('Fizz');
+  } else if (countNumbers % 5 === 0) {
+    emptyArray.push('Buzz');
+  } else {
+    emptyArray.push(countNumbers);
+  }
+  countNumbers++;
+  log(emptyArray);
+}
+
+fizzBizz();
+
+// callback;
+
+setTimeout(hello, 2000, 'Bob'); // set time out function its first parameter is a callback function so that is why you need to put the function there. 
+
+const doThing = function (other) {
+  let x = 7; 
+  log(x)
+  // do lots of other things....
+  let name = 'steve';
+  other(name); // when the function is complete it will run;
+};
+
+function hello(nm) {
+  log('hello', nm);
+}
+
+doThing(hello);
+
+const array1 = [1, 2, 3, 4, 5, 6];
+
+
+function double(number) {
+  return number * 2; 
+}
+
+const map1 = array1.map(double); 
+// return element * 2 + " " + "hello"; 
+log(double) // logt een function dus je geeft een functie mee. 
+log(map1); 
+
+
+// filter()
+
+const cities = ['London', 'Amsterdam', 'Bangkok', 'Edinburgh']; 
+
+function isLong(city) {
+  return city.length > 8;  // lengte van het element op. // true or false. 
+  // is het true dan wordt tie toegevoegd aan de nieuwe array. 
+}
+
+const longerCities = cities.filter(isLong); 
+log(longerCities);
+
+

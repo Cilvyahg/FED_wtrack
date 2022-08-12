@@ -6,6 +6,26 @@ to get into the node environment type in : node
 
 
 
+Node js 
+document bestaat  niet in node js en window mist ook heel veel eigenschappen.
+alles kan in node js wat niet te maken heeft met document.
+
+startpunt van node js is javascript en niet het document en niet direct dus met een browser te maken heeft.
+
+node js is wel in staat om met documenten te werken alleen het is niet het startpunt. 
+
+voordeel van node js :
+je hoeft niet rekening te houden met verschillende browser
+je hoeft dus alleen je code voor node js te schrijven.
+
+node js is de backend versie van de normale javascript in de browser
+
+npm is de package manager van node.js
+nod
+
+
+
+
 **to get out of the node REPL**
 .exit
 crtl + c (2x)
@@ -146,3 +166,6 @@ We pictured the meek mild creatures where .
 They dwelt in their strawy pen .  
 Nor did it occur to one of us there .  
 To doubt they were kneeling then.
+
+## How does the internet works?
+

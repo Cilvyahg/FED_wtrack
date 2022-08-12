@@ -205,11 +205,12 @@ array.map(element, index, arg).
 
 met map() kun je je hele array/lijst van structuur wijzigen en of van waarde wijzigen. dus elke waarde kan vertaald worden naar iets anders. het doel is om een nieuwe array/lijst te maken
 
-array.filter() --> het doel is om de array/lijst te filteren op een bepaalde conditie. je geeft een functie mee aan de filter functie. 
+array.filter() --> het doel is om de array/lijst te filteren op een bepaalde conditie. je geeft een functie mee aan de filter functie. een filter() functie geeft altijd een boolean als return waarde. want een vergelijking is altijd true or false. lege string (" ") en of 0 is hebben falsey values. 
 
-op basis van true of false. een lege string " " heeft een falsey value en zal false zijn en wordt dus ook niet toegevoegd aan de nieuwe array/lijst. makkelijk om bijvoorbeeld lege strings eruit te filteren en of 0 getallen eruit filter. want 0 heeft ook een falsey waarde. 
+op basis van true of false. een lege string " " heeft een falsey value en zal false zijn en wordt dus ook niet toegevoegd aan de nieuwe array/lijst. makkelijk om bijvoorbeeld lege strings eruit te filteren en of 0 getallen eruit filter. want 0 heeft ook een falsey waarde. als je dat omzet naar een boolean. 
 
-
+split(",") --> van string naar array omzetten
+join(",") --> van array naar string
 
 
 

@@ -203,3 +203,4 @@ const div = document.createElement('div');
 const newDiv = body.append(div);
 div.innerText = 'this is a new div'.toUpperCase();
 
+console.log('hello')

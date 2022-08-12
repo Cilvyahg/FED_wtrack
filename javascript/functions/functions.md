@@ -411,3 +411,18 @@ or
  .filter 
 
  deze functies geven een functie mee, maar er zijn ook functies die een functie teruggeven aan een andere functie
+
+
+## functions live les
+
+handige resources
+
+met console log kun je ergens iets laten zien.
+
+variabelen ::
+als je iets wilt opslaan, kan je het in een bakje stoppen, dit bakje kunnen we een naam geven. zet een const of let om js te laten weten dat je een variabele aan het aanmaken ben. 
+
+variabele namen moeten voldoen aan bepaalde condities. zoals camelCase 
+
+
+

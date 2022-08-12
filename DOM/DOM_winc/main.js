@@ -1,5 +1,7 @@
 'use strict';
 
+const l = console.log
+
 // higher order functions. functions that take other functions as arguments
 function add(num1, num2) {
   return num1 + num2;
@@ -246,11 +248,11 @@ fizzBizz();
 
 // callback;
 
-setTimeout(hello, 2000, 'Bob'); // set time out function its first parameter is a callback function so that is why you need to put the function there. 
+setTimeout(hello, 2000, 'Bob'); // set time out function its first parameter is a callback function so that is why you need to put the function there.
 
 const doThing = function (other) {
-  let x = 7; 
-  log(x)
+  let x = 7;
+  log(x);
   // do lots of other things....
   let name = 'steve';
   other(name); // when the function is complete it will run;
@@ -264,27 +266,85 @@ doThing(hello);
 
 const array1 = [1, 2, 3, 4, 5, 6];
 
-
 function double(number) {
-  return number * 2; 
+  return number * 2;
 }
 
-const map1 = array1.map(double); 
-// return element * 2 + " " + "hello"; 
-log(double) // logt een function dus je geeft een functie mee. 
-log(map1); 
-
+const map1 = array1.map(double);
+// return element * 2 + " " + "hello";
+log(double); // logt een function dus je geeft een functie mee.
+log(map1);
 
 // filter()
 
-const cities = ['London', 'Amsterdam', 'Bangkok', 'Edinburgh']; 
+const cities = [
+  'London',
+  '',
+  0,
+  false,
+  'Amsterdam',
+  '',
+  'Bangkok',
+  'Edinburgh',
+]; 
+
+
+log(cities.at(-2));
+log(cities.at(-1)); // is hetzelfde als hieronder alleen dit is veel chiller. en begint vanaf achteraan te tellen
+log(cities[cities.length-1])
+
+// van array naar string 
+const citiesString = cities.join(', ') // joinen met een komma en een spatie 
+log(citiesString);
+
+// van string naar array 
+// const citieArray = cities.split(',');
+// log(citieArray);
+
+
+
+
+
+const resultCities = cities.filter(function (city) {
+  return city;
+});
+
+log(resultCities);
 
 function isLong(city) {
-  return city.length > 8;  // lengte van het element op. // true or false. 
-  // is het true dan wordt tie toegevoegd aan de nieuwe array. 
+  return city.length > 8; // lengte van het element op. // true or false.
+  // is het true dan wordt tie toegevoegd aan de nieuwe array.
 }
 
-const longerCities = cities.filter(isLong); 
+const longerCities = cities.filter(isLong);
 log(longerCities);
+
+
+
+//om te checken of ze false or true zijn;
+log(Boolean(''));
+
+
+console.log("hello");
+
+
+const meanHeightCats = 1;
+const meanHeightBears = 5;
+const meanHeightDogs = 3;
+
+
+const sumAnimals = (meanHeightCats + meanHeightBears + meanHeightDogs) / 3;
+console.log(sumAnimals); 
+
+
+const str = 'hello my name is cilvya';
+
+
+const newStr = str.split(); // when (' ') then it takes the index ('') takes the character
+l(newStr[7]);
+l(newStr)
+
+l(str)
+
 
 

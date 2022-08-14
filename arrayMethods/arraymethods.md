@@ -202,3 +202,6 @@ Using map, you don't have to manage the state of the for loop yourself.
 With map, you can operate on the element directly, rather than having to index into the array.
 You don't have to create a new array and push into it. map returns the finished product all in one go, so we can simply assign the return value to a new variable.
 You do have to remember to include a return statement in your callback. If you don't, you'll get a new array filled with undefined. 
+
+## functions 
+

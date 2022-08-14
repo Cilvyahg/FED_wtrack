@@ -710,3 +710,32 @@ const str1 = 'hello my name is cilvya';
 const str2 = 'name';
 
 console.log(str1.match(str2));
+
+
+// functions
+
+function getMilk(money) {
+  const cost = Math.floor(money / 1.5);
+
+  console.log('leaveHouse');
+  console.log('moveRight');
+  console.log('moveRight');
+  console.log('moveUp');
+  console.log('moveUp');
+  console.log('moveUp');
+  console.log('moveUp');
+  console.log('moveRight');
+  console.log('moveRight');
+  console.log('buy' + " " + cost + " " + 'bottles of milk')
+  console.log('moveLeft');
+  console.log('moveLeft');
+  console.log('moveDown');
+  console.log('moveDown');
+  console.log('moveDown');
+  console.log('moveDown');
+  console.log('moveLeft');
+  console.log('moveLeft');
+  console.log('enterHouse');
+}
+
+getMilk(10)

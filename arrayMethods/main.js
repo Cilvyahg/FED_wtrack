@@ -639,22 +639,74 @@ console.log(sayHello()); // output is de waarde van de sayHello functie dat is h
 
 function callTwice(func) {
   func();
-  console.log(func)
+  console.log(func);
 
   func();
-
- 
 }
 
-
-console.log(callTwice)
+console.log(callTwice);
 
 function rollDie() {
   const roll = Math.floor(Math.random() * 6) + 1;
-  console.log(roll)
+  console.log(roll);
 }
 
 callTwice(rollDie);
 
+// ======================
+// live les array method
+// ======================
+
+const plus6 = function (number) {
+  return number + 6;
+};
+
+const double = function (number) {
+  return number * 2;
+};
+
+const minus10 = function (number) {
+  return number - 10;
+};
+
+const functionArray = [plus6, double, double, minus10, double];
+
+let number = 1; // je zet dit buiten omdat binnen de forEach een eigen wereld zit en dan ben je de waarde kwijt als je dit binnen zou zetten
+// en de forEach() methode returned ook niks
+
+functionArray.forEach((func) => {
+  number = func(number);
+  console.log(`this is the endvalue`, number);
+});
+
+console.log(number); // output is 36
+
+// dit kun je ook met een for loop doen;
+let numberSecond = 1;
+for (let i = 0; i < functionArray.length; i++) {
+  console.log(i, functionArray[i]);
+  console.log(typeof functionArray[i]); // function
+  console.log(typeof functionArray); // object
+  numberSecond = functionArray[i](numberSecond); // een assignment van een expression moet altijd aan de linkerkant
+  console.log(numberSecond);
+}
+
+console.log(numberSecond);
+
+// !!!!! returnen doe je alleen in een functie en niet in een loop!! 
 
 
+// kan ook in een for .. of loop en makkelijker
+let numberThree = 1;
+for (let func of functionArray) {
+  numberThree = func(numberThree);
+  console.log(numberThree)
+}
+
+console.log(numberThree);
+
+
+const str1 = 'hello my name is cilvya';
+const str2 = 'name';
+
+console.log(str1.match(str2));

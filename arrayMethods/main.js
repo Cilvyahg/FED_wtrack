@@ -230,9 +230,9 @@ sayName('Ed', callBack);
 
 console.log('first');
 
-setTimeout(() => {
-  console.log('from callback');
-}, 2000);
+// setTimeout(() => {
+//   console.log('from callback');
+// }, 2000);
 
 console.log('last');
 
@@ -955,7 +955,6 @@ const calculateTotalPrice = function (arr) {
   if (total > 100) {
     log(`WHOAH, YOU ARE SPENDING WAY TO MUCH`);
     return total; // you put in here total because otherwise total will not be returned when this condition is true;
-
   } else {
     log(`You are good total is less then a 100`);
   }
@@ -983,5 +982,110 @@ log({
 // ==================
 
 const numberOne = 1;
-const number2 = numberOne;
+let number2 = numberOne;
+number2 = 7;
 log(`the first number is ${numberOne}, the secondNumber is ${number2}`);
+
+let person11 = { name: 'Bob', age: 22, occupation: 'butcher' };
+let person22 = { ...person11 }; // with the spread operator you will make a copy from the array so the
+//original array stays the same;
+
+// person22 = person11;
+person22.name = 'susy';
+
+log(person22.name);
+log(person22.occupation);
+log(person11.name);
+
+log(person22);
+log(person11);
+
+let number20 = 20 + null; // behind the scence it will be 20 + 0
+log(number20);
+number20 = 20 + undefined; // output is NaN
+log(number20);
+
+// ===================
+// GLOBAL SCOPES
+// ===================
+
+// you can modify global variables also in functions if you use the let.
+
+let nameInGlobalScope = 'peter';
+nameInGlobalScope = 'qing';
+
+const calculateScope = function () {
+  log(nameInGlobalScope);
+  nameInGlobalScope = 'petra';
+  log(nameInGlobalScope);
+
+  const inner = function () {
+    nameInGlobalScope = 'inner name value';
+    log(`this is from innerfunction ${nameInGlobalScope}`);
+  };
+
+  inner();
+};
+
+calculateScope();
+
+// ======================
+// LOCAL SCOPES
+// ======================
+
+let nameLocal = 'bobo';
+
+const calculateLocal = function () {
+  const nameLocal = 'jessy';
+  const age = 24;
+};
+
+calculateLocal(); // if you don't invoke it nothing will happen
+// log(age) // no access to age because its local
+
+const globalNumber = 5;
+
+const adding = function (num1, num2) {
+  const globalNumber = 8; // js starts with the local scope. is it there it will take the local variable. if not it will take the global variable
+  const result = num1 + num2 + globalNumber;
+
+  const multiply = function () {
+    const globalNumber = 100;
+    const multiplyResult = result * globalNumber;
+    log(multiplyResult);
+    return multiplyResult;
+  };
+
+  log(result); // 15
+  return multiply(); // 1500
+};
+
+const globalSum = adding(3, 4);
+log(globalSum); // 1500
+
+// ==========================
+// HIGHER ORDER FUNCTIONS --  if that functions gets another function as a argument or returns another function as result
+// ==========================
+
+// higher order function -- because it accepts another function as a argument
+const greetingInADay = function (myname, name, cb) {
+  return `hello my name is ${myname}. ${cb(name)} `;
+};
+
+//callback function
+function morning(nameMorning) {
+  return `And my name is ${nameMorning.toUpperCase()}`;
+}
+
+//call back function
+const evening = function (nameEvening) {
+  return `and my name is ${nameEvening.repeat(4)}`;
+};
+
+const jip = greetingInADay('jip', 'bobo', morning); // not invoking it here
+log(jip);
+log(greetingInADay('tess', 'maria', morning)); // not invoking it here
+log(greetingInADay('joeri', 'shelly', evening));
+
+// console.dir(document); //
+// console.dir(window);

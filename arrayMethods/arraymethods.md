@@ -234,3 +234,9 @@ Objects ::
 - arrays
 - objects literals
 - functions (so also methods())
+
+
+## LOCAL SCOPE
+everything in the codeblock { } so the curlybraces is not acces from the outside.
+
+

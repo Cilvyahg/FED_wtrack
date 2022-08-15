@@ -161,8 +161,8 @@ const isSpiderman = (arr) => {
 };
 
 const isBatman = function (s) {
-    return s.name === 'Batman';
-  }
+  return s.name === 'Batman';
+};
 
 console.log(`Find Spiderman:`, findSuperHero(superheroes, isSpiderman));
 console.log(`Find Batman:`, findSuperHero(superheroes, isBatman));
@@ -210,6 +210,7 @@ const containsNumberBiggerThan10 = (array) => {
   });
 };
 
+// eslint-disable-next-line no-unused-vars
 const containsNumberBiggerThan10v2 = (array) => {
   return hasSome(array);
 };
@@ -269,8 +270,6 @@ console.log(
   isBelow100([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 101, 11, 77, 84, 98])
 );
 
-let randomSum = bigSum([4, 2, 3]);
-
 const bigSum = (reduceNumbers) => {
   return reduceNumbers.reduce(function (accumulatingValue, currentValue) {
     const sum = accumulatingValue + currentValue;
@@ -278,8 +277,76 @@ const bigSum = (reduceNumbers) => {
   });
 };
 
-console.log(
-  bigSum([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28, 11, 77, 84, 98, 101, 206, 234])
-); // output 1118
+let randomSum = bigSum([4, 2, 3]);
+console.log(bigSum([1, 81, 4, 53, 3, 6, 79, 2, 43, 7, 28])); // output 1118
 
 console.log(randomSum);
+
+const log = console.log;
+
+// ===============
+// forEach()
+// ===============
+
+const people = [
+  { name: 'bob', age: 20, position: 'developer' },
+  { name: 'peter', age: 25, position: 'designer' },
+  { name: 'anna', age: 30, position: 'the boss' },
+  { name: 'willy', age: 50, position: 'gardener' },
+];
+
+log(people);
+
+// const showPerson = person =>
+//   log(person.position.toUpperCase());
+
+// log(showPerson)// output a function
+
+// people.forEach(showPerson); // pass by the reference not invoking the showperson function
+const a = function (person) {
+  // it's a callback function
+  log(person.name.toUpperCase());
+};
+
+people.forEach(a);
+
+// ===============
+// .map()
+// ===============
+
+const ages = people.map(function (person) {
+  log(person);
+  return person.age + 20;
+});
+
+log(ages);
+
+const b = function (person) {
+  return [person.age, person.name];
+
+  // let a = {
+  //   firstName: person.name.toUpperCase(),
+  //   oldAge: person.age + 30,
+
+  // };
+  // return a;
+
+}
+
+const newPeople = people.map(b);
+
+log(newPeople);
+
+
+
+
+
+
+// log(b); // b is de functie .. en niet de returnwaarde van de functie 
+// log(b()) // dus als je b invoked dan is de uitkomst de returnwaarde van functie b
+
+
+// let waarde = b();
+// log(waarde)
+// log(b()) // uitkomst van de functie b. 
+

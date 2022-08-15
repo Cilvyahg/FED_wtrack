@@ -240,3 +240,16 @@ Objects ::
 everything in the codeblock { } so the curlybraces is not acces from the outside.
 
 
+## Array Iterators/Methods
+
+they accept a callback function as an argument.
+
+* array.forEach() doesn't return a new array. iterates over an array
+the forEach method calls a function for each element in the array
+
+#### map();
+- it **DOES** return a new array
+- it does not change the size of the original array
+so if the original array has 3 items
+the new array will also have 3 items. the amount will be the same. 
+grabbing the values from the original array and modifying it. 

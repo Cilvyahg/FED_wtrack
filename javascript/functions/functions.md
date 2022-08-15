@@ -425,4 +425,33 @@ als je iets wilt opslaan, kan je het in een bakje stoppen, dit bakje kunnen we e
 variabele namen moeten voldoen aan bepaalde condities. zoals camelCase 
 
 
+// ==========================
+// HIGHER ORDER FUNCTIONS --  if that functions gets another function as a argument or returns another function as result
+// ==========================
+
+// higher order function -- because it accepts another function as a argument
+const greetingInADay = function (myname, name, cb) {
+  return `hello my name is ${myname}. ${cb(name)} `;
+};
+
+//callback function -- passed to another function as an argument and executed inside that function
+function morning(nameMorning) {
+  return `And my name is ${nameMorning.toUpperCase()}`;
+}
+
+//call back function
+const evening = function (nameEvening) {
+  return `and my name is ${nameEvening.repeat(4)}`;
+};
+
+const jip = greetingInADay('jip', 'bobo', morning); // not invoking it here
+log(jip);
+
+log(greetingInADay('tess', 'maria', morning)); // not invoking it here
+log(greetingInADay('joeri', 'shelly', evening));
+
+// console.dir(document); //
+// console.dir(window);
+
+
 

@@ -1072,7 +1072,7 @@ const greetingInADay = function (myname, name, cb) {
   return `hello my name is ${myname}. ${cb(name)} `;
 };
 
-//callback function
+//callback function -- passed to another function as an argument and executed inside that function
 function morning(nameMorning) {
   return `And my name is ${nameMorning.toUpperCase()}`;
 }
@@ -1084,6 +1084,7 @@ const evening = function (nameEvening) {
 
 const jip = greetingInADay('jip', 'bobo', morning); // not invoking it here
 log(jip);
+
 log(greetingInADay('tess', 'maria', morning)); // not invoking it here
 log(greetingInADay('joeri', 'shelly', evening));
 

@@ -205,3 +205,17 @@ You do have to remember to include a return statement in your callback. If you d
 
 ## functions 
 
+return // you can see it as an output
+functions reduce redundacy
+paramaters are like placeholder. parameters are local variables, because they are not accessible outside of the function body.
+
+by default ; if you don't need a return it will be undefined and that is fine. use a return if you need a return value
+
+when you return a value you need to capture this value in a variable otherwise it won't be stored.
+
+
+When using implicit returns, object literals must be wrapped in parenthesis so that the curly braces are not mistaken for the opening of the function's body.
+
+const foo = () => { bar: 1 } // foo() returns undefined
+const foo = () => ({ bar: 1 }) // foo() returns {bar: 1}
+

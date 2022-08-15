@@ -1,6 +1,14 @@
 /* eslint-disable no-unused-vars */
 'use strict';
 
+const log = console.log;
+
+// const arraycool = ['fun', 'joy', 'pretty'];
+
+// console.log(arraycool)
+// arraycool.push('cool');
+// console.log(arraycool);
+
 const items = [
   { name: 'Bike', price: 100 },
   { name: 'TV', price: 200 },
@@ -693,30 +701,35 @@ for (let i = 0; i < functionArray.length; i++) {
 
 console.log(numberSecond);
 
-// !!!!! returnen doe je alleen in een functie en niet in een loop!! 
-
+// !!!!! returnen doe je alleen in een functie en niet in een loop!!
 
 // kan ook in een for .. of loop en makkelijker
 let numberThree = 1;
 for (let func of functionArray) {
   numberThree = func(numberThree);
-  console.log(numberThree)
+  console.log(numberThree);
 }
 
 console.log(numberThree);
-
 
 const str1 = 'hello my name is cilvya';
 const str2 = 'name';
 
 console.log(str1.match(str2));
 
-
 // functions
 
-function getMilk(money) {
-  const cost = Math.floor(money / 1.5);
+const calcBottle = function (startingMoney, costPerBottle) {
+  const numberOfBottles = Math.floor(startingMoney / costPerBottle);
+  return numberOfBottles;
+};
 
+const calcChange = function (startingamount, costPerBottle) {
+  const change = startingamount % costPerBottle;
+  return change; // return as the output
+};
+
+function getMilk(money, costPerBottle) {
   console.log('leaveHouse');
   console.log('moveRight');
   console.log('moveRight');
@@ -726,7 +739,7 @@ function getMilk(money) {
   console.log('moveUp');
   console.log('moveRight');
   console.log('moveRight');
-  console.log('buy' + " " + cost + " " + 'bottles of milk')
+  console.log(`buy`, calcBottle(money, costPerBottle), `bottles of milk`);
   console.log('moveLeft');
   console.log('moveLeft');
   console.log('moveDown');
@@ -736,6 +749,145 @@ function getMilk(money) {
   console.log('moveLeft');
   console.log('moveLeft');
   console.log('enterHouse');
+  return `you get this money returned ${calcChange(money, costPerBottle)} `;
 }
 
-getMilk(10)
+const buying10Milk = getMilk(10, 3);
+console.log(buying10Milk);
+
+// BMI CALCULATOR
+
+const bmiCalculator = function (weight, height) {
+  const bmi = Math.round(weight / Math.pow(height, 2));
+  return `your bmi is ${bmi}`;
+};
+
+console.log(bmiCalculator(62, 1.8));
+
+const anna = 'anna';
+const bob = 'bob';
+
+const hello = function (name) {
+  // this is function declaration
+
+  console.log('hello there   ' + name);
+};
+
+hello(anna); // this is function invocation
+hello(bob); // when you invoke the function you can pass the arguments in the function
+
+// width and height of my wall
+// 1 inch 2.54cm
+const wallHeight = 80; // you can use a variable as argument or just pass it in.
+
+const width = calculate(100);
+const height = calculate(wallHeight);
+
+function calculate(value) {
+  // const newValue = value * 2.54
+  // return newValue;
+
+  // can also write it shorter, but both are good. depends on the logic of your functions
+  return value * 2.54;
+}
+
+const dimensions = [width, height];
+console.log(`this is the array`, dimensions);
+
+// function expression
+const addValues = function (num1, num2) {
+  return num1 + num2; // the variable addValues holds the function. this is an function expression.
+};
+
+const addValuesArrowFunction = (num1, num2) => num1 + num2; //arrow function
+
+const firstValue = addValues(3, 4);
+const secondValue = addValues(12, 34);
+console.log(firstValue, secondValue);
+
+const addArray = [firstValue, secondValue, addValues(8, 9)]; // so you can also put a function invocation in the array everything is possible
+
+console.log(addArray);
+
+// function challenge (subTotal, tax)
+
+const calculateTotal = function (subTotal, tax) {
+  // const total = subTotal + tax;
+  // return total;
+  return subTotal + tax;
+};
+
+console.log(calculateTotal(2, 6));
+
+const order1 = calculateTotal(100, 10); // we are calling the variable that is holding the function
+const order2 = calculateTotal(50, 20);
+const order3 = calculateTotal(10, 5);
+console.log(calculateTotal); // the variable calculateTotal holds a function if you log this in the console
+// you will see that the value of this variable is a function ::::
+//f(subTotal, tax) {
+//return subTotal + tax;
+//}
+
+console.log(order1, order2, order3);
+
+const calculateTotalArrow = (subTotal, tax) => subTotal + tax; // arrow function
+
+console.log({ name: 'john', age: 30 });
+
+//alert({ name: 'john', age: 30 }); // output object object which is not very useful there for its better to use console.log
+
+// ASSIGN VARIABLE VALUE LATER
+
+let name = 'john shrimp taco VI';
+let address, zip, state;
+
+address = '101 main street';
+zip = '60612';
+state = 'California';
+log(address, zip, state);
+log(zip);
+
+// string properties and methods
+// wrapper string objects
+
+let text = ' Peter Jordan';
+let result = text.length; // property length
+// METHODS
+log(text.toUpperCase()) // this is a method, which is actually a built in function that is why we need the parantheses.
+
+log(text.charAt(3)) // as string is also indexed. to get the character at index 2 use the charAt() method 
+//white spaces also counts;
+log(text.charAt(text.length - 1)); // always gets me the last value;
+
+log(text.indexOf('p')) // its -1 because the lowercase p is not in the string
+log(text.indexOf('e')); 
+log(text.startsWith(' peter')); // whitespaces also counts. it's also case sensitive // false 
+log(text.trim())
+log(text.trim().toLowerCase().startsWith('peter'));
+log(text.includes('or')); // does it include a part of the string of text.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const person = {
+  name: 'sarah',
+  greeting() { // this is a object method 
+    console.log('hey i"m', this.name);
+  },
+};
+
+log(person)
+console.log(person.name);
+
+

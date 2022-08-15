@@ -219,3 +219,18 @@ When using implicit returns, object literals must be wrapped in parenthesis so t
 const foo = () => { bar: 1 } // foo() returns undefined
 const foo = () => ({ bar: 1 }) // foo() returns {bar: 1}
 
+The unshift() function changes the array and returns the length of the new array.
+
+## VALUE VS REFERENCE
+Primitive Data types::
+- string
+- number
+- undefined
+- boolean
+- null
+- symbol
+
+Objects ::
+- arrays
+- objects literals
+- functions (so also methods())

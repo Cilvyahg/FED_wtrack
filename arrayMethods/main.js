@@ -853,41 +853,135 @@ log(zip);
 let text = ' Peter Jordan';
 let result = text.length; // property length
 // METHODS
-log(text.toUpperCase()) // this is a method, which is actually a built in function that is why we need the parantheses.
+log(text.toUpperCase()); // this is a method, which is actually a built in function that is why we need the parantheses.
 
-log(text.charAt(3)) // as string is also indexed. to get the character at index 2 use the charAt() method 
+log(text.charAt(3)); // as string is also indexed. to get the character at index 2 use the charAt() method
 //white spaces also counts;
 log(text.charAt(text.length - 1)); // always gets me the last value;
 
-log(text.indexOf('p')) // its -1 because the lowercase p is not in the string
-log(text.indexOf('e')); 
-log(text.startsWith(' peter')); // whitespaces also counts. it's also case sensitive // false 
-log(text.trim())
+log(text.indexOf('p')); // its -1 because the lowercase p is not in the string
+log(text.indexOf('e'));
+log(text.startsWith(' peter')); // whitespaces also counts. it's also case sensitive // false
+log(text.trim());
 log(text.trim().toLowerCase().startsWith('peter'));
 log(text.includes('or')); // does it include a part of the string of text.
 
+// slice(start, end)
+log(text.slice(1, -2)); // dan bij laatste want -1 dan stopt tie er net voor
+log(text.slice(-3)); // starts from the back
 
-
-
-
-
-
-
-
-
-
-
-
-
+log(text);
 
 const person = {
   name: 'sarah',
-  greeting() { // this is a object method 
+  greeting() {
+    // this is a object method
     console.log('hey i"m', this.name);
   },
 };
 
-log(person)
+log(person);
 console.log(person.name);
 
+// ================
+// ARRAY PROPERTIES AND METHODS
+// ================
 
+const namesMethodArray = ['john', 'bobo', 'barry', 'olga', 'ben']; // we need to use quotation marks
+//lenght
+log(namesMethodArray[namesMethodArray.length - 1]); // to get the last index;
+
+//concat()
+
+let lastNames = ['peper', 'salt', 'banana'];
+
+// concat
+const allNamesConcat = namesMethodArray.concat(lastNames);
+log(allNamesConcat);
+
+// but you can also do it with the spread operator
+const allNamesSpread = [...namesMethodArray, ...lastNames];
+log(allNamesSpread);
+log(allNamesSpread.reverse()); // reverse method
+
+// unshift (add something to the beginning of the array)
+
+log(lastNames.unshift('sugar')); // the unshift() method returns the length of the new array
+log(lastNames);
+
+lastNames.unshift('umami');
+log(lastNames);
+
+lastNames.shift(); // moves first index of the array
+log(lastNames);
+
+// splice() method --> splice() mutates the array
+
+const specificNames = lastNames.splice(0, 3);
+log(specificNames);
+
+// arrays and loops
+
+const fullNames = ['anna', 'susy', 'bob', 'john', 'maylyn', 'joshua'];
+const fullLastNames = 'shakeandbake';
+
+let newArray = [];
+
+// for loop
+for (let i = 0; i < fullNames.length; i++) {
+  console.log(i);
+  log(fullNames[i]); // this is how we access the items of the array
+  // you can also put it in a variable first and then add this variable value to push() method
+  const completeName = `${fullNames[i]} ${fullLastNames}`;
+  newArray.push(completeName);
+  //or you can also do it like this below, and do the functionality immediately instead of putting it in a variable first
+  // newArray.push(`${fullNames[i]} ${fullLastNames}`);
+}
+
+log(newArray);
+
+// calculateTotal exercise
+
+const gas = [20, 40, 100, 30];
+const food = [10, 40, 50];
+
+const calculateTotalPrice = function (arr) {
+  let total = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+
+  if (total > 100) {
+    log(`WHOAH, YOU ARE SPENDING WAY TO MUCH`);
+    return total; // you put in here total because otherwise total will not be returned when this condition is true;
+
+  } else {
+    log(`You are good total is less then a 100`);
+  }
+
+  return total;
+};
+
+const totalGas = calculateTotalPrice(gas);
+const totalFood = calculateTotalPrice(food);
+const totalRandom = calculateTotalPrice([2, 3, 6, 7]);
+log(totalGas);
+log(totalFood);
+log(totalRandom);
+
+// you can log it as an object as well.
+
+log({
+  gas: totalGas,
+  food: totalFood,
+  random: totalRandom,
+});
+
+// ==================
+// VALUE VS Reference
+// ==================
+
+const numberOne = 1;
+const number2 = numberOne;
+log(`the first number is ${numberOne}, the secondNumber is ${number2}`);

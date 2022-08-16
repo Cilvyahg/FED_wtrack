@@ -244,7 +244,8 @@ everything in the codeblock { } so the curlybraces is not acces from the outside
 
 they accept a callback function as an argument.
 
-* array.forEach() doesn't return a new array. iterates over an array
+## forEach()
+ array.forEach() doesn't return a new array. iterates over an array
 the forEach method calls a function for each element in the array
 
 #### map();
@@ -253,3 +254,28 @@ the forEach method calls a function for each element in the array
 so if the original array has 3 items
 the new array will also have 3 items. the amount will be the same. 
 grabbing the values from the original array and modifying it. 
+
+ ## filter() 
+ - returns a new array 
+ - can manipulate the size of a new array according to its condition
+ - returns based on condition
+ - returns a boolean
+ - nothing matches the condition you will get an empty array [] returned
+
+ since we are getting a new array this is how you can access the items(property) within the array.
+
+ log(findEricFilter[0].age, findEricFilter[0].name);
+
+ ## find()
+ - return a single object , a single instance
+ - doens't return an array 
+ - returns the first match, if there is no match : 'undefined'
+ - great for getting unique value, and not so good for repeated values like name = bob
+ name = bob
+ name = bob
+
+ but if you have a unique name like name = dreamy it's better to use find()
+
+
+
+

@@ -322,31 +322,100 @@ const ages = people.map(function (person) {
 log(ages);
 
 const b = function (person) {
-  return [person.age, person.name];
-
-  // let a = {
-  //   firstName: person.name.toUpperCase(),
-  //   oldAge: person.age + 30,
-
-  // };
-  // return a;
-
-}
+  // return [person.age, person.name];
+  let a = {
+    firstName: person.name.toUpperCase(),
+    oldAge: person.age + 30,
+  };
+  return a;
+};
 
 const newPeople = people.map(b);
 
 log(newPeople);
 
-
-
-
-
-
-// log(b); // b is de functie .. en niet de returnwaarde van de functie 
-// log(b()) // dus als je b invoked dan is de uitkomst de returnwaarde van functie b
-
+// log(b); // b is de functie .. en niet de returnwaarde van de functie
 
 // let waarde = b();
 // log(waarde)
-// log(b()) // uitkomst van de functie b. 
+// log(b()) // uitkomst van de functie b.
+
+const namesNew = people.map(function (person) {
+  return `<h1>${person.name}</h1>`;
+});
+
+log(namesNew);
+
+log((document.body.innerHTML = namesNew.join('*****')));
+
+const strSplit = 'My name is Bert';
+
+const strSplitNew = strSplit.split(' ', 4); // ['My', 'name', 'is', 'Bert']
+log(strSplitNew);
+log(strSplitNew.join(' ')); // My name is Bert
+
+// ==========
+// filter()
+// ==========
+
+const youngPeople = people.filter(function (person) {
+  return person.age <= 25;
+});
+log(youngPeople);
+
+let dev = function (person) {
+  return person.position === 'developer';
+};
+log(dev); // function
+
+const developer = people.filter(dev);
+
+log(developer); // array with one index (object of Bob)
+
+// ==========
+// find()
+// ==========
+
+const peopleFind = [
+  { name: 'bob', age: 20, position: 'developer', id: 1 },
+  { name: 'peter', age: 25, position: 'designer', id: 2 },
+  { name: 'anna', age: 30, position: 'the boss', id: 3 },
+  { name: 'willy', age: 50, position: 'gardener', id: 4 },
+];
+log(peopleFind);
+
+const findPerson = peopleFind.find(function (person) {
+  // function body
+  return person.id === 3;
+});
+
+log(findPerson);
+
+const findNames = ['bob', 'eric', 'julia', 'mario', 'soumeya'];
+
+log(findNames.find(function (name) {
+  return name === 'eric'; // returns the name item with the value of 'eric'
+})); 
+
+
+
+const findEric = findNames.filter(function (name) {
+  return name === 'eric'; // returns the name item with the value of 'eric'
+});
+log(findEric) // output['eric']
+
+const findEricFilter = peopleFind.filter(function (name) {
+  return name.name === 'bob'  // returns the name item with the value of 'eric'
+});
+
+log(findEricFilter[0].age, findEricFilter[0].name); // output 20 // output bob 
+// when using filter() we are getting a new array 
+
+
+// ==============
+// reduce
+// ==============
+
+
+
 

@@ -276,6 +276,21 @@ grabbing the values from the original array and modifying it.
 
  but if you have a unique name like name = dreamy it's better to use find()
 
+## reduce()
 
+iterates, callback function
+reduces to a single value, number, array, object
+so you are not limited to numbers!! 
+1 parameter ('acc') - total of all calculations
+2 paramater ('curr') - current iteration/value 
+
+
+## IIFE 
+immediately invoked function expression
+
+
+## HOISTING
+function and var declarations are hoisted
+safer to access only after initialized.
 
 

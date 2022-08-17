@@ -363,11 +363,8 @@ const youngPeople = people.filter(function (person) {
 });
 log(youngPeople);
 
-
-
-
 let dev = function (person) {
-  return person.position === 'developer';  // boolean
+  return person.position === 'developer'; // boolean
 };
 log(dev); // function
 
@@ -375,14 +372,12 @@ const developer = people.filter(dev);
 
 log(developer); // array with one index (object of Bob)
 
-
 const funcFilter = function (array, cb) {
-  const devo = array.filter(cb); // filter functie zegt geef mij een functie als parameter en niet de invoked function. 
+  const devo = array.filter(cb); // filter functie zegt geef mij een functie als parameter en niet de invoked function.
   return devo;
-}
+};
 
 log(funcFilter(people, dev));
-
 
 const people1 = [
   { name: 'bob', age: 20, position: 'developer' },
@@ -403,14 +398,12 @@ const filter = function (array, fn) {
   return res;
 };
 
-let een = 1
+let een = 1;
 
-console.log(een)
-console.log(1)
+console.log(een);
+console.log(1);
 
-log(filter(people1, dev))
-
-
+log(filter(people1, dev));
 
 // ==========
 // find()
@@ -433,35 +426,33 @@ log(findPerson);
 
 const findNames = ['bob', 'eric', 'julia', 'mario', 'soumeya'];
 
-log(findNames.find(function (name) {
-  return name === 'eric'; // returns the name item with the value of 'eric'
-})); 
-
-
+log(
+  findNames.find(function (name) {
+    return name === 'eric'; // returns the name item with the value of 'eric'
+  })
+);
 
 const findEric = findNames.filter(function (name) {
   return name === 'eric'; // returns the name item with the value of 'eric'
 });
-log(findEric) // output['eric']
+log(findEric); // output['eric']
 
 const findEricFilter = peopleFind.filter(function (name) {
-  return name.name === 'bob'  // returns the name item with the value of 'eric'
+  return name.name === 'bob'; // returns the name item with the value of 'eric'
 });
 
-log(findEricFilter[0].age, findEricFilter[0].name); // output 20 // output bob 
-// when using filter() we are getting a new array 
-
+log(findEricFilter[0].age, findEricFilter[0].name); // output 20 // output bob
+// when using filter() we are getting a new array
 
 // ==============
 // reduce
 // ==============
 
-
 const peopleReduce = [
   { name: 'bob', age: 20, position: 'developer', id: 1, salary: 200 },
-  { name: 'peter', age: 25, position: 'designer', id: 2 ,salary: 300},
-  { name: 'anna', age: 30, position: 'the boss', id: 3,  salary: 500},
-  { name: 'willy', age: 50, position: 'self-employed', id: 4, salary: 500},
+  { name: 'peter', age: 25, position: 'designer', id: 2, salary: 300 },
+  { name: 'anna', age: 30, position: 'the boss', id: 3, salary: 500 },
+  { name: 'willy', age: 50, position: 'self-employed', id: 4, salary: 500 },
 ];
 
 log(peopleReduce);
@@ -469,21 +460,18 @@ log(peopleReduce);
 //currentItem : represents each item of the array so every element /index of the array;
 
 const totalReduce = peopleReduce.reduce(function (accumulate, currentItem) {
-  log(`total: ${accumulate}`)
+  log(`total: ${accumulate}`);
   log(`current money: ${currentItem.salary}`);
   accumulate += currentItem.salary;
 
   return accumulate;
-  
 }, 0);
 
 log(`totalsalary is : ${totalReduce}`);
 
-
 // ============
 // IIFE
 // ============
-
 
 const num1 = 30;
 const num2 = 50;
@@ -494,17 +482,41 @@ function add2() {
 
 log(add2());
 
-// IIFE // they are scoped locally 
+// IIFE // they are scoped locally
 
 (function () {
   const num3 = 30;
   const num4 = 50;
-  log(`i"m a IIFE total : ${num3 + num4}`)
-  log('i"m a IIFE')
+  log(`i"m a IIFE total : ${num3 + num4}`);
+  log('i"m a IIFE');
 })();
 
 // passing in arguments in the IIFE
 (function (num3, num4) {
-  log(`i"m a IIFE  parameter and this is my total : ${num3 - num4}`)
+  log(`i"m a IIFE  parameter and this is my total : ${num3 - num4}`);
 })(400, 100);
 
+// =========
+// closure
+// =========
+
+const newAccount = function (name, initialBalance) {
+  let balance = initialBalance;
+
+  function showBalance() {
+    return`hey ${name}, your balance is ${balance}`;
+  }
+
+  return showBalance;
+};
+
+log(newAccount('susan', 500)());
+
+log(newAccount('john', 300)());
+
+// const bob = newAccount('bob', 1000);
+const john = newAccount('john', 400)
+log(john());
+
+// john();  
+// bob();

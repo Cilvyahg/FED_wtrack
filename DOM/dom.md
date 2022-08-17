@@ -8,7 +8,6 @@ dom is the interface between js and the webpage
 
 the dom is automatically created by the browser as soon as the HTML page loads.
 
-#
 
 # DOM
 
@@ -20,6 +19,11 @@ console.dir(value) in order to get the objects
 
 document.getElementsByTagName()
 document.getElementsByClassName()
+
+in the DOM each element becomes an object or node, we can use built in methods to interact with these nodes. 
+
+
+
 
 **Nodes versus Element nodes**
 Nodes are all the different components the webpage contains of also textnodes and comments. Elements are one type of nodes. Elements are only HTMNL elements.
@@ -478,3 +482,14 @@ console.dir(document)
 console.dir(window)
 
 
+## children
+
+use the children property instead of childNodes property. with the childNodes property you will also get the text, empty spaces node. with the 
+>
+>parent.children 
+>
+
+you will only get the element
+
+
+## parent element

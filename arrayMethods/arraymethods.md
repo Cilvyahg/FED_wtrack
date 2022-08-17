@@ -293,4 +293,5 @@ immediately invoked function expression
 function and var declarations are hoisted
 safer to access only after initialized.
 
-
+## CLOSURE
+closure gives you an access to an outer function's scope from an inner function

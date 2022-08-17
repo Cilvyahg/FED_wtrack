@@ -82,7 +82,6 @@ PART 2
 =============
  */
 
-
 const firstSection1 = document.getElementById('first-section');
 
 // the result is I see the first section element with all its children so with the ptags
@@ -124,7 +123,7 @@ document.body.appendChild(newImg);
 const newH3 = document.createElement('h3');
 console.log(newH3);
 
-newH3.innerText = '<i>hello</i>';
+newH3.innerHTML = '<strong> hello</strong>';
 
 document.body.appendChild(newH3);
 
@@ -201,6 +200,98 @@ function aa(a) {
 const body = document.body;
 const div = document.createElement('div');
 const newDiv = body.append(div);
-div.innerText = 'this is a new div'.toUpperCase();
+div.innerText = 'this is a new div'.toUpperCase().split(' ');
 
-console.log('hello')
+//================
+
+const log = console.log;
+
+const result = document.querySelector('#result');
+result.style.backgroundColor = 'blue';
+
+const list = document.querySelectorAll('.special');
+log(list);
+
+list.forEach(function (item) {
+  item.style.color = 'yellow';
+});
+
+const lastItem = document.querySelector('li:last-child'); // to get the last child.
+// log(lastItem);
+
+// ===== TRAVERSE THE DOM TREE =====
+
+const resultUL = document.querySelector('#result');
+const allChildren = resultUL.children;
+log(allChildren);
+
+log(resultUL.firstChild);
+log(resultUL.lastChild);
+
+// parent -- going upwards
+
+const heading = document.querySelector('h2');
+const parent = heading.parentElement;
+parent.style.color = 'red';
+
+// previousSibling
+// nextSibling
+// they do return whitespace
+
+// ==== FUNCTIONS =====
+//password
+
+const isValidPassword = function (password, username) {
+  if (
+    password.length >= 8 &&
+    password.indexOf(' ') === -1 &&
+    !password.includes(username)
+  ) {
+    return true;
+  }
+  return false;
+};
+
+log(isValidPassword('heya78689', 'heya'));
+
+const isValidPass = function (password, username) {
+  if (password.length < 8) {
+    return false;
+  }
+  if (password.indexOf(' ') !== -1) {
+    return false;
+  }
+  if (password.includes(username)) {
+    return false;
+  }
+  return true;
+};
+
+log(isValidPass('heya7867', 'oio liiooh'));
+
+// =====AVERAGE=====
+
+const averageArray = function (arr) {
+  // make a variable to store the sum
+  // loop over each num
+  // add them together
+  // divide by number of nums
+
+  let total = 0;
+
+  for (let num of arr) {
+    total += num;
+  }
+
+  let result = total / arr.length;
+  return result;
+};
+
+log(averageArray([5, 8, 6, 4]));
+
+// =====PANGRAM======
+// a pangram is a sentence that contains every letter of the alphabet like: 'The quick brown fox jumps over the lazy dog'
+
+const isPangram = function (sentence) {
+  
+}

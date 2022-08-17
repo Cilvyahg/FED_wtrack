@@ -357,15 +357,13 @@ log(isPangram2('abcdefghijklmnopqrstuvwxyz'));
 // ==== GET PLAYING CARD ====
 
 const pick = function (arr) {
-
   //returns random element from arr
 
   const pickRandom = arr[Math.floor(Math.random() * arr.length)];
-  return pickRandom; 
-}
+  return pickRandom;
+};
 
-log(pick([1,6,8,9,9])) // om te zien of de functie werkt; 
-
+log(pick([1, 6, 8, 9, 9])); // om te zien of de functie werkt;
 
 const getCard = function () {
   const values = [
@@ -382,18 +380,16 @@ const getCard = function () {
     'J',
     'Q',
     'K',
-    'A'
+    'A',
   ]; // 0-13 index - 14 items
 
   const valuesRandom = pick(values);
-
 
   const suits = 'clubs spades hearts diamonds';
   const suitsArray = suits.split(' ');
   const suitsRandom = pick(suitsArray);
 
   function randomGenerator() {
-
     const randomObject = {
       value: valuesRandom, // kan ook pick(values)
       suit: suitsRandom, // kan ook pick(suitArray) -- om de code nog korter te maken
@@ -408,9 +404,151 @@ log(getCard());
 log(getCard());
 log(getCard());
 
+const isPurple = function (color) {
+  if (color.toLowerCase() === 'purple') {
+    return true;
+  }
+  return false;
+};
+
+log(isPurple('purple'));
+
+// you can write it shorter .. only works for true or false
+
+const isRed = function (color) {
+  return color.toLowerCase() === 'red'; // <--- this is a boolean expression
+};
+
+log(isRed('pink')); // false
+log(isRed('red')); // true
+
+const colorArray = ['pink', 'blue', 'green'];
+
+const containsPurple = function (arr) {
+  for (let color of arr) {
+    if (color === 'purple' || color === 'magenta') {
+      return true;
+    }
+  }
+  // if none of the colors in the array returns true (so if it never is true) then return false outside of the loop.
+  return false; // put it outside of the loop because otherwise it will stop the if statement because it needs to get checked for every color of the colorarray
+};
+
+log(containsPurple(colorArray));
+log(containsPurple(['red', 'magenta', 'blue']));
+
+// === HIGHER ORDER FUNCTIONS ===
+
+const multiply = function (x, y) {
+  return x * y;
+};
+
+const add = function (x, y) {
+  return x + y;
+};
+
+const substract = function (x, y) {
+  return x - y;
+};
+
+const divide = function (x, y) {
+  return x / y;
+};
+
+//making an array with all the functions as elements in it
+
+const operations = [multiply, add, substract, divide];
+log(operations);
+
+const operationGenerator = function (arr, x, y) {
+  let result = 0;
+
+  for (let func of arr) {
+    result = result + func(x, y);
+    log(result);
+  }
+  return result;
+};
+
+log(operationGenerator(operations, 2, 4)); // de uitkomst van de invocatie operationgenerator is 12.5
+
+// ==== HIGHER ORDER FUNCTIONS =====
+
+const callThreeTimes = function (func) {
+  func();
+  func();
+  func();
+};
+
+function cry() {
+  log('hello');
+}
+
+log(callThreeTimes(cry));
+
+function rage() {
+  log(`I HATE EVERYTHING`);
+}
+
+const repeat = function (func, number) {
+  for (let i = 0; i < number; i++) {
+    func();
+  }
+};
+
+// log(repeat(rage, 5));
+
+function pickOne(func1, func2, x , y) {
+  let random = Math.random(); 
+  log(random);
+
+  if (random < 0.5) {
+    func1(x,y)
+  } else {
+    func2(x,y)
+  }
+}
+
+log(pickOne(cry, rage)); 
+
+// === RETURNING FUNCTIONS ==== made a function factory
+
+//function factores, the function itself returns a function
+
+const multiplyBy = function (number) {
+
+  return function (x) {
+    return x * number
+  }
+}
+
+log(multiplyBy(3)(5));
+
+log(multiplyBy())
+
+const triple = multiplyBy(3) // the output is a function so tripel is a function. 
+log(triple)
+
+log(triple(2));
+
+
+const makeBetweenFunc = function (x, y) {
+  return function (num) {
+    return num >= x && num <= y;
+    // returns a boolean because it's a logical expression
+  }
+}
+
+const isOlder = makeBetweenFunc(30, 50)(10)
+log(isOlder);
+
+const isNiceWeather = makeBetweenFunc(30, 90)
+log(isNiceWeather);
+log(isNiceWeather(20))
 
 
 
+// ==== CALLBACKS ====
 
 
 

@@ -1,5 +1,7 @@
 # FUNCTIONS
 functies zijn niks meer dan het opdelen van stukjes in code die je zo vaak kunt oproepen zoals je wilt.
+functions zijn objects
+
 
 ## WHY FUNCTIONS?
 - je kunt ze beschrijvende namen geven
@@ -412,6 +414,9 @@ or
 
  deze functies geven een functie mee, maar er zijn ook functies die een functie teruggeven aan een andere functie
 
+ * accepts other functions as argumements
+ * return a function
+
 
 ## functions live les
 
@@ -455,6 +460,8 @@ log(greetingInADay('joeri', 'shelly', evening));
 
 
 ## return statement
-- end function execution .. the code afterward won't be executed
+- if the code will be run with the return then the execution stops like for example with if statement will only stop the execution when the return statement will be executed.
+
+- so if you go over an array and inside of it there is a loop and you want to check for all index then put the return of else outside of the loop
 
 

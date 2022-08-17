@@ -472,3 +472,8 @@ A callback function is a function passed into another function as an argument , 
 anytime we pass a function to another function and it's executed in that function it is called a callback.
 
 array methods have callback functions
+
+## THIS
+In regular functions "this" determined 'how'  a function is invoked (left of .)
+- default to this refers to the window global object. if we invoke a this with nothing on the left side
+it will defaulted to the window object

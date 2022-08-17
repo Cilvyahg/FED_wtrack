@@ -550,7 +550,7 @@ const grumpus = function () {
   alert('my first setTimeout');
 };
 
-// setTimeout(grumpus, 5000); 
+// setTimeout(grumpus, 5000);
 
 // setTimeout(function () {
 //   alert('welcome'.toUpperCase());
@@ -559,6 +559,74 @@ const grumpus = function () {
 const coltBtn = document.querySelector('#colt-btn');
 console.dir(coltBtn);
 
-coltBtn.addEventListener('click', function () { // passing it in as an anonymous function as a callback
-  alert('why did u click me??')
-}) 
+coltBtn.addEventListener('click', function () {
+  // passing it in as an anonymous function as a callback
+  alert('why did u click me??');
+});
+
+// =====MAP=====
+
+const numb = [20, 21, 22, 23, 24, 25, 26, 27];
+const words = ['asap', 'byob', 'rvsp', 'diy'];
+
+const numbNew = numb.map(function (num) {
+  return num * 2;
+});
+
+const isEven = numb.map(function (num) {
+  return {
+    value: num,
+    isEven: num % 2 === 0, // logical operators expressions returns a boolean
+  };
+});
+
+log(isEven);
+
+// === SPLIT AND JOIN ===
+
+const splitAndJoin = words.map(function (word) {
+  const splittedWord = word.toUpperCase().split('');
+  log(splittedWord);
+  const joinedWord = splittedWord.join('.');
+
+  return joinedWord;
+});
+
+log(splitAndJoin);
+
+// == THIS ==
+
+const maggie = {
+  firstName: 'pien',
+  lastName: 'lolapo',
+  fullName: function () {
+    log(this)
+    log(`My fullname is ${this.firstName} ${this.lastName}`);
+  },
+};
+
+log(this) // global window object .. will always point to the window object
+
+function showThis() {
+  log(this)
+}
+
+const philly = {
+  firstName: 'phil',
+  lastName: 'toole',
+  showThis: showThis,
+}
+
+philly.showThis(); // points to the object philly
+
+
+const b1 = document.querySelector('#b1');
+const b2 = document.querySelector('#b2');
+
+b1.addEventListener('click', showThis)
+b2.addEventListener('click', showThis)
+
+b2.addEventListener('mouseover', function () {
+  this.classList.add('shaka');
+  
+});

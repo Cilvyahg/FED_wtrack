@@ -131,6 +131,20 @@ const is200Pounds = superHeroes
   .map((name) => name.name);
 console.log(is200Pounds); // output ["Thor", "Wolverine", "DareDevil"]
 
+
+
+const is200PoundsMap = function (arr) {
+  return arr.map(function (hero) {
+    return hero
+  }).filter(function (hero) {
+    return hero.weight == 200;
+  });
+}
+
+
+console.log(is200PoundsMap(superHeroes)); 
+
+
 //4. Make an array with all the comics where the superheroes had their "first appearances".
 
 const heroFirstAppearance = superHeroes.map((name) => {

@@ -293,5 +293,124 @@ log(averageArray([5, 8, 6, 4]));
 // a pangram is a sentence that contains every letter of the alphabet like: 'The quick brown fox jumps over the lazy dog'
 
 const isPangram = function (sentence) {
-  
+  let lowerCasedSentence = sentence.toLowerCase(); // because the array you are looping over is lowercased so the sentence needs to be converted into lowercased
+
+  for (let char of [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+  ]) {
+    log(char);
+    if (lowerCasedSentence.indexOf(char) === -1) {
+      return false;
+    }
+  }
+  return `yes it is a Pangram`;
+};
+
+log(isPangram('Abcdefghijklmnopqrstuvwxyz'));
+
+// you can also write it with with includes() method
+
+// let alphabet = 'abcdefghijklmnopqrstuvxyz';
+// let alphabetSplit = alphabet.split("");
+// log(alphabetSplit);
+
+const isPangram2 = function (phrase) {
+  let lowerCasesPhrase = phrase.toLowerCase();
+  let alphabet = 'abcdefghijklmnopqrstuvxyz';
+  let alphabetToArray = [...alphabet];
+
+  for (let char of alphabetToArray) {
+    if (!lowerCasesPhrase.includes(char)) {
+      return false;
+    }
+  }
+  return `yes the ${lowerCasesPhrase} is a pangram`;
+};
+
+log(isPangram2('abcdefghijklmnopqrstuvwxyz'));
+
+// ==== GET PLAYING CARD ====
+
+const pick = function (arr) {
+
+  //returns random element from arr
+
+  const pickRandom = arr[Math.floor(Math.random() * arr.length)];
+  return pickRandom; 
 }
+
+log(pick([1,6,8,9,9])) // om te zien of de functie werkt; 
+
+
+const getCard = function () {
+  const values = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    'J',
+    'Q',
+    'K',
+    'A'
+  ]; // 0-13 index - 14 items
+
+  const valuesRandom = pick(values);
+
+
+  const suits = 'clubs spades hearts diamonds';
+  const suitsArray = suits.split(' ');
+  const suitsRandom = pick(suitsArray);
+
+  function randomGenerator() {
+
+    const randomObject = {
+      value: valuesRandom, // kan ook pick(values)
+      suit: suitsRandom, // kan ook pick(suitArray) -- om de code nog korter te maken
+    };
+    return randomObject;
+  }
+  return randomGenerator();
+};
+
+log(getCard());
+log(getCard());
+log(getCard());
+log(getCard());
+
+
+
+
+
+
+

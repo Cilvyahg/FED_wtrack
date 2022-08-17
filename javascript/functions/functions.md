@@ -454,4 +454,7 @@ log(greetingInADay('joeri', 'shelly', evening));
 // console.dir(window);
 
 
+## return statement
+- end function execution .. the code afterward won't be executed
+
 

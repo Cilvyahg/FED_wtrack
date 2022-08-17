@@ -167,5 +167,8 @@ They dwelt in their strawy pen .
 Nor did it occur to one of us there .  
 To doubt they were kneeling then.
 
-## How does the internet works?
+## DEBUGGING IN DEVTOOLS
+
+console
+go to sources to see the files
 

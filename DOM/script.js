@@ -498,57 +498,67 @@ const repeat = function (func, number) {
 
 // log(repeat(rage, 5));
 
-function pickOne(func1, func2, x , y) {
-  let random = Math.random(); 
+function pickOne(func1, func2, x, y) {
+  let random = Math.random();
   log(random);
 
   if (random < 0.5) {
-    func1(x,y)
+    func1(x, y);
   } else {
-    func2(x,y)
+    func2(x, y);
   }
 }
 
-log(pickOne(cry, rage)); 
+log(pickOne(cry, rage));
 
 // === RETURNING FUNCTIONS ==== made a function factory
 
 //function factores, the function itself returns a function
 
 const multiplyBy = function (number) {
-
   return function (x) {
-    return x * number
-  }
-}
+    return x * number;
+  };
+};
 
 log(multiplyBy(3)(5));
 
-log(multiplyBy())
+log(multiplyBy());
 
-const triple = multiplyBy(3) // the output is a function so tripel is a function. 
-log(triple)
+const triple = multiplyBy(3); // the output is a function so tripel is a function.
+log(triple);
 
 log(triple(2));
-
 
 const makeBetweenFunc = function (x, y) {
   return function (num) {
     return num >= x && num <= y;
     // returns a boolean because it's a logical expression
-  }
-}
+  };
+};
 
-const isOlder = makeBetweenFunc(30, 50)(10)
+const isOlder = makeBetweenFunc(30, 50)(10);
 log(isOlder);
 
-const isNiceWeather = makeBetweenFunc(30, 90)
+const isNiceWeather = makeBetweenFunc(30, 90);
 log(isNiceWeather);
-log(isNiceWeather(20))
-
-
+log(isNiceWeather(20));
 
 // ==== CALLBACKS ====
 
+const grumpus = function () {
+  alert('my first setTimeout');
+};
 
+// setTimeout(grumpus, 5000); 
 
+// setTimeout(function () {
+//   alert('welcome'.toUpperCase());
+// }, 2000);
+
+const coltBtn = document.querySelector('#colt-btn');
+console.dir(coltBtn);
+
+coltBtn.addEventListener('click', function () { // passing it in as an anonymous function as a callback
+  alert('why did u click me??')
+}) 

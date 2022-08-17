@@ -465,3 +465,10 @@ log(greetingInADay('joeri', 'shelly', evening));
 - so if you go over an array and inside of it there is a loop and you want to check for all index then put the return of else outside of the loop
 
 
+## CALLBACK FUNCTIONS
+
+A callback function is a function passed into another function as an argument , which is then invoked inside the outer function. 
+
+anytime we pass a function to another function and it's executed in that function it is called a callback.
+
+array methods have callback functions

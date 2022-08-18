@@ -603,7 +603,6 @@ document.querySelector('#input-2').addEventListener('blur', function (e) {
   console.log(e);
 });
 
-
 // SORT array Methods
 
 console.log(['b', 'a', 'c', 'g'].sort());
@@ -1090,42 +1089,79 @@ log(greetingInADay('joeri', 'shelly', evening));
 // === ARRAY METHOD ::: EVERY() ===
 // test whether ALL elements in the array pass the provided function. It returns a Boolean value;
 
-
 const words = ['doggg', 'diggg', 'log', 'batgggggg', 'wag'];
 
 const wordsOfThree = function (array) {
-
- return array.every(function (element) {
+  return array.every(function (element) {
     return element.length === 3;
-    
-  })
-}
+  });
+};
 
-log(wordsOfThree(words))
+log(wordsOfThree(words));
 
 // debugger;
 
 const endWithG = words.every(function (word) {
   const last = word.length - 1;
   log(last);
-  return word[last] === 'g'
+  return word[last] === 'g';
 });
 
-log(endWithG) // false because not all word ends with 'g'
-
+log(endWithG); // false because not all word ends with 'g'
 
 // op het hele document keydown AND DETECTING KEYBOARD PRESS IN JS
 
-document.addEventListener('keydown', function(e)  {
+document.addEventListener('keydown', function (e) {
   console.log(e.key); //welke toets wordt er getoetst
 });
 
-
-// checks if the first index of the word element contains a i 
+// checks if the first index of the word element contains a i
 
 const hasCinWord = words.some(function (word) {
-  log(word)
-  return word[1].includes("c")
-})
+  log(word);
+  return word[1].includes('c');
+});
 
 log(hasCinWord);
+
+// === SORT() ===
+
+const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500];
+
+const priceSlice = prices.slice().sort();
+log(priceSlice);
+
+// ASCENDING
+const ascendingSort = [...prices].sort(function (a, b) {
+  return a - b;
+});
+
+log(ascendingSort);
+
+//DESCENDING
+const descendingSort = [...prices].sort(function (a, b) {
+  return b - a;
+});
+log(descendingSort);
+
+
+log(Math.max(99, 60, 40, 3, 8));
+
+
+
+// ==== ...SPREAD FOR FUNCTION CALLS ===
+
+const giveMeFour = function (a, b, c, d) {
+  log('a', a)
+  log('b', b)
+  log('c', c)
+  log('d', d)
+}
+
+
+log(giveMeFour(5, 6, 8, 4))
+
+const coleure = ['red', 'pink', 'orange', 'green']
+
+log(giveMeFour(...coleure))
+

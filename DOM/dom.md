@@ -493,5 +493,9 @@ use the children property instead of childNodes property. with the childNodes pr
 
 you will only get the element
 
+# body
+document.body.innerText = "" 
 
-## parent element
+# innerText 
+when updating the innertext of the nested elements will also be affected. so for example if you have an UL with li's in it. changing the UL innerText will change what's inside of UL and what is inside of UL are also li's so li's will dissapear and the new innerText will be displayed
+

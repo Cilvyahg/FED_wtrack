@@ -298,11 +298,18 @@ const words = ["dog", "dig", "log", "bag", "wag"];
 >
 
 
-## SOME
+## SOME()
 Similair to every() but returns true if ANY of the array elements pass the test function.  so if there is AT LEAST ONE ELEMENT THAT PASSES TRUE IT WILL RETURN TRUE.  
 
 it won't loop over the whole array will just return true when the true condition is met for the first time. 
 
+
+## SORT()
+by default sort() converts the array elements based on strings, rather than actual values
+
+dus [12, 3000, 35.99, 9500, 99.9]
+
+the sort() array method does mutates the array
 
 
 ## IIFE 

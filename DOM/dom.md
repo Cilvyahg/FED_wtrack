@@ -497,5 +497,14 @@ you will only get the element
 document.body.innerText = "" 
 
 # innerText 
-when updating the innertext of the nested elements will also be affected. so for example if you have an UL with li's in it. changing the UL innerText will change what's inside of UL and what is inside of UL are also li's so li's will dissapear and the new innerText will be displayed
+when updating the innertext of the nested elements will also be affected. so for example if you have an UL with li's in it. changing the UL innerText will change what's inside of UL and what is inside of UL are also li's so li's will dissapear and the new innerText will be displayed. 
+
+it doesn't ignore the tags but ends up with the tags as a string so the <b> <b> will be shown. that can only be done with innerHTML
+
+
+
+# textContent (gives back all the text)
+# innerHTML 
+gives back all the tags, attributes and etc.innerHTML allows
+us to pass in tags like <b> styling and etc. 
 

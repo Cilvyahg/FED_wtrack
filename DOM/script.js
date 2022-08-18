@@ -605,6 +605,7 @@ const maggie = {
   },
 };
 
+
 log(this) // global window object .. will always point to the window object
 
 function showThis() {
@@ -630,3 +631,5 @@ b2.addEventListener('mouseover', function () {
   this.classList.add('shaka');
   
 });
+
+

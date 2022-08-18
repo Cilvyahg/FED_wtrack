@@ -285,6 +285,26 @@ so you are not limited to numbers!!
 2 paramater ('curr') - current iteration/value 
 
 
+
+## every() 
+tests whether all elements in the array pass the provided function. it returns a boolean value : true or false. runs the function for every element and look if it's true or false.
+
+so checks ALL elements for example
+
+const words = ["dog", "dig", "log", "bag", "wag"];
+
+>
+>words.every(function(word) {return word.>length === 3;})
+>
+
+
+## SOME
+Similair to every() but returns true if ANY of the array elements pass the test function.  so if there is AT LEAST ONE ELEMENT THAT PASSES TRUE IT WILL RETURN TRUE.  
+
+it won't loop over the whole array will just return true when the true condition is met for the first time. 
+
+
+
 ## IIFE 
 immediately invoked function expression
 

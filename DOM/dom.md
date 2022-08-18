@@ -23,6 +23,8 @@ document.getElementsByClassName()
 in the DOM each element becomes an object or node, we can use built in methods to interact with these nodes. 
 
 
+you need to understand the basics html and css when you want to use the DOM.
+
 
 
 **Nodes versus Element nodes**

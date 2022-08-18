@@ -603,10 +603,6 @@ document.querySelector('#input-2').addEventListener('blur', function (e) {
   console.log(e);
 });
 
-// op het hele document keydown
-document.addEventListener('keydown', (e) => {
-  console.log(e.key); //welke toets wordt er getoetst
-});
 
 // SORT array Methods
 
@@ -1090,3 +1086,46 @@ log(greetingInADay('joeri', 'shelly', evening));
 
 // console.dir(document); //
 // console.dir(window);
+
+// === ARRAY METHOD ::: EVERY() ===
+// test whether ALL elements in the array pass the provided function. It returns a Boolean value;
+
+
+const words = ['doggg', 'diggg', 'log', 'batgggggg', 'wag'];
+
+const wordsOfThree = function (array) {
+
+ return array.every(function (element) {
+    return element.length === 3;
+    
+  })
+}
+
+log(wordsOfThree(words))
+
+// debugger;
+
+const endWithG = words.every(function (word) {
+  const last = word.length - 1;
+  log(last);
+  return word[last] === 'g'
+});
+
+log(endWithG) // false because not all word ends with 'g'
+
+
+// op het hele document keydown AND DETECTING KEYBOARD PRESS IN JS
+
+document.addEventListener('keydown', function(e)  {
+  console.log(e.key); //welke toets wordt er getoetst
+});
+
+
+// checks if the first index of the word element contains a i 
+
+const hasCinWord = words.some(function (word) {
+  log(word)
+  return word[1].includes("c")
+})
+
+log(hasCinWord);

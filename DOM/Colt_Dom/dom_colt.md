@@ -79,3 +79,14 @@ the method appendChild() will append the child as the last element of the parent
 
 remove() is not supported in IE just like append() en prepend()
 
+# Events
+the addEventListener has an eventtype as argument, and a callback function as argument
+
+
+getElementsbyTagName() is live, meaning that it is automatically updated wgen elements with the matching tag name are added or removed from the document. Note that the HTMLCollection is an array-like object, like arguments object of a function.
+
+
+## Event Object
+
+the event object is always firing but we are not capturing it unless we do it by for example saving it in a Variable. 
+

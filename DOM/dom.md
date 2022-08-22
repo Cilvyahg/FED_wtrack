@@ -508,3 +508,13 @@ it doesn't ignore the tags but ends up with the tags as a string so the <b> <b> 
 gives back all the tags, attributes and etc.innerHTML allows
 us to pass in tags like <b> styling and etc. 
 
+** window.screen ** 
+
+property
+window.innerHeight
+window.innerWidth
+
+
+// this is refering the addEventListener is attached to. 
+
+

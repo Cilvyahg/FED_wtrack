@@ -4,10 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
+
     <title>DOM</title>
   </head>
   <body>
+    <h1>Hello you</h1>
+
+    <form action="">
+      <input type="text" placeholder="bear" />
+      <input type="password" placeholder="password" />
+      <input type="checkbox" />
+      <input type="range" min="100" max="500" />
+
+      <input type="submit" />
+    </form>
+
+    <br />
+    <div>
+      <a
+        href="https://images.unsplash.com/photo-1535068484622-7a077e5aa558?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YnV0dGVyZmx5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+        target="_blank"
+      >
+        Beautiful butterflies</a
+      >
+      <img
+        id="butterfly-photo"
+        src="https://images.unsplash.com/photo-1535068484622-7a077e5aa558?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YnV0dGVyZmx5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60"
+        alt="butterfly"
+        width="300"
+      />
+    </div>
+
+    <label for="name">Your name</label>
+    <input type="text" name="name" id="name" />
+    <br />
+    <label for="password">Your password</label>
+    <input type="password" name="password" id="password" />
+
+    <ul class="list-1">
+      <li class="special"> 1 special</li>
+      <li>2</li>
+      <li class="special">3 special</li>
+      <li>I am not special</li>
+      <li class="unique">I am unique</li>
+    </ul>
+
+    <section>
+      <li>carrots</li>
+      <li class="special">peas</li>
+      <li>brocolli</li>
+      <li>kale</li>
+    </section>
+
     <script defer src="./script.js"></script>
   </body>
 </html>

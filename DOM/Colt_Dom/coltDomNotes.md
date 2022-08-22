@@ -41,23 +41,41 @@ for radiobuttons use radiobutton.checked = true/false
 input.value = " ...."
 range.value = " ... " (set for example a max and min)
 
-
 ### href, src
+
 some attributes like src and href can be directly accessed on the object
 
 ## nextElementSibling, previousElementSibling, parentElement, children
-these are properties. 
+
+these are properties.
 
 ## Style property
+
 every element has a style property.
-if you set something with the style property you style it inline so it will be in the HTML page. 
+if you set something with the style property you style it inline so it will be in the HTML page.
 disadvantage ; is that you'll have to do every style seperately that is why this is not convenient. Style one at a time. so it's better to use classed in the CSS.
 property names of style properties are camelCased there are no hyphens
 
-
-!NOTE
+!NOTE :: Inline styles overwrite everything
 because inline styles do have priority over css styling that is why those styles will be applied when style.property is used in javascript. so it's not changing the style in our CSS but changing the styles in our inline styling individually.
 
+## getComputedStyle()
 
+to retrieve the current styles also from the CSS this is how to do it.
+getComputedStyle() is a method
 
+## createElement();
+
+first createElement() and then parent.appendChild(child)
+
+the method appendChild() will append the child as the last element of the parent
+
+### appendChild() 
+
+* appendChild() append the child to the end of the parent
+* insertBefore()
+
+## removeChild(), remove()
+
+remove() is not supported in IE just like append() en prepend()
 

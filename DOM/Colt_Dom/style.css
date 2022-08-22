@@ -1,21 +1,42 @@
 h1 {
   font-family: 'Bungee Shade', cursive;
-  color: rgb(100, 66, 135);
+  color: rgb(226, 95, 193);
 }
 
-form :not(input[type="submit"], [type="checkbox"]) {
-display:flex;
-flex-direction: column;
-width: 20vw;
-
+h1:hover {
+  color: black;
 }
 
-form > input:not(input[type="submit"]) {
+form :not(input[type='submit'], [type='checkbox']) {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+
+form > input:not(input[type='submit']) {
   margin-top: 6px;
 }
 
 img {
   display: block;
   margin-bottom: 1rem;
+}
+
+.todo {
+  font-size: 20px;
+  color: olive;
+}
+
+.done {
+  color: rgb(177, 137, 226);
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.heading {
+  color: red; 
+  font-weight: bold;
+  border: 2px solid purple;
+  text-align: center;
 }
 

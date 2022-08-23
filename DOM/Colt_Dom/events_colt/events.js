@@ -203,4 +203,39 @@ for (let input of formInput) {
   });
 }
 
+// makes an array van strings
+// eslint-disable-next-line no-unused-vars
+const friends = Array.of('hello', 12, 19, 'lalalalalal');
+
+// === ARRAY FROM NODELIST ====
+// we can also turn the nodelist in an array with a [...spread] operator
+// we cannot iterate over an nodelist
+
+const p = document.querySelectorAll('p');
+const result = document.getElementById('result');
+const second = document.getElementById('second');
+
+// const pArray = [...p];
+// log(pArray);
+
+let newText = Array.from(p);
+log(newText);
+
+newText = newText
+  .map(function (element) {
+    return `<span>${element.textContent}</span>`;
+  })
+  .join(' ');
+
+log(newText);
+
+result.innerHTML = newText;
+
+// THE Array.from() method can take a optional parameter mapFN which is map() function on each element of the array being created. here the function(item) is the second parameter
+const text = Array.from(document.querySelectorAll('p'), function (item) {
+  return `<i>${item.innerText}</i>`;
+}).join(' ');
+
+second.innerHTML = text;
+
 

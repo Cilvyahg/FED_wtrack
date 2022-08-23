@@ -529,3 +529,5 @@ The `.checked` property gives back a boolean (true or false)
 use this for input radiobuttons, input checkbox
 
 here the `.value` property like for other input elements won't work.
+
+

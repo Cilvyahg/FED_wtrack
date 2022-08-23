@@ -105,15 +105,52 @@ input.addEventListener('keypress', function () {
 const addItemInput = document.querySelector('#addItem');
 const itemsUL = document.querySelector('#items');
 
-addItemInput.addEventListener('keypress', function (e) {
+const updateToShoppingList = function (e) {
   log(e);
+  log(this.value);
+
+  // if (this.value.length === 0) {
+  // return;
+  // }
+  if (this.value === "") return;
 
   if (e.key === 'Enter') {
-    //add new item to list
-    const newItemText = this.value;
+
+    // if (!this.value) return; // this kan ook dus als de value = false waar is doe dan return
+   
+    const newItemText = this.value.toUpperCase();
     const newItem = document.createElement('li');
-    newItem.innerText = newItemText;
+
+    const textBox = document.createTextNode(newItemText);
+    newItem.appendChild(textBox);
+    newItem.style.color = 'hotpink';
     itemsUL.appendChild(newItem);
-    this.value =''; // 
+
+    //  zelfde als hieronder :::
+    // newItem.innerText = newItemText;
+    // newItem.style.color = "hotpink";
+
+    this.value = ''; // the addItemInput wordt na de bovenstaande handelingen weer leeggemaakt. dus na de enter wordt de input leeggemaakt
+    // en dit zet je hier omdat je na de enter wilt dat de input weer leeg is. 
   }
+};
+
+addItemInput.addEventListener('keypress', updateToShoppingList);
+
+
+// ==== FORM e.preventDefault ====
+
+const form = document.querySelector('#signup-form');
+const creditCardInput = document.querySelector('#creditcard');
+const termsCheckBox = document.querySelector('#terms');
+const veggieSelect = document.querySelector('#veggie');
+
+console.dir(termsCheckBox);
+
+form.addEventListener('submit', function (e) {
+  log(e);
+  e.preventDefault(); // preventing the form from it's typical form behavior
+  log(`CREDITCARD VALUE = ${creditCardInput.value}`);
+  log(`TERMS VALUE = ${termsCheckBox.checked}`); // instead of value use 'checked' for checkbox and for radiobuttons
+  log(`VEGGIE VALUE = ${veggieSelect.value}`);
 });

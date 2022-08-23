@@ -151,3 +151,7 @@ Input events -- like keyUp, keyDown,  KeyPress
 for example 'delete' is not a keypress
 for example 'return' is a keypress
 
+keydown and keyup will fire for any key -- one will fire when we press down other up.
+keypress only fires 
+
+

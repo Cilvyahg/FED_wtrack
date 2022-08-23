@@ -8,7 +8,6 @@ dom is the interface between js and the webpage
 
 the dom is automatically created by the browser as soon as the HTML page loads.
 
-
 # DOM
 
 document object is where everything is contained and within it there are methods and properties you can change. you can manipulate all these through the document.
@@ -20,12 +19,9 @@ console.dir(value) in order to get the objects
 document.getElementsByTagName()
 document.getElementsByClassName()
 
-in the DOM each element becomes an object or node, we can use built in methods to interact with these nodes. 
-
+in the DOM each element becomes an object or node, we can use built in methods to interact with these nodes.
 
 you need to understand the basics html and css when you want to use the DOM.
-
-
 
 **Nodes versus Element nodes**
 Nodes are all the different components the webpage contains of also textnodes and comments. Elements are one type of nodes. Elements are only HTMNL elements.
@@ -458,15 +454,14 @@ querySelector() are also methods.
 document = also a object that is why you can put the querySelector() on the document.
 window is also a object and the window has a document property.
 
-
 nodelist is almost like a array but not exact the same
 
 log(btn.nodeName) --> property nodeName van de btn
 log(btn.style) --> all the styles properties van de btn
 window --> to see all the properties from the window.
 
+## window object
 
-## window object  
 browser api - it gives us methods and properties to work with the browser
 
 and in the window object we have the document property
@@ -476,49 +471,61 @@ alert is also a property of the window but if it can't find it then it will go s
 
 same as for document.addEventListern();
 
-
 console.dir(object)
 to see all the methods and the properties that the object can have
 for example
 console.dir(document)
 console.dir(window)
 
-
 ## children
 
-use the children property instead of childNodes property. with the childNodes property you will also get the text, empty spaces node. with the 
->
->parent.children 
->
+use the children property instead of childNodes property. with the childNodes property you will also get the text, empty spaces node. with the
+
+> parent.children
 
 you will only get the element
 
 # body
-document.body.innerText = "" 
 
-# innerText 
-when updating the innertext of the nested elements will also be affected. so for example if you have an UL with li's in it. changing the UL innerText will change what's inside of UL and what is inside of UL are also li's so li's will dissapear and the new innerText will be displayed. 
+document.body.innerText = ""
+
+# innerText
+
+when updating the innertext of the nested elements will also be affected. so for example if you have an UL with li's in it. changing the UL innerText will change what's inside of UL and what is inside of UL are also li's so li's will dissapear and the new innerText will be displayed.
 
 it doesn't ignore the tags but ends up with the tags as a string so the <b> <b> will be shown. that can only be done with innerHTML
 
-
-
 # textContent (gives back all the text)
-# innerHTML 
-gives back all the tags, attributes and etc.innerHTML allows
-us to pass in tags like <b> styling and etc. 
 
-** window.screen ** 
+# innerHTML
+
+gives back all the tags, attributes and etc.innerHTML allows
+us to pass in tags like <b> styling and etc.
+
+** window.screen **
 
 property
 window.innerHeight
 window.innerWidth
 
-
-// this is refering the addEventListener is attached to. 
+// this is refering the addEventListener is attached to.
 
 ## CreatTextNode()
+
 The createTextNode() method is used to create a TextNode which contains element node and a text node. It is used to provide text to an element. This method contains the text values as parameter which is of string type. Syntax: document.createTextNode(text);
 
+## e.preventDefault()
 
+like submitting a form
+when submitting you will directed to another webpage after clicking submit
+by using the e.preventDefault() you will stop this default behavior
 
+when you have set the preventDefault when you look at
+log(e) you will see the property 'defaultPrevented : true' ;
+
+**Checked**
+
+The `.checked` property gives back a boolean (true or false)
+use this for input radiobuttons, input checkbox
+
+here the `.value` property like for other input elements won't work.

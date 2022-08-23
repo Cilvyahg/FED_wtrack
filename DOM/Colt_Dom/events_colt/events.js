@@ -2,45 +2,45 @@
 
 const log = console.log;
 
-// const btn = document.getElementsByTagName('button')[0];
-// log(btn);
+const btn = document.getElementsByTagName('button')[0];
+log(btn);
 
-// const buttonClick = function () {
-//   btn.addEventListener('click', function () {
-//     this.classList.toggle('button-pink');
-//   });
-// };
+const buttonClick = function () {
+  btn.addEventListener('click', function () {
+    this.classList.toggle('button-pink');
+  });
+};
 
-// buttonClick();
+buttonClick();
 
-// btn.addEventListener('mouseover', function () {
-//   this.innerText = 'I"M IN';
+btn.addEventListener('mouseover', function () {
+  this.innerText = 'I"M IN';
+});
+
+btn.addEventListener('mouseout', function () {
+  this.innerText = 'I"M OUT';
+});
+
+// window.addEventListener('scroll', function () {
+//   document.body.style.backgroundColor = "beige";
 // });
 
-// btn.addEventListener('mouseout', function () {
-//   this.innerText = 'I"M OUT';
-// });
+const btn2 = document.querySelector('.button-2');
 
-// // window.addEventListener('scroll', function () {
-// //   document.body.style.backgroundColor = "beige";
-// // });
+btn2.addEventListener('mouseover', function (e) {
+  log(e);
 
-// const btn2 = document.querySelector('.button-2');
+  const windowHeight = Math.floor(Math.random() * window.innerHeight);
+  const windowWidth = Math.floor(Math.random() * window.innerWidth);
 
-// btn2.addEventListener('mouseover', function (e) {
-//   log(e);
+  this.style.left = `${windowWidth}px`;
+  this.style.top = `${windowHeight}px`;
+});
 
-//   const windowHeight = Math.floor(Math.random() * window.innerHeight);
-//   const windowWidth = Math.floor(Math.random() * window.innerWidth);
-
-//   this.style.left = `${windowWidth}px`;
-//   this.style.top = `${windowHeight}px`;
-// });
-
-// btn2.addEventListener('click', function () {
-//   this.innerText = 'YOU GOT ME';
-//   document.body.style.backgroundColor = 'red';
-// });
+btn2.addEventListener('click', function () {
+  this.innerText = 'YOU GOT ME';
+  document.body.style.backgroundColor = 'red';
+});
 
 const colors = [
   'red',
@@ -112,12 +112,11 @@ const updateToShoppingList = function (e) {
   // if (this.value.length === 0) {
   // return;
   // }
-  if (this.value === "") return;
+  if (this.value === '') return;
 
   if (e.key === 'Enter') {
-
     // if (!this.value) return; // this kan ook dus als de value = false waar is doe dan return
-   
+
     const newItemText = this.value.toUpperCase();
     const newItem = document.createElement('li');
 
@@ -131,12 +130,11 @@ const updateToShoppingList = function (e) {
     // newItem.style.color = "hotpink";
 
     this.value = ''; // the addItemInput wordt na de bovenstaande handelingen weer leeggemaakt. dus na de enter wordt de input leeggemaakt
-    // en dit zet je hier omdat je na de enter wilt dat de input weer leeg is. 
+    // en dit zet je hier omdat je na de enter wilt dat de input weer leeg is.
   }
 };
 
 addItemInput.addEventListener('keypress', updateToShoppingList);
-
 
 // ==== FORM e.preventDefault ====
 
@@ -155,41 +153,53 @@ form.addEventListener('submit', function (e) {
   log(`VEGGIE VALUE = ${veggieSelect.value}`);
 });
 
-
 // === INPUT / CHANGE ===
 
 //async represenation of the data from the form
 // so all the events are triggered before the customer submits the form
 
-// const formData = {}; 
+// const formData = {};
 // creditCardInput.addEventListener('input', function (e) {
-  //   log(`CC changed`, e)
-  //   formData["creditcard"] = e.target.value;
-  
-  // })
-  
-  // veggieSelect.addEventListener('input', function (e) {
-    //   log(`veggie changed`, e)
-    //   formData["veggie"] = e.target.value;
-    
-    // })
-    // termsCheckBox.addEventListener('input', function (e) {
-      //   log(`checkbox changed`, e)
-      //   formData["agreeToTerms"] = e.target.checked;
-      
-      // })
+//   log(`CC changed`, e)
+//   formData["creditcard"] = e.target.value;
 
+// })
 
-      
-      
+// veggieSelect.addEventListener('input', function (e) {
+//   log(`veggie changed`, e)
+//   formData["veggie"] = e.target.value;
+
+// })
+// termsCheckBox.addEventListener('input', function (e) {
+//   log(`checkbox changed`, e)
+//   formData["agreeToTerms"] = e.target.checked;
+
+// })
+
 const formData = {}; // making a new object
-const formInput = [creditCardInput, termsCheckBox, veggieSelect]; 
+const formInput = [creditCardInput, termsCheckBox, veggieSelect];
+
+//////// DESTRUCTURING ////////
+
+// for (let input of formInput) {
+//   input.addEventListener('input', function ({ target }) {
+//     const { name, type, value, checked } = target;
+//     formData[name] = type === 'checkbox' ? checked : value;
+//     log(formData)
+//   });
+// }
+
+log(veggieSelect.type); // 'select-one' type
 
 for (let input of formInput) {
-  input.addEventListener('input', function ({ target }) {
-    const { name, type, value, checked } = target;
+  input.addEventListener('input', function (e) {
+    const name = e.target.name;
+    const type = e.target.type;
+    const value = e.target.value;
+    const checked = e.target.checked;
     formData[name] = type === 'checkbox' ? checked : value;
-    log(formData)
+    log(e);
+    log(formData);
   });
 }
 

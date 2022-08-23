@@ -517,4 +517,8 @@ window.innerWidth
 
 // this is refering the addEventListener is attached to. 
 
+## CreatTextNode()
+The createTextNode() method is used to create a TextNode which contains element node and a text node. It is used to provide text to an element. This method contains the text values as parameter which is of string type. Syntax: document.createTextNode(text);
+
+
 

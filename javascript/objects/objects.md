@@ -245,3 +245,20 @@ in     operator -- heeft het object deze key?
 hasOwnProperty -- 
 
 
+keys  will be converted automatically in strings when creating an object
+
+```
+const object = {
+  45: 'hello', 
+  100: 'stront'
+}
+
+```
+you can't access the key 45 like this
+object.45
+
+but this because it's converted into a string now
+
+
+object[45]
+object['45']

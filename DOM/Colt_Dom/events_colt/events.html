@@ -31,21 +31,22 @@
     <input type="text" name="addItem" id="addItem" placeholder="enter a food" />
     <ul id="items"></ul>
 
-
-
-
-
     <h3>Creditcard</h3>
 
     <!-- Form Events & PreventDefault -->
 
     <form id="signup-form" action="/signup" method="get">
-      <input type="text" placeholder="creditcard code" id="creditcard" />
+      <input
+        name="creditcard"
+        type="text"
+        placeholder="creditcard code"
+        id="creditcard"
+      />
       <label>
         I agree to sell my soul to your company
-        <input type="checkbox" id="terms"/>
+        <input name="agreeToTerms" type="checkbox" id="terms" />
       </label>
-      <select name="" id="veggie">
+      <select name="selectedVeggie" id="veggie">
         <option value="eggplants">Eggplants</option>
         <option value="asparagus">Asparagus</option>
         <option value="carrots">Carrots</option>

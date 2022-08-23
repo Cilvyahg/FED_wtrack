@@ -154,3 +154,43 @@ form.addEventListener('submit', function (e) {
   log(`TERMS VALUE = ${termsCheckBox.checked}`); // instead of value use 'checked' for checkbox and for radiobuttons
   log(`VEGGIE VALUE = ${veggieSelect.value}`);
 });
+
+
+// === INPUT / CHANGE ===
+
+//async represenation of the data from the form
+// so all the events are triggered before the customer submits the form
+
+// const formData = {}; 
+// creditCardInput.addEventListener('input', function (e) {
+  //   log(`CC changed`, e)
+  //   formData["creditcard"] = e.target.value;
+  
+  // })
+  
+  // veggieSelect.addEventListener('input', function (e) {
+    //   log(`veggie changed`, e)
+    //   formData["veggie"] = e.target.value;
+    
+    // })
+    // termsCheckBox.addEventListener('input', function (e) {
+      //   log(`checkbox changed`, e)
+      //   formData["agreeToTerms"] = e.target.checked;
+      
+      // })
+
+
+      
+      
+const formData = {}; // making a new object
+const formInput = [creditCardInput, termsCheckBox, veggieSelect]; 
+
+for (let input of formInput) {
+  input.addEventListener('input', function ({ target }) {
+    const { name, type, value, checked } = target;
+    formData[name] = type === 'checkbox' ? checked : value;
+    log(formData)
+  });
+}
+
+

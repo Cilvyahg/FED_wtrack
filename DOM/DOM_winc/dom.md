@@ -155,3 +155,9 @@ keydown and keyup will fire for any key -- one will fire when we press down othe
 keypress only fires 
 
 
+## eventtype 'input'
+
+the input event fires when the value of an <input> <select> <textarea> element has been changed. 
+
+input will always change live update 
+with the change event things will fire when it is changed. 

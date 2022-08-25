@@ -6,8 +6,6 @@ when you enter a domanname the browser will call a DNS server and that will tran
 
 and then the browser can actually make that request to the server which has the IP address and the server will send it back to the browser
 
-
-
 ### HTTP request and responses code
 
 browser can be your Iphone, chrome
@@ -15,6 +13,21 @@ browser can be your Iphone, chrome
 server has an ip address
 
 you connects to the server --> request and responses
+domain name will converted to an IP address (DNS)
+
+
+client make the request and the server responds.
+you make this request using the HTTP protocol (standards that we all agreed to).
+
+
+Protocols :
+HTTP
+FTP 
+DNS and etc
+
+## HTTP Protocol Status Codes
+Status codes let us know whether the request was a succes, a failure or something in between.
+
 
 **Assets requests**
 asset (is another request)
@@ -38,13 +51,15 @@ DELETE request -- javascript will send a delete request to the server to for exa
 
 user-agent
 
+When you are accessing any page on the internet or interacting on a website (e.g. clicking a link), you’re often requesting a whole bunch of documents from that server. Maybe it’s HTML, maybe it’s CSS, maybe it’s an image, a PDF file—whatever it is, the basic relationship stays the same: you make a request, the server responds.
+
 ## AJAX
 
 refers to making requests on the page while it's already been loaded or after it's been loaded, making request behind the scenes.
 
 ## PING command
 
-stands for packet internet groper. the ping sent data packets to the server and the server repplies with sending it back or other replies. see below. 
+stands for packet internet groper. the ping sent data packets to the server and the server repplies with sending it back or other replies. see below.
 
 with the ping you can test ::
 
@@ -80,7 +95,7 @@ PING udemy.com (104.16.65.85): 56 data bytes
 --- udemy.com ping statistics ---
 5 packets transmitted, 5 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 18.264/18.772/19.484/0.439 ms
-cilvya@Cillie-codes-MBP ~ % 
+cilvya@Cillie-codes-MBP ~ %
 
 
 ```
@@ -93,25 +108,22 @@ ping localhost (in terminal)
 
 if you get a reply it means your network card is working properly
 
-
 is a simple tool to trouble shoot network. if we reserve a reply then its a good sign it means there is a network connectivity
 
 ping is a simple way to send network data to, and receive network data from, another computer on a network. It is frequently used to test, at the most basic level, whether another system is reachable over a network, and if so, how much time it takes for that data to be exchanged.
 
-ping 8.8.8.8.8 if you are pinging to another server but have troubles with the DNS to check if it's because of the internet network or not. if the ping test from google is positive it means there are some DNS issues 
+ping 8.8.8.8.8 if you are pinging to another server but have troubles with the DNS to check if it's because of the internet network or not. if the ping test from google is positive it means there are some DNS issues
 
 ## TRACEROUTE
 
 The Internet is a global network of routers
-the tracerout is a command line utility that used to show the exact route the data packets has taken from the sender  to the destination.
+the tracerout is a command line utility that used to show the exact route the data packets has taken from the sender to the destination.
 
-this way you can find bottlenecks for example find where a connection to a server might be lagging(achterblijven). 
+this way you can find bottlenecks for example find where a connection to a server might be lagging(achterblijven).
 
 traceroute differs from the ping that is pings each router on its way to the destination
 
-
 routers read ip addresses. routers routes data from one network to another based on their IP address. a router is essentially a gateway for its network.
-
 
 ## URI URL URN
 
@@ -119,7 +131,12 @@ difference URI and URL
 
 A URI identifies a resource either by location, or a name, or both. A URI has two specializations known as URL and URN.
 
+A URI is a standard method for identifying resources on the internet by their location, name, or both. URN and URL together are known as URI.
+
+![image](./Screenshot%202022-08-24%20at%2016.24.51.png)
+
 ## HTTP Protocol Status Codes
+
 the internet is made out of clients(browser) and servers
 whenever you go to a website you are actually acccessing their server.
 for example the facebook server
@@ -127,13 +144,84 @@ for example the facebook server
 you make the request and the server responds
 
 status codes let us know if the request was succesfull or not
-there are kinds of HTTP Status Codes
+there are kinds of HTTP Status Codes Blocks: 
 
-* 1xx - informational
-* 2xx - succes
-* 3xx - redirection request
-* 4xx - client error. any 400 code is a client error
-* 5xx - server error - the client made a good request but something is wrong with the server
+
+- 1xx - informational -- can also mean it's still processing and not yet completed the request
+
+- 2xx - succes -- THIS IS WHAT YOU WANT. 200 means perfect
+- 3xx - redirection request
+- 4xx - client error. any 400 code is a client error
+- 5xx - server error - the client made a good request but something is wrong with the server. 
+
+
+Code 301 --> permanently moved to a new URL - 301 redirects instead
+code 302 --> link equity is not passed
+
+
+403 --> forbidden
+404 -- not found
+410 --> this page is gone 
+429 --> user send to many requests
+
+500 --> usually unexpected error from the server
+503 --> is a expected error for example u havent paid the bill to the  webhost 
+bot are crawling as well 
+
+
+
+## HTTP Headers
+
+HTTP verbs
+
+GET request - get or retrieve information
+PUT
+POST request - when we are sending something
+DELETE
+
+## USING POSTMAN
+
+Postman is een API Client
+
+
+what is an API
+Application Programming Interface
+api faciliteert de communicatie tussen twee applicaties.
+
+REST Api
+dus een api die op een webserver staat en gebruikt HTTP request om te communiceren.
+
+**HTTP Requests**
+
+GET PUT POST DELETE
+(CRUD) = Create Read Update Delete
+
+GET = Read
+PUT = Update
+POST = CREATE // aanmaken van data
+DELETE = DELETE
+
+## Callstack
+
+Last in .. first out ... 
+like a stack of books .. when you remove something from the top. you will move the thing that was added most recently.
+
+## REST
+Representation State Trasfer
+it's just a fancy way of saying Create, Read, Update en Delete.
+
+
+# POSTMAN
+
+HTTP Requist builder 
+- Method
+- Address
+- Body
+- Headers
+- Cookies
+
+
+
 
 
 

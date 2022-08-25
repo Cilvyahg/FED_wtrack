@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+#wrapper:hover .card {
+  transform: rotateY(180deg);
+}
+.card {
+  height: 300px;
+  width: 200px;
+  position: relative;
+  transition: all 1000ms linear;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.front {
+  background: linear-gradient(
+    10deg,
+    rgb(231, 136, 188),
+    rgb(66, 66, 178),
+    rgb(182, 143, 244)
+  );
+  backface-visibility: hidden;
+  z-index: 2;
+}
+
+.back {
+  background: linear-gradient(45deg, rgb(222, 216, 179), rgb(15, 44, 15));
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.card :hover {
+  transform: translateY(180deg);
+}
+
+#wrapper {
+  perspective: 1000px;
+}
+/*  perspetive of you and the computer */

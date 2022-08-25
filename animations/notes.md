@@ -81,10 +81,14 @@ x-axis and y-axis
 `rotateZ(45deg)` draait met de klok mee of terug -45deg
 rotate(.25turn)
 
-rotate(.25turn) is net zoals rotateZ. Volgens Kyle wordt de rotateX en rotateY bijna niet gebruikt dan behalve bij 3D animaties. 
+rotate(.25turn) is net zoals rotateZ. Volgens Kyle wordt de rotateX en rotateY bijna niet gebruikt dan behalve bij 3D animaties.
 
 
+# keyframes
 
+transform and opacity is best for animations
+ negative values go to left x-axis
+ and positive values go to the right x-axis
 
 
 

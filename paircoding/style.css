@@ -3,12 +3,13 @@
   margin: 0;
 }
 
+
 body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgb(38, 23, 23);
 }
 
 #wrapper:hover .card {
@@ -24,7 +25,7 @@ body {
   width: 200px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 5000ms linear; 
+  transition: transform 1000ms linear; 
   /*  wanneer je de transition hier op zet dan is dit zowel begin stand als eindstand, dus heen en terug
   wanneer je ook transitie op de #wrapper:hover .card zou zetten dan wordt deze stand overgeschreven tijdens de hover
   maar blijft de terugweg wel op deze transitie staan  */

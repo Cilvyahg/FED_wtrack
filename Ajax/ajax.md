@@ -221,8 +221,36 @@ HTTP Requist builder
 - Cookies
 
 
+# Async 
+
+at any given point in time, that single JS thread running at most one line of js code. One thing is run at a time.
+
+javascript is a one threaded. 
 
 
+## callstack
+
+callstack is the mechanism the JS interpreter uses to keep track of its place in a script that calls multiple functions. How JS 'knows' what function is currently being run and what functions are being called are from within that function
+
+a stack of books, or stack of plates .. the last thing that was added will be the first thing out. you grab from the top. that is how the callstack works.
+
+function call that are added latest will be finish the first
+because the other functions are waiting for the value of the other function that afe being called
+
+## Async callbacks
+
+js is not the same as your browser. but the browser itself (safari, firefox) are usually writing in C++ .. the browser takes over and reminds js again like okay its ur time again. the browser handles it.
+
+
+## OKAY BUT HOW? 
+* browsers come with Web API's that are able to handle certain tasks in the background (like making requests and setTimout(), setInterval). tasks that takes time. the browser is capable doing that in the background. 
+
+js hands the settimeout of the browser. like hi browser can u set a timer for 3 seconds. and js can go on with the code. the browser takes it and after the set seconds in the timeout function the browser will put the function to the callstack. so js doesn't keep track of time but the web api's on the browser. 
+
+
+* **The JS callstack recognizes these Web API's** functions and passed them off to the browser to take care of
+
+* Once the browser finishes those tasks, they return and are pushed onto the stack as a callback;
 
 
 

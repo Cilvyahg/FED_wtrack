@@ -252,6 +252,9 @@ js hands the settimeout of the browser. like hi browser can u set a timer for 3 
 
 * Once the browser finishes those tasks, they return and are pushed onto the stack as a callback;
 
+## PROMISES
+A promise is an object representing the eventual completion or failure of an asynchronous operation
+
 
 
 

@@ -477,3 +477,87 @@ array methods have callback functions
 In regular functions "this" determined 'how'  a function is invoked (left of .)
 - default to this refers to the window global object. if we invoke a this with nothing on the left side
 it will defaulted to the window object
+
+## new Set()
+
+Set objects are collections of values. A value in the set may only occur once. it is unique in the set's collection. Set can hold data of any type but may not containe duplicate items
+
+
+Sets do not have built-in sort functionality, however the easiest way to sort a set is to convert it to an array (for example with map()) and implementing array's sort method. Since, set is an iterable object, we can build our own sorting algorithm of our choice.
+
+
+```
+const products = [
+  {
+    title: 'high back bench',
+
+    company: 'ikea',
+  },
+  {
+    title: 'albany table',
+
+    company: 'marcos',
+  },
+  {
+    title: 'accent chair',
+
+    company: 'caressa',
+  },
+  {
+    title: 'wooden table',
+
+    company: 'ikea',
+  },
+];
+
+console.table(products);
+
+------> to get the array from only the companies name
+
+const companies = products.map(function (product) {
+  log(product);
+  return product.company;
+});
+
+log(companies);
+
+
+-------> to only get Unique companies
+
+const uniqueCompanies = new Set();
+
+log(new Set()); // empty object 
+
+uniqueCompanies.add(companies);
+log(uniqueCompanies); 
+
+// now it's still an object with an array in it but we want to change it into a array with the company names.
+
+const finalCompanies = [...uniqueCompanies]; // stored in an array, it's converted in an array now by using the spread ... operator
+log(finalCompanies);
+```
+
+
+
+## call, apply, bind
+
+
+#### call()
+call() function runs instantly
+
+functionName.call(thisArg, arg1, arg2, ...)
+ this syntax, the call() method calls a function functionName with the arguments (thisArg, arg1, arg2, …) and the this set to thisArg object inside the function.
+
+when we use call() we can change where we want this is pointing to
+
+
+### bind()
+
+bind doesnt run instantly. we can assign it an use it later. 
+call and apply are run immediately
+
+
+
+
+
+

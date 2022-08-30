@@ -172,3 +172,32 @@ To doubt they were kneeling then.
 console
 go to sources to see the files
 
+
+
+## JSON
+Javascript Object notation is an open standard file format or data interchange format that uses human readable text to transmit data objects consisting of key value pairs and array data types.
+
+**how to understand  json**
+
+- key , value pairs <---- together this is a json object
+
+key value pairs, json objects, json array
+
+
+## POSTMAN
+
+#### GET REQUEST
+GET request are used to retrieve information from the given URL. there will be no changes done to the endpoint. 
+
+*Note: There may be cases that Get Postman request may be unsuccessful. It can be due to an invalid request URL or authentication is needed.
+
+## POST REQUEST
+Post requests are different from Get request as there is data manipulation with the user adding data to the endpoin
+
+## Parameterization 
+Instead of creating the same requests with different data, you can use variables with parameters. These data can be from a data file or an environment variable.
+
+Parameters are created through the use of double curly brackets: {{sample}}
+
+## Create Collections
+

@@ -90,3 +90,19 @@ getElementsbyTagName() is live, meaning that it is automatically updated wgen el
 
 the event object is always firing but we are not capturing it unless we do it by for example saving it in a Variable. 
 
+adapts it to the window
+
+window.innerWidth
+window.innerHeight
+
+
+Element.getReboudingClientRect();
+// gives us the height, width and location of the elemement 
+we get the proper dimension of widht and heigt of the element and the where its on the viewport.
+
+## resize event
+
+`resize` eventtype .. it will listening to the resizing of the window. 
+
+# scroll event
+

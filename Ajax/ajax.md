@@ -242,19 +242,91 @@ because the other functions are waiting for the value of the other function that
 js is not the same as your browser. but the browser itself (safari, firefox) are usually writing in C++ .. the browser takes over and reminds js again like okay its ur time again. the browser handles it.
 
 
+when all the synchronous stuff finish first then the asynchronous stuff run
+
+
+
+
 ## OKAY BUT HOW? 
 * browsers come with Web API's that are able to handle certain tasks in the background (like making requests and setTimout(), setInterval). tasks that takes time. the browser is capable doing that in the background. 
 
 js hands the settimeout of the browser. like hi browser can u set a timer for 3 seconds. and js can go on with the code. the browser takes it and after the set seconds in the timeout function the browser will put the function to the callstack. so js doesn't keep track of time but the web api's on the browser. 
 
 
-* **The JS callstack recognizes these Web API's** functions and passed them off to the browser to take care of
+
+ **The JS callstack recognizes these Web API's** functions and passed them off to the browser to take care of
 
 * Once the browser finishes those tasks, they return and are pushed onto the stack as a callback;
 
 ## PROMISES
-A promise is an object representing the eventual completion or failure of an asynchronous operation
+promise is asynchronous::
+
+A promise is an object representing the eventual completion or failure of an asynchronous operation.
+
+Promise is just an object. Usually is a way promosing a value that you may not have at the moment. 
+
+the Promise function takes two parameters (which are functions).
+the two parameters are resolve, reject
+// resolve()
+// reject()
+
+if we do neither the promise will have the status of pending
+
+
+syntax: we create a Promise by `new Promise`
+
+```
+const willGetYouADog = new Promise(function (resolve, reject) {
+  resolve();
+  
+});
+
+```
+
+#### .then() and catch() method
+every Promise has a .then() method
+and a .catch() method . these will run automatically 
+the catch and then methods accepts a callback function. 
 
 
 
+
+this function will return a Promise
+```
+const makeDogPromise = () => { // this function will return a promise
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      const rand = Math.random();
+      if (rand < 0.5) {
+        resolve();
+      } else {
+        reject();
+      }
+    }, 5000); // this promise takes 5 seconds before its resolving or rejected
+  });
+};
+
+makeDogPromise()
+  .then(() => {
+    log('Yay we got a dog!!!'.toUpperCase());
+  })
+  .catch(() => {
+    log(`sad face no dog :(`.toUpperCase());
+  });
+```
+
+## Hoisting
+
+var is hoisted. 
+let and const variable declaration are not hoisted.
+
+
+function statements are hoisted. so that is why its better to use  function expressions. function expressions are not hoisted
+
+ so functions can be invoked/called before they are declared.
+ 
+
+ # Asynchronous
+
+setTimeOut(function, time);
 

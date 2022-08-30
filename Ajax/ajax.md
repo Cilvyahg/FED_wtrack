@@ -330,3 +330,13 @@ function statements are hoisted. so that is why its better to use  function expr
 
 setTimeOut(function, time);
 
+the setTimeOut() method calls a function (callback function)
+
+## fetch API
+- internet explorer doesn't support fetch API
+- supports promises!
+- fetch() is a method
+- fetch gives a promise back\
+
+the catch callback from the fetch is not gonna run because you get a statuscode of 404 or another code.
+the catch call back it will only return a catch for example if the network doesnt work. 

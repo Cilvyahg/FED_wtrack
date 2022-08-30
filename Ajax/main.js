@@ -221,7 +221,7 @@ let a3 = 100;
 setTimeout(function () {
   a3++;
   log(a3++);
-}, 1);
+}, 0);
 
 log(a3);
 
@@ -236,7 +236,6 @@ let promise = new Promise(function (resolve) {
 });
 
 log(promise); // pending
-
 
 const willGetYouADog = new Promise(function (resolve, reject) {
   const rand = Math.random();
@@ -271,7 +270,7 @@ const makeDogPromise = () => {
       } else {
         reject();
       }
-    }, 5000); // this promise takes 5 seconds before its resolving or rejected
+    }, 0); // this promise takes 5 seconds before its resolving or rejected
   });
 };
 
@@ -284,24 +283,86 @@ makeDogPromise()
   });
 
 
-  // const makeDogPromise = () => {
-  //   // we can make a function that returns a Promise
-  //   return new Promise(function (resolve, reject) {
-  //     setTimeout(function () {
-  //       const rand = Math.random();
-  //       if (rand < 0.5) {
-  //         resolve('hello');
-  //       } else {
-  //         reject('heehehehehehe');
-  //       }
-  //     }, 5000); // this promise takes 5 seconds before its resolving or rejected
-  //   });
-  // };
 
-  // makeDogPromise()
-  //   .then((val) => {
-  //     log(val);
-  //   })
-  //   .catch((val) => {
-  //     log(val);
-  //   });
+
+const fakeRequest = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const rand = Math.random();
+      if (rand < 0.3) {
+        reject({ status: 404 }, 'hello');
+      } else {
+        const pages = {
+          '/users': [
+            { id: 1, username: 'Bilbo' },
+            { id: 5, username: 'Esmeralda' },
+          ],
+          "/about": 'this is the about page!' // second page
+        };
+        const data = pages[url]
+        resolve({ status: 200, data : data });
+      }
+    }, 1000);
+  });
+};
+
+fakeRequest('/about')
+  .then((res) => {
+    log('status code::', res.status);
+    log('DATA::', res.data)
+    log('REQUEST WORKED');
+  })
+  .catch(function (res, num) {
+    log(res.status, num);
+    log('Request failed');
+  }); 
+
+
+
+// const makeDogPromise = () => {
+//   // we can make a function that returns a Promise
+//   return new Promise(function (resolve, reject) {
+//     setTimeout(function () {
+//       const rand = Math.random();
+//       if (rand < 0.5) {
+//         resolve('hello');
+//       } else {
+//         reject('heehehehehehe');
+//       }
+//     }, 5000); // this promise takes 5 seconds before its resolving or rejected
+//   });
+// };
+
+// makeDogPromise()
+//   .then((val) => {
+//     log(val);
+//   })
+//   .catch((val) => {
+//     log(val);
+//   });
+
+// log('here');
+
+// log('hoi' + new Date().getMilliseconds());
+
+// setTimeout(function () {
+//   log('log timeout' + new Date().getMilliseconds());
+// }, 1000);
+
+// new Promise((resolve, rj) => {
+//   resolve();
+// }).then(
+//   setTimeout(() => {
+//     log('hoi');
+//   }, 0)
+// );
+
+// let a = 1;
+// for (let index = 1; index < 1000; index++) {
+//   log(a);
+//   a = a * index;
+// }
+
+// log(a);
+
+// log('na timeout' + new Date().getMilliseconds());

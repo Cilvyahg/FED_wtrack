@@ -11,6 +11,11 @@ for the setTimeOut() the browser will take the callback function after the amoun
 setTimeOut is something the browser will do for Javascript. the browser is setting a timeout and js is free to continu with the code. JS is not keeping the time. JS is not making a request
 
 
+
+### SetTimeOut()
+
+setTimeout is a JavaScript function that calls a function after a set amount of time.
+
 ```
 setTimeOut(reference function, time, param1, param2) is a method
 ```
@@ -44,6 +49,8 @@ asynchronous ==> a task is executed but you don't want to wait until it's totall
 for example when you want to get your data, but you don't want js to wait until you get your data. 
 
 A callback is a general JavaScript concept: it is simply a function that is only executed after another function is carried out.
+What is a Callback?
+Simply put: A callback is a function that is to be executed after another function has finished executing — hence the name ‘call back’.
 
 
 
@@ -89,9 +96,54 @@ await always returns a promise.
 
 ## JS PROMISES 
 
+in javascript promises are a objects that represents an eventual either failure or success of some task that takes time. Promises are objects that we can attach two callback functions to. 
+
+A promise is an object that may produce a single value some time in the future either a resolved value or a reason that it's not resolved (e.g. a network error occured). promise users can attach callbacks to handle fulfilled value or the reason for rejection.
+
+
+How Promises Work
+3 states of a Promise are;
+A promise is an object which can be returned synchronously from an asynchronous function. It will be in one of 3 possible states:
+
+Fulfilled: onFulfilled() will be called (e.g., resolve() was called)
+Rejected: onRejected() will be called (e.g., reject() was called)
+Pending: not yet fulfilled or rejected
+
+
+when the promise is not resolved or rejected the value of the promise status is still pending, just like in real life. 
+
+
+The code does not directly or immediately return a value. Instead, **it returns a promise** that it will eventually provide the value at a later time. A promise in JavaScript is asynchronous, meaning it takes time to resolve or finish. 
+
+The JS engine also doesn’t wait around doing nothing – it starts executing other parts of the code, pending (in afwachting) the returned value of the promise.
 
 
 
+
+# what to do when the promise is resolved or rejected? 
+what needs to happen when the promise is fulfilled (resolved) or rejected? 
+.then() method will run if that promise is resolved.
+
+```
+ .then(function(){
+/// this code will run when the promise is resolved
+});
+
+OR 
+
+.then(() =>> {
+  // this code will run when the promise is resolved. 
+
+})
+```
+
+
+
+
+
+### New Promise
+
+when we create Promise we pass in a function with two parameters that are functions. these two parameters are resolve and reject
 
 
 

@@ -138,9 +138,6 @@ OR
 ```
 
 
-
-
-
 ### New Promise
 
 when we create Promise we pass in a function with two parameters that are functions. these two parameters are resolve and reject
@@ -148,3 +145,5 @@ when we create Promise we pass in a function with two parameters that are functi
 
 
 
+
+## SOME() AND EVERY()

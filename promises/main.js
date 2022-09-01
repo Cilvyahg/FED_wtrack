@@ -190,9 +190,6 @@ new Promise((res, rej) => {
 
 const arrayOfWords = ['cucumber', 'tomatos', 'avocado'];
 
-
-
-
 const complicatedArray = ['cucumber', 44, true];
 
 const makeAllCaps = function (array) {
@@ -211,7 +208,6 @@ const makeAllCaps = function (array) {
 //     }
 //   });
 // };
-
 
 const sortAlphabeticOrder = function (array) {
   return array.sort();
@@ -246,22 +242,181 @@ log(test1);
 let test2 = arrayIsNoString(complicatedArray);
 log(test2);
 
-
+arrayIsNoString(arrayOfWords).then(console.log); //
+arrayIsNoString(complicatedArray).then(console.log); //
 
 // EVERY() AND SOME() also returns a boolean
 const words = ['dog', 'dig', 'log', 'bag', 'wag'];
 
-const someStartsWithD = words.some(word => word[0] === 'd');
+const someStartsWithD = words.some((word) => word[0] === 'd');
 log(someStartsWithD); // true because at least one word starts with d. so it will return true
 
-const everyStartsWithD = words.every(word => word[0] === 'd');
-log(everyStartsWithD) // false because not every word starts with d
+const everyStartsWithD = words.every((word) => word[0] === 'd');
+log(everyStartsWithD); // false because not every word starts with d
 
 const allEndingG = words.every(function (word) {
-  // const lastLetter = word.length - 1; 
-  return word[word.length -1 ] === 'g';
+  // const lastLetter = word.length - 1;
+  return word[word.length - 1] === 'g';
 });
 
-log(allEndingG)// true because all of the word ends with G. 
+log(allEndingG); // true because all of the word ends with G.
+
+// FAKEREQUEST
+
+const fakeRequest = (url) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      const pages = {
+        '/users': [
+          { id: 1, username: 'Boba' },
+          { id: 5, username: 'Esmee' },
+        ],
+        '/about': ' This is the about page',
+      };
+      const data = pages[url];
+      if (data) {
+        resolve({ status: 200, data: data });
+      } else {
+        reject({ status: 404 });
+      }
+    });
+  }, 1000)
+    .then(function (response) {
+      log(`Status code::`, response.status);
+      log(`Status data::`, response.data);
+      log('request worked');
+    })
+    .catch(function (result) {
+      log('request failed!'.toUpperCase());
+      log(result.status);
+    });
+};
+
+fakeRequest('/users');
+fakeRequest('/about');
+fakeRequest('/doggs');
+
+// .then .catch are callback functions
+
+// template strings
+
+let myName = 'Cilvya';
+
+let template = `<div class="alert">
+<p>${myName}</p>
+</div>`;
+
+log(template);
+
+const sum = function (a, b, ...numbers) {
+  log(`${a}${b}`);
+  log(numbers);
+  return numbers.reduce(function (total, currentvalue) {
+    return total + currentvalue;
+  });
+};
+
+log(sum(1, 2, 3, 4, 6, 7));
+
+const a = [2, 43, 5, 6, 6, 7, 7];
+
+const sum1 = [2, 6];
+
+const arraysum = [...a, [sum1]];
+
+log(arraysum);
+
+// alles moet een string zijn
+
+// every
+// a, 1, c
+// a is string? true;
+// 1 is string? false;
+// false;
+
+// some
+// a, 1, c
+// a is geen string? false;
+// 1 is geen string? true;
+// true;
+
+if (['a', 'b', 1].every((element) => typeof element === 'string')) {
+  log('strings');
+} else {
+  log('iets anders');
+}
+
+if (['a', 'b', 1].some((element) => typeof element !== 'string')) {
+  log('iets anders');
+} else {
+  log('strings');
+}
+
+// REST
+
+const restTest = function (foo, ...nums) {
+  return `${foo} ${nums}`;
+};
+
+log(restTest('hello', 1, 6, 7, 9, 6, 34));
+
+const fullName = function (first, last, ...titles) {
+  log(`first`, first);
+  log(`last`, last);
+  return `titles, ${titles}`; // this will turn into an array
+};
+
+log(fullName('thommy', 'hollow', 'the book thief', 'yoyoyoy'));
+
+log({ ...'hahahaha' });
+
+
+log(Math.max(4,6,7,21,7,8,4,32,57,876,543))
+
+function giveMeFour(a, b, c, d) {
+  log(a)
+  log(b)
+  log(c)
+  log(d)
+
+  // return `${a} ${b} ${c} ${d}`
+  return a + " " + b + " " + c + " " + d
+
+}
+
+const colours = ['red', 'orange', 'yellow', 'pink']
+
+log(giveMeFour(...colours))
+
+
+
+
+
+
+
+
+// ===== EXERCISE : REST PARAMETER AND SPREAD OPERATOR ====
+
+const multiply = function (...numbers) {
+  return numbers.reduce(function (total, currentvalue) {
+    return total + currentvalue;
+  });
+};
+
+log(multiply(4, 6, 7, 1, 3, 5));
+
+const multiplySecond = function (...numbers) {
+  let start = 0;
+
+  for (let number of numbers) {
+    log(start, number);
+    start = start + number;
+  }
+
+  return start;
+};
+
+log(multiplySecond(1, 2, 4, 5, 10, 450));
+
 
 

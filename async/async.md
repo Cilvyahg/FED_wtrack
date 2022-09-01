@@ -143,7 +143,60 @@ OR
 when we create Promise we pass in a function with two parameters that are functions. these two parameters are resolve and reject
 
 
-
-
-
 ## SOME() AND EVERY()
+returns a boolean
+
+## API Authentication (part 1);
+
+Authentication --> who am I 
+Authorization --> what am I allowed to do?
+
+To regulate this there are API keys. This is a key that you send when you make a request (GET POST DELETE PUT PATCH) and that grants you access. when the api key is invalid the server can simply block the access to the API.
+
+you add the API Key in each header or URL in each of your request and then you are able to access the api 200 ok
+
+
+
+endpoints --> entrances of the API 
+
+You can also withdraw what you want from any vending machine with a euro at the FEBO. However, with an API, the administrator can determine that you only have access to certain endpoints with your API key, or that you can submit a GET request to certain endpoints, but do not have POST request access.
+
+
+There are several places in your request where an API key can be expected. Do you remember the request diagrams?
+
+Your API key can end up in these places:
+
+Authorization Header (in the header)
+Basic Auth
+Body Data (in the body)
+Custom Header
+Query String (in the url)
+
+
+## API authentication : Token based authentication
+
+access token contains a string with encrypted data of the user
+
+The main distinction between these two is: API keys identify the calling project — the application or site — making the call to an API. Authentication tokens identify a user — the person — that is using the app or site. they contain more data about the user
+
+## Spread operator
+
+spread operator has different function depend on where it it used
+
+(...array) split an array into indiviual numbers.
+
+...spread 
+
+using spread in function(a,b,c,d);
+
+spreading the entire array into different arguments otherwise it would be seen as one argument. 
+each element is passed along as one argument.
+
+
+**rest operator**
+
+(...rest) operator turn is into an array;
+
+
+we put the (...rest) in a parameter of a function 
+it collects all remaining arguments into an actual array.

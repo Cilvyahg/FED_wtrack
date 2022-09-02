@@ -340,3 +340,5 @@ the setTimeOut() method calls a function (callback function)
 
 the catch callback from the fetch is not gonna run because you get a statuscode of 404 or another code.
 the catch call back it will only return a catch for example if the network doesnt work. 
+
+

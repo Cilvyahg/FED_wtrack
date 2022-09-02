@@ -200,3 +200,20 @@ each element is passed along as one argument.
 
 we put the (...rest) in a parameter of a function 
 it collects all remaining arguments into an actual array.
+
+
+## fetch() is a promise so we can attach the methods .then() and .catch() to it 
+
+```
+fetch("https://swapi.dev/api/people/1") // RETURNS A PROMISE if you look into the console.
+  .then(function (response) {
+    log(`RESPONSE`, response)
+  }).catch(err => {
+    log(`ERROR`, err)
+  }); 
+```
+
+it returns a response object with key value pairs (statuscode: value, headers, body)
+
+### steps 
+

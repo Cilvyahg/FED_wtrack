@@ -370,30 +370,21 @@ log(fullName('thommy', 'hollow', 'the book thief', 'yoyoyoy'));
 
 log({ ...'hahahaha' });
 
-
-log(Math.max(4,6,7,21,7,8,4,32,57,876,543))
+log(Math.max(4, 6, 7, 21, 7, 8, 4, 32, 57, 876, 543));
 
 function giveMeFour(a, b, c, d) {
-  log(a)
-  log(b)
-  log(c)
-  log(d)
+  log(a);
+  log(b);
+  log(c);
+  log(d);
 
   // return `${a} ${b} ${c} ${d}`
-  return a + " " + b + " " + c + " " + d
-
+  return a + ' ' + b + ' ' + c + ' ' + d;
 }
 
-const colours = ['red', 'orange', 'yellow', 'pink']
+const colours = ['red', 'orange', 'yellow', 'pink'];
 
-log(giveMeFour(...colours))
-
-
-
-
-
-
-
+log(giveMeFour(...colours));
 
 // ===== EXERCISE : REST PARAMETER AND SPREAD OPERATOR ====
 
@@ -418,5 +409,49 @@ const multiplySecond = function (...numbers) {
 
 log(multiplySecond(1, 2, 4, 5, 10, 450));
 
+// PART 2
+const arrayToIndividual = [3, 5, 8, 4, 2, 8, 9, 10];
+
+const multiplySpread = function (a, b, c, d, e, f, g, h) {
+  return [a, b, c, d, e, f, g, h].reduce(function (total, currentvalue) {
+    return total + currentvalue;
+  });
+};
+
+log(multiplySpread(...arrayToIndividual));
+
+//OR
+
+// ...spread array in individual elements in combinatie met de ..rest in the parameter
+
+const multiplySpreadRest = function (numbers) {
+  return numbers.reduce(function (total, currentvalue) {
+    log(total, currentvalue);
+    return total + currentvalue;
+  });
+};
+
+log(multiplySpreadRest(arrayToIndividual));
+
+const digits = [1, 2, 3];
+const sum3 = function (num1, num2, num3) {
+  return num1 + num2 + num3;
+};
+console.log(sum3(...digits));
+// expected result: 6
+
+// ============ fetch() ==========
+
+fetch('https://swapi.dev/api/people/1') // RETURNS A PROMISE if you look into the console.
+  .then(function (response) {
+    log(`RESPONSE`, response);
+    return response.json(); // getting parsed data 
+  })
+  .then((data) => log(data))
+  .catch((err) => {
+    log(`ERROR`, err);
+  });
+
+// json() also gives back a response
 
 

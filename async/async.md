@@ -1,8 +1,10 @@
 # Javascript is single threaded
 
-which means it can only do one thing at a time.
+which means it can only do one thing at a time. js can run one line of code at one time. 
 
-The browser does the work. js is not the same as the browser. js is a language. browser is like firefox and etc. browser is capable of doing things that js can't. The browser takes over and reminds js when it's time to do certain things
+browser comes with web API's. we can see these as browser functions. 
+
+The browser does the work. js is not the same as the browser. js is a language. browser is like firefox and etc. browser is capable of doing things that js can't. The browser takes over and reminds js when it's time to do certain things. this happens with doing 'request' , settime out and etc. 
 
 so for example with setTimeOut(function, time) --> js is not settting A TIMER or keeping TRACK of how MANY SECONDS have gone by.
 javascript is not sending a request to the API, it's the browser that is doing it. it's given to the browser.
@@ -10,6 +12,22 @@ javascript is not sending a request to the API, it's the browser that is doing i
 for the setTimeOut() the browser will take the callback function after the amount of seconds has elapsed it will put on the callstack.
 
 setTimeOut is something the browser will do for Javascript. the browser is setting a timeout and js is free to continu with the code. JS is not keeping the time. JS is not making a request
+
+
+## HTTP METHOD
+POST : create -- http post method is normally used to create one resource
+meestal met een method: "POST" request die je meegeeft aan fetch()
+ 
+
+
+GET : read -- enkele of meerdere resources opvragen. bijvoorbeeld alle personen of een enkele persoon
+PUT : update -- ik heb een resource en die wil ik 'updaten'/replace 
+DELETE : delete -- deze resource moet weg. en je stuurt geen body mee, want doet hoef niet. 
+
+**postman** check in postman altijd of het verwijderd, geupdate en gepost is middels GET request nadat je de andere request hebt gedaan. Alles wat je in POSTman kan doen kun je in javascript doet. in postman experimenteer je hoe er wordt gecommuniceerd met de api, of er wel gebeurd wat je wilt en etc. 
+
+met api's praten. met restfull api's zijn er vaak 'resources'. dit zijn entities waar de api je mee laat praten middels een endpoint van een url (zoals url met movie resources, url met pokemon dieren en etc. ) als je op een bepaald endpoint zit kun je een bepaalde request doen op die informatie die je ontvangt van de endpoint.
+
 
 ### SetTimeOut()
 
@@ -87,7 +105,7 @@ geef je een lijstje van Promises. en wat promise.all() doet en gaat wachten tot 
 
 als je een method = "POST" request doe dan geef je data mee
 
-JSON.stringyfy()
+JSON.stringyfy() je data in een json string zetten zodat de server het kan lezen. 
 
 header van je HTTP request. je browser stuurt headers mee en response stuurt header terug
 
@@ -363,6 +381,8 @@ promise is eerst een belofte en daarna een resultaat
 
 ### async funtie always returns a promise
 
+als je await gebruikt moet je een async functie maken met daarbinnen de await. 
+
 
 # header, body, method 
 
@@ -373,3 +393,6 @@ kijk en probeer in postman uit met de headers en etc om te zien of je wel hetgee
 # JSON methods
 
 JSON.stringify --> deze methode zorgt ervoor dat je 
+ 
+### finally {}
+ The finally block will always execute before control flow exits the try...catch...finally construct. It always executes, regardless of whether an exception was thrown or caught.

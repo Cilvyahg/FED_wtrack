@@ -601,4 +601,3 @@ const createPost = async () => {
 document.querySelector('.fetch').addEventListener('click', fetchPost);
 document.querySelector('.post').addEventListener('click', createPost);
 
-

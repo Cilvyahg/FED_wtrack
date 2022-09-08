@@ -188,15 +188,15 @@ new Promise((res, rej) => {
   .then((getal) => log(getal))
   .catch((msg) => log(msg));
 
-const arrayOfWords = ['cucumber', 'tomatos', 'avocado'];
+// const arrayOfWords = ['cucumber', 'tomatos', 'avocado'];
 
-const complicatedArray = ['cucumber', 44, true];
+// const complicatedArray = ['cucumber', 44, true];
 
-const makeAllCaps = function (array) {
-  return array.map(function (element) {
-    return element.toUpperCase();
-  });
-};
+// const makeAllCaps = function (array) {
+//   return array.map(function (element) {
+//     return element.toUpperCase();
+//   });
+// };
 
 // const sortAlphabeticOrder = function (array) {
 //   return array.sort((a, b) => {
@@ -209,249 +209,351 @@ const makeAllCaps = function (array) {
 //   });
 // };
 
-const sortAlphabeticOrder = function (array) {
-  return array.sort();
-};
+log;
 
-const arrayIsNoString = (array) => {
-  return new Promise((resolve, reject) => {
-    if (
-      array.every(function (element) {
-        return typeof element === 'string';
-      })
-    ) {
-      resolve(array);
-    } else {
-      reject('THIS IS AN ERROR');
-    }
-  })
-    .then(function (array) {
-      return makeAllCaps(array);
-    })
-    .then(function (array) {
-      return sortAlphabeticOrder(array);
-    })
-    .catch(function (value) {
-      return value;
-    });
-};
+// const sortAlphabeticOrder = function (array) {
+//   return array.sort();
+// };
 
-// the values van de promises staan nog op pending omdat
-let test1 = arrayIsNoString(arrayOfWords); //
-log(test1);
-let test2 = arrayIsNoString(complicatedArray);
-log(test2);
+// const arrayIsNoString = (array) => {
+//   return new Promise((resolve, reject) => {
+//     if (
+//       array.every(function (element) {
+//         return typeof element === 'string';
+//       })
+//     ) {
+//       resolve(array);
+//     } else {
+//       reject('THIS IS AN ERROR');
+//     }
+//   })
+//     .then(function (array) {
+//       return makeAllCaps(array);
+//     })
+//     .then(function (array) {
+//       return sortAlphabeticOrder(array);
+//     })
+//     .catch(function (value) {
+//       return value;
+//     });
+// };
 
-arrayIsNoString(arrayOfWords).then(console.log); //
-arrayIsNoString(complicatedArray).then(console.log); //
+// // the values van de promises staan nog op pending omdat
+// let test1 = arrayIsNoString(arrayOfWords); //
+// log(test1);
+// let test2 = arrayIsNoString(complicatedArray);
+// log(test2);
 
-// EVERY() AND SOME() also returns a boolean
-const words = ['dog', 'dig', 'log', 'bag', 'wag'];
+// arrayIsNoString(arrayOfWords).then(console.log); //
+// arrayIsNoString(complicatedArray).then(console.log); //
 
-const someStartsWithD = words.some((word) => word[0] === 'd');
-log(someStartsWithD); // true because at least one word starts with d. so it will return true
+// // EVERY() AND SOME() also returns a boolean
+// const words = ['dog', 'dig', 'log', 'bag', 'wag'];
 
-const everyStartsWithD = words.every((word) => word[0] === 'd');
-log(everyStartsWithD); // false because not every word starts with d
+// const someStartsWithD = words.some((word) => word[0] === 'd');
+// log(someStartsWithD); // true because at least one word starts with d. so it will return true
 
-const allEndingG = words.every(function (word) {
-  // const lastLetter = word.length - 1;
-  return word[word.length - 1] === 'g';
-});
+// const everyStartsWithD = words.every((word) => word[0] === 'd');
+// log(everyStartsWithD); // false because not every word starts with d
 
-log(allEndingG); // true because all of the word ends with G.
+// const allEndingG = words.every(function (word) {
+//   // const lastLetter = word.length - 1;
+//   return word[word.length - 1] === 'g';
+// });
 
-// FAKEREQUEST
+// log(allEndingG); // true because all of the word ends with G.
 
-const fakeRequest = (url) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(function () {
-      const pages = {
-        '/users': [
-          { id: 1, username: 'Boba' },
-          { id: 5, username: 'Esmee' },
-        ],
-        '/about': ' This is the about page',
-      };
-      const data = pages[url];
-      if (data) {
-        resolve({ status: 200, data: data });
-      } else {
-        reject({ status: 404 });
-      }
-    });
-  }, 1000)
-    .then(function (response) {
-      log(`Status code::`, response.status);
-      log(`Status data::`, response.data);
-      log('request worked');
-    })
-    .catch(function (result) {
-      log('request failed!'.toUpperCase());
-      log(result.status);
-    });
-};
+// // FAKEREQUEST
 
-fakeRequest('/users');
-fakeRequest('/about');
-fakeRequest('/doggs');
+// const fakeRequest = (url) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(function () {
+//       const pages = {
+//         '/users': [
+//           { id: 1, username: 'Boba' },
+//           { id: 5, username: 'Esmee' },
+//         ],
+//         '/about': ' This is the about page',
+//       };
+//       const data = pages[url];
+//       if (data) {
+//         resolve({ status: 200, data: data });
+//       } else {
+//         reject({ status: 404 });
+//       }
+//     });
+//   }, 1000)
+//     .then(function (response) {
+//       log(`Status code::`, response.status);
+//       log(`Status data::`, response.data);
+//       log('request worked');
+//     })
+//     .catch(function (result) {
+//       log('request failed!'.toUpperCase());
+//       log(result.status);
+//     });
+// };
 
-// .then .catch are callback functions
+// fakeRequest('/users');
+// fakeRequest('/about');
+// fakeRequest('/doggs');
 
-// template strings
+// // .then .catch are callback functions
 
-let myName = 'Cilvya';
+// // template strings
 
-let template = `<div class="alert">
-<p>${myName}</p>
-</div>`;
+// let myName = 'Cilvya';
 
-log(template);
+// let template = `<div class="alert">
+// <p>${myName}</p>
+// </div>`;
 
-const sum = function (a, b, ...numbers) {
-  log(`${a}${b}`);
-  log(numbers);
-  return numbers.reduce(function (total, currentvalue) {
-    return total + currentvalue;
-  });
-};
+// log(template);
 
-log(sum(1, 2, 3, 4, 6, 7));
+// const sum = function (a, b, ...numbers) {
+//   log(`${a}${b}`);
+//   log(numbers);
+//   return numbers.reduce(function (total, currentvalue) {
+//     return total + currentvalue;
+//   });
+// };
 
-const a = [2, 43, 5, 6, 6, 7, 7];
+// log(sum(1, 2, 3, 4, 6, 7));
 
-const sum1 = [2, 6];
+// const a = [2, 43, 5, 6, 6, 7, 7];
 
-const arraysum = [...a, [sum1]];
+// const sum1 = [2, 6];
 
-log(arraysum);
+// const arraysum = [...a, [sum1]];
 
-// alles moet een string zijn
+// log(arraysum);
 
-// every
-// a, 1, c
-// a is string? true;
-// 1 is string? false;
-// false;
+// // alles moet een string zijn
 
-// some
-// a, 1, c
-// a is geen string? false;
-// 1 is geen string? true;
-// true;
+// // every
+// // a, 1, c
+// // a is string? true;
+// // 1 is string? false;
+// // false;
 
-if (['a', 'b', 1].every((element) => typeof element === 'string')) {
-  log('strings');
-} else {
-  log('iets anders');
+// // some
+// // a, 1, c
+// // a is geen string? false;
+// // 1 is geen string? true;
+// // true;
+
+// if (['a', 'b', 1].every((element) => typeof element === 'string')) {
+//   log('strings');
+// } else {
+//   log('iets anders');
+// }
+
+// if (['a', 'b', 1].some((element) => typeof element !== 'string')) {
+//   log('iets anders');
+// } else {
+//   log('strings');
+// }
+
+// // REST
+
+// const restTest = function (foo, ...nums) {
+//   return `${foo} ${nums}`;
+// };
+
+// log(restTest('hello', 1, 6, 7, 9, 6, 34));
+
+// const fullName = function (first, last, ...titles) {
+//   log(`first`, first);
+//   log(`last`, last);
+//   return `titles, ${titles}`; // this will turn into an array
+// };
+
+// log(fullName('thommy', 'hollow', 'the book thief', 'yoyoyoy'));
+
+// log({ ...'hahahaha' });
+
+// log(Math.max(4, 6, 7, 21, 7, 8, 4, 32, 57, 876, 543));
+
+// function giveMeFour(a, b, c, d) {
+//   log(a);
+//   log(b);
+//   log(c);
+//   log(d);
+
+//   // return `${a} ${b} ${c} ${d}`
+//   return a + ' ' + b + ' ' + c + ' ' + d;
+// }
+
+// const colours = ['red', 'orange', 'yellow', 'pink'];
+
+// log(giveMeFour(...colours));
+
+// // ===== EXERCISE : REST PARAMETER AND SPREAD OPERATOR ====
+
+// const multiply = function (...numbers) {
+//   return numbers.reduce(function (total, currentvalue) {
+//     return total + currentvalue;
+//   });
+// };
+
+// log(multiply(4, 6, 7, 1, 3, 5));
+
+// const multiplySecond = function (...numbers) {
+//   let start = 0;
+
+//   for (let number of numbers) {
+//     log(start, number);
+//     start = start + number;
+//   }
+
+//   return start;
+// };
+
+// log(multiplySecond(1, 2, 4, 5, 10, 450));
+
+// // PART 2
+// const arrayToIndividual = [3, 5, 8, 4, 2, 8, 9, 10];
+
+// const multiplySpread = function (a, b, c, d, e, f, g, h) {
+//   return [a, b, c, d, e, f, g, h].reduce(function (total, currentvalue) {
+//     return total + currentvalue;
+//   });
+// };
+
+// log(multiplySpread(...arrayToIndividual));
+
+// //OR
+
+// // ...spread array in individual elements in combinatie met de ..rest in the parameter
+
+// const multiplySpreadRest = function (numbers) {
+//   return numbers.reduce(function (total, currentvalue) {
+//     log(total, currentvalue);
+//     return total + currentvalue;
+//   });
+// };
+
+// log(multiplySpreadRest(arrayToIndividual));
+
+// const digits = [1, 2, 3];
+// const sum3 = function (num1, num2, num3) {
+//   return num1 + num2 + num3;
+// };
+// console.log(sum3(...digits));
+// // expected result: 6
+
+// // ============ fetch() ==========
+
+// fetch('https://swapi.dev/api/people/1') // RETURNS A PROMISE if you look into the console.
+//   .then(function (response) {
+//     log(`RESPONSE`, response);
+//     return response.json(); // getting parsed data
+//   })
+//   .then((data) => log(data))
+//   .catch((err) => {
+//     log(`ERROR`, err);
+//   });
+
+// // json() also gives back a response
+
+// // async await
+// const loadStarWarsPeople = async () => {
+//   try {
+//     const response = await fetch('https://swapi.dev/api/people/1');
+//     const data = await response.json();
+//     log(data);
+//     const response2 = await fetch('https://swapi.dev/api/people/2');
+//     const data2 = await response2.json();
+//     log(data2);
+//   } catch (error) {
+//     log('error!!!!!!!!', error);
+//   }
+// };
+
+// loadStarWarsPeople();
+
+// let obj = {
+//   a: 'lettra',
+//   b: 'latterB',
+// };
+
+// log(obj);
+
+// log(obj['a']);
+
+// // ====== ASYNC ======
+// // an async function returns a promise (implicitely)
+
+// async function hello() {
+//   return `I am a promise`;
+// }
+
+// log(hello());
+
+// const sing = async () => {
+//   throw new Error('OH NO BIG PROBLEM'); // promise is rejected --> see console
+//   // return 'LALALALApOEP'; // promise is resolved
+// };
+
+// sing()
+//   .then((data) => {
+//     log(data);
+//   })
+//   .catch((err) => log(`REJECTED:: because`, err));
+
+// const login = async (username, password) => {
+//   if (!username || !password) {
+//     throw 'missing credentials';
+//   }
+//   if (password === 'corgifeetarecute') {
+//     return 'Welcome you have the best password!';
+//   }
+//   throw 'Invalid password';
+// };
+
+// login('yammyy', 'lalalalallaal')
+//   .then((msg) => {
+//     log(msg);
+//   })
+//   .catch((err) => {
+//     log(`this is an error`, err);
+//   });
+
+// login('thisisiti', 'corgifeetarecute')
+//   .then((msg) => {
+//     log(msg);
+//   })
+//   .catch((err) => {
+//     log(`this is an error`, err);
+//   });
+
+// ====== AWAIT =======
+
+function main() {
+  log('staring');
+  log(foo(2, 3));
+  log('the end');
 }
 
-if (['a', 'b', 1].some((element) => typeof element !== 'string')) {
-  log('iets anders');
-} else {
-  log('strings');
+function foo(a, b) {
+  let c = a + b;
+  return c;
 }
 
-// REST
+main();
 
-const restTest = function (foo, ...nums) {
-  return `${foo} ${nums}`;
-};
-
-log(restTest('hello', 1, 6, 7, 9, 6, 34));
-
-const fullName = function (first, last, ...titles) {
-  log(`first`, first);
-  log(`last`, last);
-  return `titles, ${titles}`; // this will turn into an array
-};
-
-log(fullName('thommy', 'hollow', 'the book thief', 'yoyoyoy'));
-
-log({ ...'hahahaha' });
-
-log(Math.max(4, 6, 7, 21, 7, 8, 4, 32, 57, 876, 543));
-
-function giveMeFour(a, b, c, d) {
-  log(a);
-  log(b);
-  log(c);
-  log(d);
-
-  // return `${a} ${b} ${c} ${d}`
-  return a + ' ' + b + ' ' + c + ' ' + d;
+try {
+  //throw {name: "john", message: "Salmon"};
+  throw new Error('A stick');
+} catch (err) {
+  // catch parameter catches the error.
+  log('caught ::', err);
+} finally {
+  // the finally statement will run no matter if it has an error or not
+  log(' you took forever');
 }
 
-const colours = ['red', 'orange', 'yellow', 'pink'];
 
-log(giveMeFour(...colours));
 
-// ===== EXERCISE : REST PARAMETER AND SPREAD OPERATOR ====
-
-const multiply = function (...numbers) {
-  return numbers.reduce(function (total, currentvalue) {
-    return total + currentvalue;
-  });
-};
-
-log(multiply(4, 6, 7, 1, 3, 5));
-
-const multiplySecond = function (...numbers) {
-  let start = 0;
-
-  for (let number of numbers) {
-    log(start, number);
-    start = start + number;
-  }
-
-  return start;
-};
-
-log(multiplySecond(1, 2, 4, 5, 10, 450));
-
-// PART 2
-const arrayToIndividual = [3, 5, 8, 4, 2, 8, 9, 10];
-
-const multiplySpread = function (a, b, c, d, e, f, g, h) {
-  return [a, b, c, d, e, f, g, h].reduce(function (total, currentvalue) {
-    return total + currentvalue;
-  });
-};
-
-log(multiplySpread(...arrayToIndividual));
-
-//OR
-
-// ...spread array in individual elements in combinatie met de ..rest in the parameter
-
-const multiplySpreadRest = function (numbers) {
-  return numbers.reduce(function (total, currentvalue) {
-    log(total, currentvalue);
-    return total + currentvalue;
-  });
-};
-
-log(multiplySpreadRest(arrayToIndividual));
-
-const digits = [1, 2, 3];
-const sum3 = function (num1, num2, num3) {
-  return num1 + num2 + num3;
-};
-console.log(sum3(...digits));
-// expected result: 6
-
-// ============ fetch() ==========
-
-fetch('https://swapi.dev/api/people/1') // RETURNS A PROMISE if you look into the console.
-  .then(function (response) {
-    log(`RESPONSE`, response);
-    return response.json(); // getting parsed data 
-  })
-  .then((data) => log(data))
-  .catch((err) => {
-    log(`ERROR`, err);
-  });
-
-// json() also gives back a response
 
 

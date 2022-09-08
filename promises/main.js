@@ -444,33 +444,33 @@ log;
 
 // // ============ fetch() ==========
 
-// fetch('https://swapi.dev/api/people/1') // RETURNS A PROMISE if you look into the console.
-//   .then(function (response) {
-//     log(`RESPONSE`, response);
-//     return response.json(); // getting parsed data
-//   })
-//   .then((data) => log(data))
-//   .catch((err) => {
-//     log(`ERROR`, err);
-//   });
+fetch('https://swapi.dev/api/people/1') // RETURNS A PROMISE if you look into the console.
+  .then(function (response) {
+    log(`RESPONSE`, response);
+    return response.json(); // getting parsed data
+  })
+  .then((data) => log(data))
+  .catch((err) => {
+    log(`ERROR`, err);
+  });
 
-// // json() also gives back a response
+// json() also gives back a response
 
-// // async await
-// const loadStarWarsPeople = async () => {
-//   try {
-//     const response = await fetch('https://swapi.dev/api/people/1');
-//     const data = await response.json();
-//     log(data);
-//     const response2 = await fetch('https://swapi.dev/api/people/2');
-//     const data2 = await response2.json();
-//     log(data2);
-//   } catch (error) {
-//     log('error!!!!!!!!', error);
-//   }
-// };
+// async await
+const loadStarWarsPeople = async () => {
+  try {
+    const response = await fetch('https://swapi.dev/api/people/1');
+    const data = await response.json();
+    log(data);
+    const response2 = await fetch('https://swapi.dev/api/people/2');
+    const data2 = await response2.json(); // als je niet await doet krijg je enkel een promise terug
+    log(data2);
+  } catch (error) {
+    log('error!!!!!!!!', error);
+  }
+};
 
-// loadStarWarsPeople();
+loadStarWarsPeople();
 
 // let obj = {
 //   a: 'lettra',
@@ -555,5 +555,50 @@ try {
 
 
 
+// ====== JSON.stringify() ========
+
+let obj1 = {
+  name: "walter",
+  age: 45,
+  place: "York",
+  Country: "England",
+  Hobbies: ["soccers", "gardening", "gaming"]
+};
+
+log(obj1)
+
+
+const objectToString1 = JSON.stringify(obj1)
+log('1:', objectToString1)
+const objectToString2 = JSON.stringify(obj1, ['age', 'place']) // if you want to filter it to age, place. it has to be put into quotations
+log('2 with parameter :', objectToString2)
+
+
+// ===== LIVE LES JS FETCH - NIELS =====
+
+const fetchPost = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const json = await response.json();
+  log(json);
+};
+
+const createPost = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      title: 'My post',
+      body: 'this is a new post',
+    }),
+  });
+
+  const json = await response.json();
+  log(json);
+};
+
+document.querySelector('.fetch').addEventListener('click', fetchPost);
+document.querySelector('.post').addEventListener('click', createPost);
 
 

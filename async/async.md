@@ -41,8 +41,8 @@ setTimeout(makeHomeWork, 5000, 'math', doneWithHomework);
 
 - the value of an setTimeOut is the timeoutID
 
-
 ## HTTP Verbs
+
 GET - something we read
 PUT
 DELETE - delete something via an api
@@ -55,11 +55,6 @@ header response
 
 some API's are set in a way that we actually need to send custom headers\
 e.g `https://icanhazdadjoke.com/api`
-
-
-
-
-
 
 ## JS Callback
 
@@ -207,9 +202,8 @@ it collects all remaining arguments into an actual array.
 
 ## WTF is JSON?
 
-javascript object notation. json() is a way of parsing data into something more readable data. 
+javascript object notation. json() is a way of parsing data into something more readable data.
 to ask javascript to make it readable javascript object
-
 
 `JSON.parse()`
 parsing json string and turns it into a javascript object -- for us easier to read
@@ -231,8 +225,8 @@ possible values in json :
 - string
 - number
 - "true"
--"false"
--"null"
+  -"false"
+  -"null"
 
 ## fetch() is a promise so we can attach the methods .then() and .catch() to it
 
@@ -264,26 +258,24 @@ it returns a response object with key value pairs (statuscode: value, headers, b
 
 and the catch()
 
-
 ## ASYNC AND AWAIT
-async in front of the function
-- async functions always returns a promise 
 
-**await** 
+async in front of the function
+
+- async functions always returns a promise
+
+**await**
 await will pause the execution of the function, waiting for a promise to be solved.
 
-## throw || return 
+## throw || return
 
-throw new Error() 
+throw new Error()
 
 the throw statement lets you make custom errors
-
 
 ## hoe loopt javascript door een programma?
 
 js is single threaded = kan maar een ding tegelijk doen
-
-
 
 hoe kan je js asynchrone dingen laten doen?
 
@@ -291,28 +283,93 @@ callstack
 call zijn de functie calls
 
 functies worden op de callstack gezet.
-callback worden in de message que gezet. 
+callback worden in de message que gezet.
 
 **event loop**
-event loop houdt stack en queue in de gaten, processed message wanneer stack leeg is. gooit de callback functie op de stack wanneer de stack dus leeg is. 
+event loop houdt stack en queue in de gaten, processed message wanneer stack leeg is. gooit de callback functie op de stack wanneer de stack dus leeg is.
 
-fetch returned a promise en is dus asynchroom. 
-
+fetch returned a promise en is dus asynchroom.
 
 ### json()
 
 The json() method of the Response interface takes a Response stream and reads it to completion. It returns a promise which resolves with the result of parsing the body text as JSON.
 
 ## try and catch statements
+
 zegt meer iets over een promise
 
-### throw 
+### throw
+
 we are going to be throwing an exception
 you are throwing an error, stop the program from running.
 
 ## ASYNC
 
-als je een functie async maakt, return je een promise. await keyword can only be used with a async functie. 
+als je een functie async maakt, return je een promise. await keyword can only be used with a async functie.
 
-*await* keyword. javascript herkent dat dit speciale code is en dat dit tijd gaat duren dus de web api gaat hiermee aan de slag. dus javascript denkt ik ga verder met mijn code, ga jij maar verder en als jij klaar bent laat het mij weten. 
+_await_ keyword. javascript herkent dat dit speciale code is en dat dit tijd gaat duren dus de web api gaat hiermee aan de slag. dus javascript denkt ik ga verder met mijn code, ga jij maar verder en als jij klaar bent laat het mij weten.
 
+await deze Promise .. je kan niet bijvoorbeeld doen await console log. je kan niet wachten op een log functie
+
+one of the traits of async functions is that it the return value is a Promise. that is why we can use .then() .catch() method.
+
+await only works inside async functions. it can be put in front of any async promise-based function to pause your code that until the promise fullfills then return the resulting value.
+
+async zonder await maakt een functie niet asynchroon
+
+### wanneer gebruik je await en wanneer niet?
+
+(denk na over user experience == gebruikerservaring, voorkomen van lay-out shifting)
+
+je DOM (je pagina) alvast klaarmaken voordat je data er is.
+bijvoorbeeld met video's al de thumbnails laden voordat de video echt wordt geladen (dit omdat het lang duurt). maar om de pagina er wel goed uit te laten zien wel al ervoor zorgen dat de thumbnails geladen zijn. dus de placeholders al tonen. en daarna met de dom de data in de dom zetten.
+
+bijvoorbeeld zoals bij youtube (als je naar youtube gaat zie je eerst grijze placeholders en daarna duurt het even voordat de filmpjes worden geladen). 
+
+
+
+## fetch('url') netwerk request - met een api praten
+
+- default http method request is default. als het een andere methode is moet je deze method zoals POST wel meegeven aan de fetch request aan de api. 
+
+```
+fetch('url' , {
+  method: "POST",
+  headers: {
+    "Content-type": "application/json", <--- hoort bij een api 
+  },
+  body: JSON.stringify({
+    title: "My post",
+    body: "this is a new post",
+
+  }),
+}
+```
+
+
+
+ophalen (haal op)
+fetch() - is een asynchrome functie, dat is ook waarom we een promise terugkrijgen.
+
+- geeft een promise terug. Een promise is niks anders dan een object dat zegt 'ik ben nog niet klaar, ik ben nog niet klaar, ohja nu ben ik wel klaar'.
+- maar omdat je await doet dan wacht tie tot de promise fulfilled it en krijg je de response terug.
+  in-built javascript functie
+- meestal gebruik je fetch() methode met een API
+- gebeurt asynchroom
+
+## promise
+
+promise is eerst een belofte en daarna een resultaat
+
+### async funtie always returns a promise
+
+
+# header, body, method 
+
+wat er moet worden meegegeven bij een post request lees dan goed de documentatie van de API, daar staat wat je bijvoorbeeld moet toevoegen aan de header zodat de server het ook goed kan ontvangen en terugsturen. 
+
+kijk en probeer in postman uit met de headers en etc om te zien of je wel hetgeen terugkrijg van de api wat je wilt
+
+# JSON methods
+
+JSON.stringify --> deze methode zorgt ervoor dat je 

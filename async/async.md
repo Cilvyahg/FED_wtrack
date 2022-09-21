@@ -276,14 +276,25 @@ it returns a response object with key value pairs (statuscode: value, headers, b
 
 and the catch()
 
+try { ..} block
+
+if one of the things in the try {} block will fall it will stop and got to error (catch {})
+
+
+
 ## ASYNC AND AWAIT
+
+async will return a promise. and that is why you can also use .then() .catch() 
 
 async in front of the function
 
 - async functions always returns a promise
 
 **await**
-await will pause the execution of the function, waiting for a promise to be solved.
+await will pause the execution of the function, waiting for a promise to be solved or rejected. it will just wait till the promise settles. SO EITHER RESOLVED OR REJECTED.
+
+
+await waits till promise is settles
 
 ## throw || return
 
@@ -307,6 +318,9 @@ callback worden in de message que gezet.
 event loop houdt stack en queue in de gaten, processed message wanneer stack leeg is. gooit de callback functie op de stack wanneer de stack dus leeg is.
 
 fetch returned a promise en is dus asynchroom.
+
+### JSON 
+java script object notation. it's not javascript but it looks like javascript. but we cannot store functions and etc. Json is a format for sending data (just like XML therefore AJAX). Most API will responds with json. 
 
 ### json()
 
@@ -349,6 +363,8 @@ bijvoorbeeld zoals bij youtube (als je naar youtube gaat zie je eerst grijze pla
 ## fetch('url') netwerk request - met een api praten
 
 - default http method request is default. als het een andere methode is moet je deze method zoals POST wel meegeven aan de fetch request aan de api. 
+
+fetch() is a method. which returns a promise.
 
 ```
 fetch('url' , {
@@ -396,3 +412,7 @@ JSON.stringify --> deze methode zorgt ervoor dat je
  
 ### finally {}
  The finally block will always execute before control flow exits the try...catch...finally construct. It always executes, regardless of whether an exception was thrown or caught.
+
+ ![image](./Screenshot%202022-09-08%20at%2019.49.21.png)
+
+ 

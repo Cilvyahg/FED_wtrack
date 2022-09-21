@@ -272,13 +272,12 @@ promWithIf
     log(error);
   });
 
-
-
 /* === PROMISE HAS TWO PARAMETERS REJECT, RESOLVE. THESE TWO ARE ALSO FUNCTIONS ==== */
 
 // willgetyoucat returns a promise
 const willGetYouACat = () => {
-  return new Promise((resolve, reject) => { // return a function
+  return new Promise((resolve, reject) => {
+    // return a function
     setTimeout(function () {
       const rand = Math.random();
       if (rand < 0.5) {
@@ -300,5 +299,49 @@ willGetYouACat() // we are executing a function that returns a promise. the func
     log(rejected);
   });
 
+/* ===== ASYNC Functions ===== */
 
-  
+const add = async function (x, y) {
+  if (typeof x !== 'number' || typeof y !== 'number') {
+    throw 'X and Y must be numbers'; // throw an error // same as reject() in a Promise. the value that the promise will be reject with.
+  }
+  return x + y; // resolve(x + y) if it was a new promise . the value the promise will be resolved with
+};
+
+add('e', 4)
+  .then(function (value) {
+    log('PROMISE RESOLVED WITH:', value);
+  })
+  .catch(function (value) {
+    log('PROMISE RESOLVED WITH:', value);
+  });
+
+const getPlanets = async () => {
+  const res = await fetch('https://swapi.dev/api/planjjjets/');
+  const data = await res.json();
+  log(typeof data, res);
+  log('this is the data in json', res);
+  log(data);
+  log(data.results[3]);
+};
+
+getPlanets().catch(function (error) {
+  log('IN CATCHHHHHHHHH', error);
+}); // BUT YOU CAN ALSO USE A TRY AND CATCH BLOCKCODE IN THE ASYNC FUNCTION.
+
+
+
+/* USING TRY AND CATCH BLOCK IN ASYNC AWAIT */
+
+const getPlanetsTryCatch = async () => {
+  try {
+    const res = await fetch('https://swapi.dev/api/people/');
+    const data = await res.json();
+    log('this is the data in json', res);
+    console.table(data.results);
+  } catch (error) {
+    log('this is an error', error);
+  }
+};
+
+getPlanetsTryCatch();

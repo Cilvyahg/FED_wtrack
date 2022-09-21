@@ -233,16 +233,72 @@ Promise.all([promise1, promise2, promise3, promise4]).then(function (values) {
 
 const prom = fetch('https://swapi.dev/api/planets/');
 
-prom.then(function (response) {
-  // you get a response object back when you put json() behind it it returns a promise so you can chain the then() method to it
-  return response.json().then((data) => {
-    log(data) // getting an object back .. it's the whole json data you get back
-    log(data.results); // how to access the results object within the object of data
-    for (let name of data.results) {
-      log(name.name)
-    }
-
-
+prom
+  .then(function (response) {
+    log(response);
+    // you get a response object back when you put json() behind it it returns a promise so you can chain the then() method to it
+    response.json().then((data) => {
+      log(data); // getting an object back .. it's the whole json data you get back
+      log(data.results); // how to access the results object within the object of data
+      for (let name of data.results) {
+        log(name.name);
+      }
+    });
+  })
+  .catch((error) => {
+    log('something went wrong with fetch', error);
   });
-})
 
+// SINCE CATCH BLOCK WON'T BE EXECUTED EVEN IT THE REQUEST IS REJECTED YOU CAN DO AN IF STATEMENT LIKE BELOW
+const promWithIf = fetch('https://swapi.dev/api/plants/'); // made a mistake in the url on purpose
+
+promWithIf
+  .then(function (response) {
+    if (!response.ok) {
+      log(response);
+      throw new Error(`STATUS CODE ERROR ${response.status}`); // when we throw an error it will be given to the error in the catch block
+    } else {
+      response.json().then((data) => {
+        log(data);
+        log(data.results);
+        for (let name of data.results) {
+          log(name.name);
+        }
+      });
+    }
+  })
+  .catch((error) => {
+    log('something went wrong with fetch');
+    log(error);
+  });
+
+
+
+/* === PROMISE HAS TWO PARAMETERS REJECT, RESOLVE. THESE TWO ARE ALSO FUNCTIONS ==== */
+
+// willgetyoucat returns a promise
+const willGetYouACat = () => {
+  return new Promise((resolve, reject) => { // return a function
+    setTimeout(function () {
+      const rand = Math.random();
+      if (rand < 0.5) {
+        resolve(); // we call resolve() as a function
+      } else {
+        reject(' no cat for you'); // we call reject() as a function
+      }
+    }, 3000);
+  });
+};
+
+// .then() and .catch() method will run whenever a promise is resolved or rejected
+
+willGetYouACat() // we are executing a function that returns a promise. the function itself is not a promise.
+  .then(() => {
+    log('yea i got a cat');
+  })
+  .catch((rejected) => {
+    log(rejected);
+  });
+
+
+  

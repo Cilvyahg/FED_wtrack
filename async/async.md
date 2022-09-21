@@ -391,6 +391,9 @@ fetch() - is een asynchrome functie, dat is ook waarom we een promise terugkrijg
 - meestal gebruik je fetch() methode met een API
 - gebeurt asynchroom
 
+
+the promise returned from fetch() won't reject on HTTP error status (even if the response is an HTTP 404 or 500. Instead it will resolve normally (with ok status set to false in the response you get back ```ok:false```)) it will only reject on network failure, or your internet is off or the request can't be make at all!! because we still got a response. 
+
 ## promise
 
 promise is eerst een belofte en daarna een resultaat
